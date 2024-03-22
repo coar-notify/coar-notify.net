@@ -7,6 +7,7 @@ assignees: ''
 ---
 
 1. Please replace the title <PLACEHOLDER> (above) with a suitable title for your feedback.
-2. Please add your feedback below. Issues added here are public, and are monitored by the COAR Notify Editorial Board. Any response from the Editorial Board will be added as a comment on this issue.
+2. Please add your feedback below. Issues added here are public. The COAR Notify Team will then consider and respond using comments on that GitHub issue.
 
 
+The COAR Notify Team will then consider and respond using comments on that GitHub issue.
