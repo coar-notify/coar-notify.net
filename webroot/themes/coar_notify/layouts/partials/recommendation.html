@@ -1,0 +1,6 @@
+<div class="recommendation-panel">
+    {{- with .title -}}
+        <h5>{{ . }}</h5>
+    {{- end -}}
+    {{- .recommendation | markdownify -}}
+</div>

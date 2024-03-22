@@ -1,0 +1,30 @@
+{{ $systemPages := where site.RegularPages.ByTitle "Type" "systems" }}
+{{ $platformsPages := where site.RegularPages.ByTitle "Type" "platforms" }}
+{{ $implementationPages := sort (union $systemPages $platformsPages) "Title" "asc" }}
+
+<div class="row">
+    {{ range $implementationPages }}
+        <div class="col-12 col-sm-6 col-lg-3">
+            {{ $logo_max_width := .Params.logo_max_width}}
+            {{ if eq $logo_max_width nil }}
+                {{ $logo_max_width = site.Params.systemLogoMaxWidth }}
+            {{ end }}
+            {{ $systemPageLink := .Permalink}}
+            {{ $systemPageTitle := .Title}}
+            <a href="{{ $systemPageLink }}" class="card-as-link">
+                <div class="card">
+                    <div class="card-body">
+                        {{ with .Resources.GetMatch "logo.*" }}
+                            <img src="{{ .Permalink }}" class="system-list-logo" alt="Logo for {{ $systemPageTitle }}"/>
+                        {{ end }}
+                    </div>
+                    <div class="card-footer">
+                        <div class="system-list-card-footer">{{ $systemPageTitle }}</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {{ end }}
+</div>
+
+

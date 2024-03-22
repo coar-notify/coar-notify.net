@@ -1,0 +1,6 @@
+{{ $anchors := slice }}
+{{ $headings := (findRE `<h2 id="(.*?)">.*?</h2>` .) }}
+{{ range $headings }}
+    {{ $anchors = $anchors | append (dict "id" (replaceRE `<h2 id="(.*?)">.*?</h2>` "$1" . ) "title" (replaceRE `<h2 id=".*?">(.*?)</h2>` "$1" . )) }}
+{{ end }}
+{{ return $anchors }}

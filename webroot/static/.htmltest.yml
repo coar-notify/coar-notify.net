@@ -1,0 +1,8 @@
+DirectoryPath: "."
+EnforceHTTPS: true
+IgnoreURLs:
+  - "https://fonts.googleapis.com"
+  - "https://fonts.gstatic.com"
+IgnoreDirs: []
+IgnoreAltMissing: true
+#CacheExpires: "6h"

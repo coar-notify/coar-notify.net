@@ -1,0 +1,27 @@
+{{ define "main" }}
+    <h1 class="page-title">{{ .Title }}</h1>
+    <p>{{ .Description | markdownify }}</p>
+    {{/*            {{ .Content }}*/}}
+    {{ with .Params.payload }}
+        <div class="row">
+            <div class="col">
+                <h3>Properties</h3>
+                {{ partial "properties/all_properties" (dict "payload" .) }}
+            </div>
+            <div class="col">
+                <h3>Example JSON-LD Payload</h3>
+                {{ $payload := partial "properties/json_payload" (dict "payload" .) }}
+                {{ (partial "render_json" $payload) | markdownify }}
+                <p class="read-more"><a href="./index.json">Get raw JSON-LD</a></p>
+            </div>
+        </div>
+    {{ end }}
+
+
+    {{ $workflowSteps := where site.Pages "Params.pattern" "eq" .File.ContentBaseName }}
+    {{ $workflows := slice }}
+    {{ range $workflowSteps }}
+        {{ $workflows = $workflows | append .CurrentSection }}
+    {{ end }}
+    {{ partial "workflows/table" (dict "caption" "Example workflows which use this pattern" "rows" $workflows) }}
+{{ end }}

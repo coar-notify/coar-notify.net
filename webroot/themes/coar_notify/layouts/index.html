@@ -1,0 +1,58 @@
+{{ define "main" }}
+    <h1 class="page-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    <div class="row">
+        <div class="col-md-10">
+            {{ .Content }}
+            <div class="row">
+                <div class="col-md-4">
+                    {{ $specificationPage := site.GetPage "/specification/"}}
+                    <a href="{{ $specificationPage.Permalink }}" class="card-as-link">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Specification</h5>
+                            </div>
+                            <div class="card-body">
+                                {{ $specificationPage.Description | markdownify }}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    {{ $implementationPage := site.GetPage "/implementation/"}}
+                    <a href="{{ $implementationPage.Permalink }}" class="card-as-link">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Implementation Guide</h5>
+                            </div>
+                            <div class="card-body">
+                                {{ $implementationPage.Description | markdownify }}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    {{ $cataloguePage := site.GetPage "/catalogue/"}}
+                    <a href="{{ $cataloguePage.Permalink }}" class="card-as-link">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Catalogue</h5>
+                            </div>
+                            <div class="card-body">
+                                {{ $cataloguePage.Description | markdownify }}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <h3>Recent News</h3>
+            {{ partial "sidebar_post" . }}
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+
+    {{ partial "funding_acknowledgement_with_logo"}}
+{{ end }}

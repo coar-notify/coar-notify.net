@@ -1,0 +1,102 @@
+/*.gsc-tabsAreaInvisible,*/
+/*.gsc-resultsHeader,*/
+/*.gsc-branding,*/
+/*.gcsc-branding,*/
+/*.gs-branding,*/
+/*.gsc-url-top,*/
+/*.gs-watermark,*/
+/*.gsc-thumbnail-inside,*/
+/*.gsc-url-bottom {*/
+/*    display: none;*/
+/*}*/
+
+/* Use a different font family for search results */
+.gs-title, .gs-snippet {
+    /*font-family: courier;*/
+    color: #555555;
+}
+
+/* Add a border between individual search results */
+.gs-webResult {
+    border: 1px solid #cdcdcd;
+    padding: 1em;
+    background-color: lightyellow;
+}
+
+/* Do no display the count of search results */
+.gsc-result-info {
+    /*display: none;*/
+}
+
+/* Hide the Google branding in search results */
+.gs-branding {
+    /*display: none;*/
+}
+
+/* Hide the thumbnail images in search results */
+.gsc-thumbnail {
+    display: none;
+}
+
+/* Hide the snippets in Google search results */
+.gs-snippet {
+    /*display: none;*/
+    font-size: 14px;
+}
+
+/* Change the font size of the title of search results */
+.gs-title a {
+    font-size: 16px;
+}
+
+/* Google Custom Search highlights matching words in bold, toggle that */
+.gs-title b, .gs-snippet b {
+    /*font-weight: normal;*/
+}
+
+/* Do no display the URL of web pages in search results */
+.gsc-url-top, .gsc-url-bottom {
+    /*display: none;*/
+}
+
+/* Highlight the pagination buttons at the bottom of search results */
+.gsc-cursor-page     {
+    /*font-size: 1.5em;*/
+    /*padding: 4px 8px;*/
+    /*border: 2px solid #ccc;*/
+    /*color: white;*/
+}
+
+/*.gsc-cursor-page {*/
+/*    display: inline-block;*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*    cursor: pointer;*/
+/*    text-align: center;*/
+/*    margin: 20px 0;*/
+/*}*/
+
+/*.card {*/
+/*    margin-bottom: 20px;*/
+/*    height: 98%;*/
+/*}*/
+
+/*.card:hover {*/
+/*    background-color: #efefef;*/
+/*}*/
+
+/*a.card-as-link {*/
+/*    text-decoration: none;*/
+/*    color: #555555;*/
+/*}*/
+
+/*div.card-header {*/
+/*    font-weight: bold;*/
+/*    text-align: center;*/
+/*    background-color: #d0e1f2;*/
+/*}*/
+
+/*div.card-footer {*/
+/*    font-size: small;*/
+/*    text-align: right;*/
+/*}*/

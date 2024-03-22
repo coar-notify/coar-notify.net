@@ -1,0 +1,64 @@
+@import 'variables';
+
+thead tr {
+    //background-color: $panel-and-table-header-colour;
+}
+
+caption {
+    caption-side: top;
+    text-align: center;
+    padding-bottom: 3px;
+    font-weight: bold;
+    color: $main-content-text-color;
+    //background-color: #efefef;
+}
+
+table, tr, th, td {
+    color: $main-content-text-color;
+    //font-size: $table-content-font-size;
+
+    font-family: $main-content-font;
+}
+
+table {
+    border: 0.5px solid #cdcdcd;
+}
+
+tr {
+    border-left: 0.5px solid #cdcdcd;
+    border-top: 0.5px solid #cdcdcd;
+}
+
+th {
+    font-weight: normal;
+}
+
+table.invisible-layout-table {
+    border: none;
+    width: auto;
+}
+
+table.invisible-layout-table tr, table.invisible-layout-table td {
+    border: none;
+}
+
+td.field-name {
+    text-align: right;
+    font-weight: bold;
+    white-space: nowrap;
+    vertical-align: text-top;
+}
+
+.more-details-link {
+    float: right;
+}
+
+td.number {
+    text-align: right;
+    font-family: Courier, monospace;
+    white-space: nowrap;
+}
+
+td.nowrap {
+    white-space: nowrap;
+}

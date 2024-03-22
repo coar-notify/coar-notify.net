@@ -1,0 +1,92 @@
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<meta content='width=device-width,initial-scale=1' name='viewport'>
+<!-- The above 2 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+{{ if site.Params.enableAnalytics }}
+    <script defer data-domain="notify.coar-repositories.org" src="https://plausible.io/js/script.js"></script>
+{{ end }}
+
+{{/*{{ with .OutputFormats.Get "rss" -}}*/}}
+{{/*    {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}*/}}
+{{/*{{ end }}*/}}
+
+<link href='https://fonts.googleapis.com' rel='preconnect'>
+<link crossorigin='true' href='https://fonts.gstatic.com' rel='preconnect'>
+<meta name="google-site-verification" content="{{ site.Params.googleSiteVerification }}"/>
+<meta property="og:title" content="{{ .Title }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ .Permalink }}"/>
+<meta property="og:site_name" content="{{ site.Title }}"/>
+{{/*<meta name="twitter:card" content="summary">*/}}
+{{/*<meta name="twitter:image" content="">*/}}
+{{/*<meta name="twitter:site" content="">*/}}
+{{/*<meta name="twitter:title" content="{{ site.Title }}{{ if .Title }}: {{ .Title }}{{ end }}">*/}}
+{{hugo.Generator}}
+
+<title>{{ site.Title }}{{ if .Title }}: {{ .Title }}{{ end }}</title>
+
+{{ $variablesStyle := resources.Get "css/_variables.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $variablesStyle.Permalink }}">
+
+{{ $bootstrapStyle := resources.Get "css/bootstrap.min.css" | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $bootstrapStyle.Permalink }}">
+
+{{ $datatablesBootstrapStyle := resources.Get "css/dataTables.bootstrap5.min.css" | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $datatablesBootstrapStyle.Permalink }}">
+
+{{ $mainStyle := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $mainStyle.Permalink }}">
+
+{{ $headerAndFooterStyle := resources.Get "css/header_and_footer.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $headerAndFooterStyle.Permalink }}">
+
+{{ $guideStyle := resources.Get "css/guide.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $guideStyle.Permalink }}">
+
+{{ $swimlanesStyle := resources.Get "css/swim_lanes.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $swimlanesStyle.Permalink }}">
+
+{{ $tablesStyle := resources.Get "css/tables.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $tablesStyle.Permalink }}">
+
+{{ $cardsStyle := resources.Get "css/cards.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $cardsStyle.Permalink }}">
+
+{{ $postStyle := resources.Get "css/post.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $postStyle.Permalink }}">
+
+{{ $sidebarStyle := resources.Get "css/sidebar.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $sidebarStyle.Permalink }}">
+
+{{ $catalogueStyle := resources.Get "css/catalogue.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $catalogueStyle.Permalink }}">
+
+{{ $syntaxPageStyle := resources.Get "css/syntax_pygments.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $syntaxPageStyle.Permalink }}">
+
+{{ $jqueryJS := resources.Get "js/jquery-3.7.0.js" | resources.Minify | resources.Fingerprint }}
+<script type="text/javascript" src="{{ $jqueryJS.Permalink }}"></script>
+
+{{ $bootstrapJS := resources.Get "js/bootstrap.bundle.js" | resources.Minify  | resources.Fingerprint }}
+<script type="text/javascript" src="{{ $bootstrapJS.Permalink }}"></script>
+
+{{ $datatablesJS := resources.Get "js/jquery.dataTables.min.js" | resources.Fingerprint }}
+<script type="text/javascript" src="{{ $datatablesJS.Permalink }}"></script>
+
+{{ $datatablesBootstrap5JS := resources.Get "js/dataTables.bootstrap5.min.js" | resources.Fingerprint }}
+<script type="text/javascript" src="{{ $datatablesBootstrap5JS.Permalink }}"></script>
+
+{{ $mainJS := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
+<script type="text/javascript" src="{{ $mainJS.Permalink }}"></script>
+
+{{/*<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">*/}}
+{{/*<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">*/}}
+{{/*<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">*/}}
+{{/*<link rel="manifest" href="/site.webmanifest">*/}}
+{{/*<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#787878">*/}}
+{{/*<meta name="msapplication-TileColor" content="#da532c">*/}}
+{{/*<meta name="theme-color" content="#ffffff">*/}}
+
+
+
+

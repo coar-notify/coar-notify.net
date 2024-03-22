@@ -1,0 +1,82 @@
+---
+theme: "coar_notify"
+#resourceDir: this is configured with env variable "$HUGO_RESOURCEDIR"
+languageCode: "en-gb"
+uglyURLs: false
+title: "COAR Notify"
+enableRobotsTXT: true
+enableGitInfo: false
+disablePathToLower: true
+services:
+  rss:
+    limit: 20
+outputs:
+  home:
+    - html
+  section:
+    - html
+    - rss
+  taxonomy:
+    - html
+  term:
+    - html
+  page:
+    - html
+    - json
+permalinks:
+  page:
+    posts: "/:year/:filename/"
+taxonomies:
+  tag: "tags"
+caches:
+  getjson:
+    dir: :cacheDir/:project
+    maxAge: 5s
+  getresource:
+    dir: :cacheDir/:project
+    maxAge: 5s
+  getcsv:
+    dir: :cacheDir/:project
+    maxAge: 5s
+params:
+  systemLogoMaxWidth: 250
+  eventNotificationsPatternsBaseURL: "https://www.eventnotifications.net/"
+  enableAnalytics: false  # this param may be overridden in production/development envs
+  googleSiteVerification:
+  fundingAcknowledgementText: "The development of this work is funded in part by a generous grant from [Arcadia](https://www.arcadiafund.org.uk)."
+  gitHubRepoForSources: "https://github.com/coar-notify/notify.coar-repositories.org"
+  feedbackFormURL: "https://github.com/coar-notify/notify.coar-repositories.org/issues/new?assignees=paulwalk&labels=feedback&template=feedback.md&title=PLACEHOLDER"
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: false
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: false
+    parser:
+      attribute:
+        block: true
+        title: true
+      autoHeadingID: true
+    #      wrapStandAloneImageWithinParagraph: false
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xHTML: false
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: false
+    style: pygments
+    tabWidth: 4
+---

@@ -1,0 +1,6 @@
+notify:
+  name: "Notify"
+  uri: "https://purl.org/coar/notify"
+as2:
+  name: "Activity Streams 2.0"
+  uri: "https://www.w3.org/ns/activitystreams"

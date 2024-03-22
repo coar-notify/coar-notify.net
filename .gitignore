@@ -1,0 +1,5 @@
+/webroot/.hugo_build.lock
+/webroot/resources
+/webroot/public
+**/.DS_Store
+.idea

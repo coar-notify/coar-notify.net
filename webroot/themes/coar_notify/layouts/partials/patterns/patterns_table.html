@@ -1,0 +1,22 @@
+<table class="table sortable-table table-sm table-striped">
+    <caption>{{ .caption }}</caption>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th class="no-sort">Description</th>
+        <th>Category</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{ range .rows }}
+        <tr>
+            <td class="nowrap"><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+            <td>{{ .Description | markdownify }}</td>
+            <td>
+                <a href="/specification/pattern-categories/{{ .Params.pattern_category }}">{{ .Params.pattern_category }}</a>
+
+            </td>
+        </tr>
+    {{ end }}
+    </tbody>
+</table>

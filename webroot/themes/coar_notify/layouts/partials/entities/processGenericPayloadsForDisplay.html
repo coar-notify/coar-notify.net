@@ -1,0 +1,8 @@
+{{ range $key,$value := . }}
+    <h3>{{ $key | humanize }}</h3>
+    <ul>
+        {{ range $innerKey,$innerValue := $value }}
+            {{ partial "entities/processGenericPayloadsForDisplayRecursive" (dict "k" $innerKey "v" $innerValue ) }}
+        {{ end }}
+    </ul>
+{{ end }}

@@ -1,0 +1,23 @@
+@import 'variables';
+.card-header {
+    //background-color: #d0e1f2;
+    text-align: center;
+}
+
+.pattern-category-card {
+    margin-bottom: 20px;
+}
+
+a.card-as-link {
+    text-decoration: none;
+    color: var(--text-colour);
+}
+
+a.card-as-link .card:hover {
+    background-color: #efefef;
+}
+
+#editorial-board {
+    float: right;
+    margin-left: 10px;
+}

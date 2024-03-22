@@ -1,0 +1,35 @@
+<table class="table sortable-table table-sm table-striped">
+    <caption>{{ .caption }}</caption>
+    <thead>
+    <tr class="column-header-row">
+        <th>System</th>
+        <th>Workflow</th>
+        <th>Status</th>
+        <th>Participants</th>
+        <th>Use-case(s)</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{ range .rows }}
+        {{ $ownerPage := site.GetPage (print "/catalogue/systems/" .Params.owner) }}
+        <tr>
+            <td><a href="{{ $ownerPage.Permalink }}">{{ $ownerPage.Title }}</a></td>
+            <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+            <td>{{ partial "workflows/status_badge" .Params.workflow_status }}</td>
+            <td class="nowrap">{{ .Params.left_node }} <-> {{ .Params.right_node }}</td>
+            <td>
+                {{ $useCaseItems := slice}}
+                {{ range index .Params "use-cases" }}
+                    {{ $useCasePage := site.GetPage (print "/use-cases/" . )}}
+                    {{ $useCaseItem := print "<a href=\"" $useCasePage.Permalink "\">" $useCasePage.Title "</a>" }}
+                    {{ $useCaseItems = $useCaseItems | append $useCaseItem }}
+                {{ end }}
+                {{ delimit $useCaseItems ", " | markdownify}}
+            </td>
+        </tr>
+    {{ end }}
+    </tbody>
+</table>
+
+
+

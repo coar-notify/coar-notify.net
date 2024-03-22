@@ -1,0 +1,23 @@
+{{ define "main" }}
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ .Content }}
+    <table id="scenariosTable" class="table sortable-table table-sm table-striped">
+        <caption>Terms</caption>
+        <thead>
+        <tr>
+            <th>Term</th>
+            <th class="no-sort">Description</th>
+            {{/*                    <th>PID</th>*/}}
+        </tr>
+        </thead>
+        <tbody>
+        {{ range .Data.Pages }}
+            <tr>
+                <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+                <td>{{ .Description }}</td>
+                {{/*                        <td>{{ .Params.pid }}</td>*/}}
+            </tr>
+        {{ end }}
+        </tbody>
+    </table>
+{{ end }}

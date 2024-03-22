@@ -1,0 +1,34 @@
+.post {
+  //margin-bottom: 30px;
+  //border-bottom: 2px dotted #cdcdcd;
+}
+
+.post img {
+  max-width: 100%;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+}
+
+.post-footer {
+  border-top: 1px solid #cdcdcd;
+  font-size: smaller;
+}
+
+.post-footer .post-footer-right {
+  text-align: right;
+}
+
+.previously-published-sockdrawer-declaration p {
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.comment-suggestion {
+  text-align: right;
+  font-style: italic;
+}

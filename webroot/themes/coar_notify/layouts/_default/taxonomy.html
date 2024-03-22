@@ -1,0 +1,15 @@
+{{ define "main" }}
+    <div>
+        <h1 class="page-title">{{ .Title }}</h1>
+        {{ .Content }}
+        {{/*            {{ .Data.Singular }}*/}}
+
+    </div>
+    <div>
+        <ul>
+            {{range .Data.Terms.ByCount }}
+                <li><a href="{{ .Term }}">{{ .Name }}</a> ({{ .Count }})</li>
+            {{ end }}
+        </ul>
+    </div>
+{{ end }}

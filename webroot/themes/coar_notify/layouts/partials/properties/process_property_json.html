@@ -1,0 +1,13 @@
+{{ $payloadFragment := dict "" ""}}
+{{ if isSet .payload "payload" }}
+    {{ $payloadFragment = .payload.payload }}
+{{ else }}
+    {{ if .class }}
+        {{ $lookupClassSource := index site.Data.payloads .class }}
+        {{ $lookupEntity := index $lookupClassSource .payload.lookup }}
+        {{ if $lookupEntity }}
+            {{ $payloadFragment = $lookupEntity.payload }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+{{ return (dict .property $payloadFragment) }}

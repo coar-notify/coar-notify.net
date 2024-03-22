@@ -1,0 +1,8 @@
+{{ $status := . }}
+{{ if eq $status "draft" }}
+  <span class="badge bg-danger">Draft - NOT ready for use</span>
+{{ else if eq $status "published" }}
+  <span class="badge bg-success">Published - ready to use</span>
+{{ else }}
+  <span class="badge bg-secondary">Unknown</span>
+{{ end }}

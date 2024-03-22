@@ -1,0 +1,60 @@
+{{ define "main" }}
+    <h1 class="page-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    {{ .Content }}
+    <div class="row">
+        <div class="col-md-10">
+            {{ partial "catalogue/system_logos" . }}
+
+{{/*            <div class="row">*/}}
+{{/*                <div class="col-md-4">*/}}
+{{/*                    {{ $systemsPage := site.GetPage "/catalogue/systems/"}}*/}}
+{{/*                    <a href="{{ $systemsPage.Permalink }}" class="undecorated-link">*/}}
+{{/*                        <div class="card">*/}}
+{{/*                            <div class="card-header">*/}}
+{{/*                                <h5>Systems</h5>*/}}
+{{/*                            </div>*/}}
+{{/*                            <div class="card-body">*/}}
+{{/*                                {{ $systemsPage.Description | markdownify }}*/}}
+{{/*                            </div>*/}}
+{{/*                        </div>*/}}
+{{/*                    </a>*/}}
+{{/*                </div>*/}}
+{{/*                <div class="col-md-4">*/}}
+{{/*                    {{ $workflowsPage := site.GetPage "/catalogue/workflows"}}*/}}
+{{/*                    <a href="{{ $workflowsPage.Permalink }}" class="undecorated-link">*/}}
+{{/*                        <div class="card">*/}}
+{{/*                            <div class="card-header">*/}}
+{{/*                                <h5>Workflows</h5>*/}}
+{{/*                            </div>*/}}
+{{/*                            <div class="card-body">*/}}
+{{/*                                {{ $workflowsPage.Description | markdownify }}*/}}
+{{/*                            </div>*/}}
+{{/*                        </div>*/}}
+{{/*                    </a>*/}}
+{{/*                </div>*/}}
+{{/*                <div class="col-md-4">*/}}
+{{/*                    {{ $codebasesPage := site.GetPage "/catalogue/code-bases/"}}*/}}
+{{/*                    <a href="{{ $codebasesPage.Permalink }}" class="undecorated-link">*/}}
+{{/*                        <div class="card">*/}}
+{{/*                            <div class="card-header">*/}}
+{{/*                                <h5>Code-bases</h5>*/}}
+{{/*                            </div>*/}}
+{{/*                            <div class="card-body">*/}}
+{{/*                                {{ $codebasesPage.Description | markdownify }}*/}}
+{{/*                            </div>*/}}
+{{/*                        </div>*/}}
+{{/*                    </a>*/}}
+{{/*                </div>*/}}
+{{/*            </div>*/}}
+        </div>
+        <div class="col-md-2">
+            <h3>Catalogue Sections</h3>
+            <ul>
+                <li><a href="/catalogue/systems/">Systems</a></li>
+                <li><a href="/catalogue/workflows/">Workflows</a></li>
+                <li><a href="/catalogue/platforms/">Platforms</a></li>
+                <li><a href="/catalogue/code-bases/">Code-bases</a></li>
+            </ul>
+        </div>
+    </div>
+{{ end }}

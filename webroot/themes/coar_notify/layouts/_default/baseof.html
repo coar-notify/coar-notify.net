@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{partial "head" .}}
+    </head>
+    <body data-pagefind-body>
+        <div id="container-fluid">
+            {{ partial "header" . }}
+            {{ block "main" . }}
+
+            {{end}}
+            {{partial "footer" .}}
+            {{ if (eq .Site.Params.showDebugInfo true) }}
+                {{ partial "debugging" .}}
+            {{ end }}
+        </div>
+    </body>
+</html>
+
+			

@@ -1,0 +1,22 @@
+actor: |
+  * An `id` which must be a URI identifying the `actor` (**HTTP** URIs are preferred, but any valid URI is permitted)
+  * A `type` which should be one of: *Application*, *Group*, *Organization*, *Person* or *Service* from AS 2.0.
+  * The `actor` may also have a `name`
+origin: |
+  * An `id` which is an HTTP URI identifying the sending system
+  * A `type` which should include the value *Service* from AS 2.0.
+  * An `inbox` which is the HTTP URI of the LDN inbox for the `origin`
+target: |
+  * An `id` which is an HTTP URI identifying the receiving system
+  * A `type` which should include the value *Service* from AS 2.0.
+  * An `inbox` which is the HTTP URI of the LDN inbox for the `target`
+inReplyTo: |
+  `inReplyTo` may be specified if this is a response to a previous notification. `inReplyTo` takes the URI (URN:UUID or HTTP URI) which identifies the `activity` for which this is a response.
+general_descriptions:
+  actor: "The `actor` describes the party responsible for this activity."
+  object: "The `object` describes the resource which is the main focus of this notification."
+  context: "When the `object` describes the result of some service acting on a resource, the `context` may be used to refer to that second resource."
+  origin: "The `origin` describes the system which has sent the notification."
+  target: "The `target` describes the system which is intended to receive the notification."
+  inReplyTo: ""
+

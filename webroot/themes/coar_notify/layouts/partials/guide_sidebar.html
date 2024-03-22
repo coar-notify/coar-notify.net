@@ -1,0 +1,22 @@
+<div id="guide-sidebar" data-pagefind-ignore>
+    <h4>Guide Contents</h4>
+    <ul>
+        {{- with site.Menus.guide_toc }}
+            {{- range . }}
+                <li>
+                    <a class="" href="{{ .URL }}">{{ .Name }}</a>
+                    {{ $menuItemPage := .Page }}
+                    {{ with partial "get_page_headings_level_2" $menuItemPage.Content }}
+                        <ul>
+                            {{ range . }}
+                                <li>
+                                    <a class="" href="{{ $menuItemPage.Permalink }}#{{ .id }}">{{ .title | markdownify }}</a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+</div>

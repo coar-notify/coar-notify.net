@@ -1,0 +1,50 @@
+@import 'variables';
+
+div#guide-sidebar {
+  background-color: $panel-background-colour;
+  border: 1px solid #cdcdcd;
+  padding: 5px;
+}
+
+div#guide-sidebar ul {
+  padding-left: 10px;
+  list-style-position: inside;
+}
+
+div.on-this-page {
+  background-color: $panel-background-colour;
+  border: 1px solid #cdcdcd;
+  padding: 10px;
+  font-size: 0.8em;
+  float: right;
+  //margin-top: 15px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+div.on-this-page a,div#guide-sidebar a {
+  text-decoration: none;
+  color: $link-colour;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+div.on-this-page a:hover,div#guide-sidebar a:hover {
+  text-decoration: underline;
+}
+
+div.recommendation-panel {
+  border-left: 10px solid green;
+  padding: 10px 5px 5px 15px;
+  background-color: #d4efdf;
+  margin-bottom: 20px;
+}
+
+sub.blockquote-ref {
+  font-style: italic;
+}
+
+div.quote-reference {
+  font-size: 80%;
+  text-align: right;
+}

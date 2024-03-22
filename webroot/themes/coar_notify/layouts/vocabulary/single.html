@@ -1,0 +1,18 @@
+{{ define "main" }}
+    {{/*    {{ partial "section_badge" "Vocabulary Term" }}*/}}
+    <h1 class="page-title">{{ .Title }}</h1>
+    <h2>Description</h2>
+    {{ .Description }}
+    <br/><br/>
+    <h2>Persistent ID</h2>
+    {{ .Params.pid }}
+    <br/><br/>
+    {{ $thisTerm := print "coar-notify:" .File.ContentBaseName }}
+    {{ $thisTermAsSlice := slice $thisTerm }}
+    {{ $patternsUsingThisVocabTerm := where (where site.RegularPages "Type" "patterns" ) ".Params.Payload.type" "intersect" $thisTermAsSlice}}
+    {{ partial "patterns/patterns_table" (dict "caption" "Patterns which use this vocabulary term" "rows" $patternsUsingThisVocabTerm) }}
+    <br/>
+
+    {{ $workflowsUsingThisVocabTerm := where (where site.RegularPages "Type" "workflows" ) ".Params.Payload.type" "intersect" $thisTermAsSlice}}
+    {{ partial "workflows/table" (dict "caption" "workflows which use this vocabulary term" "rows" $workflowsUsingThisVocabTerm)}}
+{{ end }}

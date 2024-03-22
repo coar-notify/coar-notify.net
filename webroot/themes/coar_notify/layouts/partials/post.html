@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col">
+        <div class="post">
+            <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+            {{ .Content }}
+{{/*            {{ with .Params.activityPubPostID }}*/}}
+{{/*                <div class="comment-suggestion">*/}}
+{{/*                    If you would like to leave a comment - or read other comments - please <a href="{{ site.Params.activityPubPostURLPrefix }}{{ . }}{{ site.Params.activityPubPostURLSuffix }}">go to this Mastodon post</a>.*/}}
+{{/*                </div>*/}}
+{{/*            {{ end }}*/}}
+            <div class="post-footer" data-pagefind-ignore>
+                <div class="row">
+                    <div class="col">
+                        {{ .Params.author}},
+                        {{ time.Format "2 January 2006" .Date }}
+                    </div>
+                    <div class="col">
+                        <div class="post-footer-right">
+                            {{ with .Params.tags }}
+                                {{ partial "tag_link_list" . }}
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

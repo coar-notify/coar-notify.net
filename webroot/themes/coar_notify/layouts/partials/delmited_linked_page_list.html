@@ -1,0 +1,7 @@
+{{ $array := slice}}
+
+{{ range . }}
+    {{ $array = $array | append (print "<a href='/" .Permalink "'>" (.Title) "</a>")}}
+{{ end }}
+
+{{ delimit $array "&nbsp;|&nbsp;" | markdownify }}

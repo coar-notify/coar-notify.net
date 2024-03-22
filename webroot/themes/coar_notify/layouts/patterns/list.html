@@ -1,0 +1,29 @@
+{{ define "main" }}
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ .Content }}
+    {{ with site.GetPage "/pattern-categories" }}
+        <h2>Categorised Notification Patterns</h2>
+        <div class="row">
+            {{ range .Pages.ByWeight }}
+                <div class="col-12 col-lg-6">
+                    <div class="card pattern-category-card">
+                        <div class="card-header">
+                            <h5>{{ .Title }}</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>{{ .Description | markdownify }}</p>
+                            <h5>Examples:</h5>
+                            <ul>
+                                {{ range where site.Pages "Params.pattern_category" "eq" (lower .Title) }}
+                                    <li><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a></li>
+                                {{ end }}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+    {{ end }}
+    {{ partial "patterns/patterns_table" (dict "caption" "All Notification Patterns" "rows" .Data.Pages) }}
+
+{{ end }}

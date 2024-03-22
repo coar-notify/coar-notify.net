@@ -1,0 +1,157 @@
+@import 'variables';
+
+html {
+  background-color: white;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2%;
+}
+
+body {
+  background-color: white;
+}
+
+body, p, ol, ul, td {
+  font-family: $main-content-font;
+  font-weight: $main-content-font-weight-default;
+  color: $main-content-text-color;
+  font-size: $main-content-font-size;
+}
+
+pre {
+  padding: 15px;
+  background-color: #F7F7F7;
+  //font-size: 80%;
+}
+
+code, span.monospace {
+  font-family: $monospace-font;
+  font-weight: $monospace-font-weight-default;
+  font-size: 80% !important;
+  color: $code-text-color;
+}
+
+a, a:visited, a:hover {
+  color: $link-colour;
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a.undecorated-link {
+  text-decoration: none;
+  color: $main-content-text-color;
+}
+
+//a.a-img:link,
+//a.a-img:link:focus,
+//a.a-img:link:hover,
+//a.a-img:link:active {
+//  text-underline: none;
+//}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, {
+  text-decoration: none;
+  color: $header-link-colour;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  color: $header-link-colour;
+}
+
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited, {
+  color: $header-link-colour;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  font-weight: $heading-font-weight-default;
+  color: $heading-text-color;
+}
+
+h1 {
+  border-bottom: 2px solid #555555;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.6em
+}
+
+h3 {
+  font-size: 1.4em
+}
+
+h4 {
+  font-size: 1.2em
+}
+
+h5 {
+  font-size: 1.1em
+}
+
+h6 {
+  font-size: 1.0em
+}
+
+
+
+blockquote {
+  font-style: italic;
+  margin-left: 20px;
+  padding: 10px 10px 1px;
+  margin-right: 20px;
+  border-left: 1px solid #cdcdcd;
+  border-right: 1px solid #cdcdcd;
+  //border: 1px solid #cdcdcd;
+  background-color: $panel-background-colour;
+}
+
+
+div.right-aligned {
+  text-align: right;
+}
+
+.invisible {
+  display: inline-block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  position: absolute;
+  width: 0;
+}
+
+mark {
+  background-color: yellow;
+}
+
+.read-more {
+  text-align: right;
+  font-size:90%;
+  font-style: italic;
+}
+
+a.external-link::after {
+  //content: " ↗️";
+  //font-size: .7em;
+}
+
+.field-name {
+  text-align: right;
+  font-weight: normal;
+}
+
+.field-name::after {
+  content: ": ";
+}

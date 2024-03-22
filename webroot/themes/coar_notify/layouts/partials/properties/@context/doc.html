@@ -1,0 +1,5 @@
+#### `@context`
+The `@context` must include:
+{{ range (index site.Data.payloads "@context") }}
+* [{{ .uri }}]({{ .uri }})
+{{- end -}}

@@ -1,0 +1,13 @@
+{{ define "main" }}
+    <h1 class="page-title">Change-log: {{ .Title }}</h1>
+    <div class="row">
+        <div class="col-10">
+            {{ .Content }}
+        </div>
+        <div class="col-2">
+            <h2>Changes</h2>
+            {{ $changeLogPages := where site.RegularPages "Section" "changelog" }}
+            {{ partial "changelog/sidebar" $changeLogPages }}
+        </div>
+    </div>
+{{ end }}

@@ -1,0 +1,10 @@
+<div class="sidebar">
+    {{ $posts := (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+    {{ with index $posts 0 }}
+        <a class="undecorated-link" href="{{ .Permalink }}">
+            <h5>{{ .Title }}</h5>
+            {{ .Summary }}
+        </a>
+    {{ end }}
+
+</div>

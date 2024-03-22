@@ -1,0 +1,21 @@
+{{ define "main" }}
+    <h1 class="page-title">{{ .Title }}</h1>
+    <div class="row">
+        <div class="col-sm-2">
+            {{ partial "guide_sidebar" . }}
+        </div>
+        <div class="col-sm-10">
+            {{ .Content }}
+            {{ range site.Pages }}
+                {{ $page := . }}
+                {{ with .Params.recommendations }}
+                    From the <a href="{{ $page.Permalink }}">{{ $page.Title }}</a> section:
+                    {{ range . }}
+                        {{ partial "recommendation" (dict "title" "" "recommendation" . )}}
+                        <br/>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+{{ end }}

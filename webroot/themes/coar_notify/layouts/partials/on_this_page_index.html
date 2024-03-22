@@ -1,0 +1,12 @@
+{{ $currentPage := . }}
+
+{{ with $currentPage.TableOfContents }}
+    <div class="on-this-page" data-pagefind-ignore>
+        <h6>On this page:</h6>
+        {{ . }}
+    </div>
+{{ end }}
+
+
+
+

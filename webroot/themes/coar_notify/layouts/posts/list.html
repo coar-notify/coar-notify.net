@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{/*    <h1 class="page-title">Posts from {{ .Title }}</h1>*/}}
+    {{ .Content }}
+    {{ range (first 10 (where .Site.RegularPages "Section" "posts")) }}
+        <div class="post-container">
+            {{ partial "post" . }}
+        </div>
+    {{ end }}
+{{ end }}

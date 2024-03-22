@@ -1,0 +1,5 @@
+baseURL: "http://localhost:1313"
+buildDrafts: true
+params:
+  showDebugInfo: true
+  enableAnalytics: false

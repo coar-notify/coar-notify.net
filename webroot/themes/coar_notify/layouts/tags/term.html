@@ -1,0 +1,18 @@
+{{ define "main" }}
+    <div>
+        <h1 class="page-title">Pages tagged with '{{ .Title }}'</h1>
+        <div class="row">
+            <div class="col-md-9">
+                {{ .Content }}
+                <ul>
+                    {{ range .Data.Pages }}
+                        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+            <div class="col-md-3">
+                {{ partial "sidebar_tag_cloud" . }}
+            </div>
+        </div>
+    </div>
+{{ end }}

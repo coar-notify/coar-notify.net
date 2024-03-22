@@ -1,0 +1,15 @@
+{{ define "main" }}
+    {{/*    {{ partial "section_badge" "Use-case" }}*/}}
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ .Content }}
+
+    {{ $patterns := where (where site.Pages "Type" "patterns" ) "Params.use-cases" "intersect" (slice .File.ContentBaseName) }}
+    {{ with $patterns }}
+        {{ partial "patterns/patterns_table" (dict "caption" "Relevant Patterns" "rows" $patterns) }}
+    {{ end }}
+    <br/>
+    {{ $scenarios := where (where site.Pages "Type" "scenarios" ) "Params.use-cases" "intersect" (slice .File.ContentBaseName) }}
+    {{ with $scenarios }}
+        {{ partial "scenarios/scenarios_table" (dict "caption" "Example Scenarios" "rows" $scenarios)  }}
+    {{ end }}
+{{ end }}

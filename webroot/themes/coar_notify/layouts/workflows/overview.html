@@ -1,0 +1,9 @@
+{{ define "main" }}
+    <div>
+        <h1 class="page-title">{{ .Title }}</h1>
+        {{ .Content }}
+    </div>
+    <div>
+        {{ partial "workflows/table" (dict "caption" "Workflows" "rows" .Sections) }}
+    </div>
+{{ end }}

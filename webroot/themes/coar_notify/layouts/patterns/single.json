@@ -1,0 +1,4 @@
+{{ with .Params.Payload }}
+    {{- $payload := partial "properties/json_payload" (dict "payload" .) -}}
+    {{- $payload | jsonify (dict "indent" "  ") -}}
+{{ end }}

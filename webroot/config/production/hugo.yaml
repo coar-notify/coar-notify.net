@@ -1,0 +1,5 @@
+baseURL: "https://notify.coar-repositories.org"
+buildDrafts: false
+params:
+  showDebugInfo: false
+  enableAnalytics: true
