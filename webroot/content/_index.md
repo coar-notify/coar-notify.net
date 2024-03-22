@@ -2,10 +2,10 @@
 title: COAR Notify
 description:
 date: 2018-12-20
-menus:
-  main:
-    weight: 10
-    name: "Home"
+#menus:
+#  main:
+#    weight: 10
+#    name: "Home"
 breadcrumb_title: "Home"
 ---
 

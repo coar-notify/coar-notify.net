@@ -5,6 +5,6 @@ draft: false
 menus:
   main:
     weight: 75
-    name: "News/Blog"
+    name: "News"
 ---
 

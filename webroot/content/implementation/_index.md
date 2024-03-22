@@ -10,7 +10,7 @@ menus:
     weight: 10
   main:
     weight: 30
-    name: "Implementation Guide"
+    name: "Guide"
 ---
 
 Welcome to the COAR Notify Implementation Guide!
