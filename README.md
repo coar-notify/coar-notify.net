@@ -8,6 +8,6 @@ This GitHub repository is also intended to be a "one-stop shop" for all Notify-r
 
 
 ## About COAR Notify
-![COAR Notify logo](notify_logo.png | width=200)
+<img src="notify_logo.png" alt="COAR Notify logo" width="200"/>
 
 The [*COAR Notify Initiative*](https://www.coar-repositories.org/notify/) is developing and accelerating community adoption of a standard, interoperable, and decentralised approach (using Linked Data Notifications) to link research outputs hosted in the distributed network of repositories with resources from external services, such as overlay-journals and open peer review services.
