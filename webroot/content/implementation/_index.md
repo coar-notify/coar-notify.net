@@ -31,6 +31,6 @@ A _Vocabulary_ is provided to give values for certain properties in the notifica
 #### Workflows
 _Workflows_ which describe a particular set of notifications used by a service to provide a service, typically involving a repository system.
 
-*The COAR Notify Protocol is described in detail, with examples, in [the specification section](/specification).*
+*The COAR Notify Protocol is described in detail, with examples, in [the specification section](/specification/).*
 
 

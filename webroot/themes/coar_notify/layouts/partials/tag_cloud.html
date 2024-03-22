@@ -3,10 +3,10 @@
     {{ range site.Taxonomies.tags.ByCount }}
         {{ if eq $featuredTagsOnly true }}
             {{ if in site.Params.featured_tags .Name}}
-                <a href="/tags/{{ .Name }}"><span class="badge bg-secondary">{{ .Name }} ({{.Count}})</span></a>
+                <a href="/tags/{{ .Name }}/"><span class="badge bg-secondary">{{ .Name }} ({{.Count}})</span></a>
             {{ end }}
         {{ else }}
-            <a href="/tags/{{ .Name }}"><span class="badge bg-secondary">{{ .Name }} ({{.Count}})</span></a>
+            <a href="/tags/{{ .Name }}/"><span class="badge bg-secondary">{{ .Name }} ({{.Count}})</span></a>
         {{ end }}
     {{ end }}
 </div>

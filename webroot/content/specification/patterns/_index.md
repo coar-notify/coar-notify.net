@@ -22,7 +22,7 @@ notification patterns:
 * The `activity` **must** contain the following properties:
   * `@context`: This is the JSON-LD 'context' for the activity.
   * `id`: This must be a URI, and the use of URN:UUID is recommended. An HTTP URI may be used, but in such cases the URI should resolve to a resource which represents the activity.
-  * `type`: This should include one of the [Activity Stream 2.0 Activity Types](https://www.w3.org/TR/activitystreams-vocabulary/). It may (depending on the activity) also include a type from the [Notify Activity Types vocabulary](/vocabulary/)
+  * `type`: This should include one of the [Activity Stream 2.0 Activity Types](https://www.w3.org/TR/activitystreams-vocabulary/). It may (depending on the activity) also include a type from the [Notify Activity Types vocabulary](/specification/vocabulary/)
   * `origin`: The originator of the activity, typically the service responsible for *sending* the notification.
   * `object`: This should be the focus of the activity. Other object properties may appear in notifications, as properties of other properties.
   * `target`: The intended destination of the activity, typically the service which *consumes* the notification.
