@@ -9,7 +9,7 @@ draft: false
 
 The *COAR Notify Protocol* consists of documented community conventions for the use of *[W3C Linked Data Notifications (LDN)](https://www.w3.org/TR/2017/REC-ldn-20170502/)* to integrate repository systems with relevant services in a distributed, resilient and web-native architecture. Notify notification patterns are more specific implementations of the generic patterns described by *[Event Notifications in Value-Adding Networks](https://www.eventnotifications.net/)*, and they rely heavily on the *[W3C Activity Streams 2.0](https://www.w3.org/TR/activitystreams-core/)* model and properties.
 
-This Editorial Process Document outlines the process that is followed by the [Editorial Board](/about#editors) of the COAR Notify Protocol. The goal is to ensure that the COAR Notify Protocol is documented comprehensively, clearly and accurately, such that it can be readily implemented in software. The Board is committed to maintaining the integrity of the protocol and to promoting distributed scholarly communications.
+This Editorial Process Document outlines the process that is followed by the Editorial Board of the COAR Notify Protocol. The goal is to ensure that the COAR Notify Protocol is documented comprehensively, clearly and accurately, such that it can be readily implemented in software. The Board is committed to maintaining the integrity of the protocol and to promoting distributed scholarly communications.
 
 ## Roles and Responsibilities
 
@@ -33,7 +33,7 @@ The Editorial Board of the COAR Notify Protocol consists of at least three membe
 * conforms to the Event Notifications in Value-Adding Networks specification
 * uses the W3C Activity Streams 2.0 model and properties where possible to promote broad interoperability
 * is easily implemented and useful in a range of use-cases
-* is clearly, accurately and comprehensively documented on a [dedicated website](https://notify.coar-repositories.org/)
+* is clearly, accurately and comprehensively documented on this website
 
 ## Process
 
@@ -43,7 +43,7 @@ The Editorial Board is active in monitoring and, indeed, working in the contexts
 
 ### Requests for changes
 
-The COAR Notify Protocol is intended to be implemented and, as such, the Editorial Board takes a pragmatic stance with regard to requests for changes. Requests for changes may be [submitted as GitHub issues](/about/feedback/).
+The COAR Notify Protocol is intended to be implemented and, as such, the Editorial Board takes a pragmatic stance with regard to requests for changes. Requests for changes may be [submitted as GitHub issues]({{% feedbackFormURL %}}).
 
 ### Decisions
 

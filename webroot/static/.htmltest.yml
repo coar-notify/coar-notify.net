@@ -1,5 +1,5 @@
 DirectoryPath: "."
-EnforceHTTPS: true
+EnforceHTTPS: false
 IgnoreURLs:
   - "https://fonts.googleapis.com"
   - "https://fonts.gstatic.com"
