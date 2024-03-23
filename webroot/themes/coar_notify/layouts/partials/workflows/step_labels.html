@@ -1,0 +1,6 @@
+{{ range . }}
+    {{ if eq . "terminates" }}
+        <div class="workflow-step-label-container"><span class="badge bg-danger">workflow terminates here</span></div>
+    {{ end }}
+{{ end }}
+

@@ -1,0 +1,31 @@
+{{ $stepPosition := .stepPosition }}
+{{ $stepPage := .stepPage }}
+<div class="card">
+    <div class="card-header">
+        <span class="step-number">{{ $stepPosition }}</span>&nbsp;<a href="{{ $stepPage.Permalink }}">{{ $stepPage.Title }}</a>
+    </div>
+    <div class="card-body">
+        {{ $stepPage.Description }}
+        {{ if ne $stepPage.Content "" }}
+            <div class="accordion" id="accordionLeft_{{$stepPosition }}">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="accordionLeftDetailHeading_{{$stepPosition }}">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionLeftDetail_{{$stepPosition }}" aria-expanded="false"
+                                aria-controls="accordionLeftDetail_{{$stepPosition }}">
+                            More Details
+                        </button>
+                    </h2>
+                    <div id="accordionLeftDetail_{{$stepPosition }}" class="accordion-collapse collapse" aria-labelledby="accordionLeftDetailHeading_{{$stepPosition }}"
+                         data-bs-parent="#accordionLeft_{{$stepPosition }}">
+                        <div class="accordion-body">
+                            {{ $stepPage.Content }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{ end }}
+        {{ with $stepPage.Params.labels }}
+            {{ partial "workflows/step_labels" . }}
+        {{ end }}
+    </div>
+</div>

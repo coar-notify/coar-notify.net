@@ -1,6 +1,6 @@
 <div data-pagefind-ignore>
-{{/*    {{ range sort .Data.Pages "File.ContentBaseName" }}*/}}
-    {{ range .Data.Pages.ByWeight }}
+    {{ range sort .Data.Pages "File.ContentBaseName" }}
+{{/*    {{ range .Data.Pages.ByWeight }}*/}}
         {{ $stepPosition := .File.ContentBaseName }}
         {{ if eq .Params.scope "notify" }}
             {{ $patternPage := .Site.GetPage (print "/specification/patterns/" .Params.pattern) }}
@@ -80,32 +80,7 @@
         {{ if eq .Params.scope "left_node" }}
             <div class="row">
                 <div class="col-3 column-left">
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="step-number">{{ $stepPosition }}</span>&nbsp;<a href="{{ .Permalink }}">{{ .Title }}</a>
-                        </div>
-                        <div class="card-body">
-                            {{ .Description }}
-                            {{ if ne .Content "" }}
-                                <div class="accordion" id="accordionLeft_{{$stepPosition }}">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="accordionLeftDetailHeading_{{$stepPosition }}">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionLeftDetail_{{$stepPosition }}" aria-expanded="false"
-                                                    aria-controls="accordionLeftDetail_{{$stepPosition }}">
-                                                More Details
-                                            </button>
-                                        </h2>
-                                        <div id="accordionLeftDetail_{{$stepPosition }}" class="accordion-collapse collapse" aria-labelledby="accordionLeftDetailHeading_{{$stepPosition }}"
-                                             data-bs-parent="#accordionLeft_{{$stepPosition }}">
-                                            <div class="accordion-body">
-                                                {{ .Content }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            {{ end }}
-                        </div>
-                    </div>
+                    {{ partial "workflows/step_left" (dict "stepPosition" $stepPosition "stepPage" . )}}
                 </div>
                 <div class="col-6 column-center">
                 </div>
@@ -120,32 +95,7 @@
                 <div class="col-6 column-center">
                 </div>
                 <div class="col-3 column-right">
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="step-number">{{ $stepPosition }}</span>&nbsp;<a href="{{ .Permalink }}">{{ .Title }}</a>
-                        </div>
-                        <div class="card-body">
-                            {{ .Description }}
-                            {{ if ne .Content "" }}
-                                <div class="accordion" id="accordionRight_{{$stepPosition }}">
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="accordionRightDetailHeading_{{$stepPosition }}">
-                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionRightDetail_{{$stepPosition }}" aria-expanded="false"
-                                                    aria-controls="accordionRightDetail_{{$stepPosition }}">
-                                                More Details
-                                            </button>
-                                        </h2>
-                                        <div id="accordionRightDetail_{{$stepPosition }}" class="accordion-collapse collapse" aria-labelledby="accordionRightDetailHeading_{{$stepPosition }}"
-                                             data-bs-parent="#accordionRight_{{$stepPosition }}">
-                                            <div class="accordion-body">
-                                                {{ .Content }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            {{ end }}
-                        </div>
-                    </div>
+                    {{ partial "workflows/step_right" (dict "stepPosition" $stepPosition "stepPage" . )}}
                 </div>
             </div>
         {{ end }}

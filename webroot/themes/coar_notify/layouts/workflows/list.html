@@ -30,12 +30,12 @@
         {{ partial "workflows/status_badge" .Params.workflow_status }}
     </div>
     {{ .Description | markdownify }}
-        <br/>
+    <br/>
     {{ $ownerPage := site.GetPage (print "/catalogue/systems/" .Params.owner )}}
     <b>Owner of this workflow:</b> <a href="{{ $ownerPage.Permalink }}">{{ $ownerPage.Title }}</a>
-        <br/>
+    <br/>
     <b>Systems using this workflow:</b> {{ delimit $systemItems ", " | markdownify}}
-        <br/>
+    <br/>
     <b>Platforms supporting this workflow:</b> {{ delimit $platformsItems ", " | markdownify}}
     <hr/>
 
