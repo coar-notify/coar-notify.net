@@ -38,7 +38,7 @@ preprint:
     * An `id` which is the HTTP URI of the "landing page" for the resource.
     * A `type` which should include the value *AboutPage* from schema.org.
     * An `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.
-    * A `url` containing the details of the actual content resource. The `url` has:
+    * A `ietf:item` containing the details of the actual content resource. The `url` has:
       * An `id` containing the HTTP URI of the content file for the resource.
       * A `type` describing the content file.
       * A `mediaType` which contains the MIME Type of the content file.
