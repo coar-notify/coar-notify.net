@@ -1,2 +1,2 @@
 Header set Access-Control-Allow-Origin "*"
-#RedirectMatch 301 https://notify.coar-repositories.org/patterns/(.*) https://notify.coar-repositories.org/specification/patterns/$1
+RedirectMatch 301 ^/patterns/(.*) /specification/patterns/$1
