@@ -61,6 +61,9 @@
 {{ $catalogueStyle := resources.Get "css/catalogue.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $catalogueStyle.Permalink }}">
 
+{{ $mermaidStyle := resources.Get "css/mermaid.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $mermaidStyle.Permalink }}">
+
 {{ $syntaxPageStyle := resources.Get "css/syntax_pygments.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $syntaxPageStyle.Permalink }}">
 
