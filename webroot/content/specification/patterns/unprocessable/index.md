@@ -14,7 +14,8 @@ payload:
     lookup: "generic-organisation"
   target:
     lookup: "generic-service"
-  object: "__exclude__"
+  object:
+    lookup: "preprint"
   inReplyTo:
     lookup: "required-inReplyTo"
   summary:

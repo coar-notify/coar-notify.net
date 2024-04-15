@@ -13,8 +13,7 @@
         {{ if and (ne $inComingPayload nil) (ne (index $inComingPayload $propertyName) nil)}}
             {{- print "\n#### `" $propertyName "`" -}}
 
-            {{/*            {{- $prefixToSpecificDescription := "This particular example has the following properties:\n\n" -}}*/}}
-            {{- $prefixToSpecificDescription := "" -}}
+                        {{- $prefixToSpecificDescription := "\nIn this particular example:\n" -}}
 
             {{- $defaultDescription := "***UNDEFINED***"}}
             {{- with index site.Data.payloads.default_descriptions $propertyName -}}
