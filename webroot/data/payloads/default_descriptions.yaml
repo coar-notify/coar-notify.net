@@ -19,4 +19,5 @@ general_descriptions:
   origin: "The `origin` describes the system which has sent the notification."
   target: "The `target` describes the system which is intended to receive the notification."
   inReplyTo: ""
+  summary: ""
 

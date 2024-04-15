@@ -4,6 +4,7 @@ description: 'This pattern is used to acknowledge and reject a request (`Offer`)
 date: "2021-03-08"
 type: patterns
 event_notifications_pattern: []
+status: published
 pattern_category: acknowledgements
 payload:
   id: "urn:uuid:668f26e0-2c8d-4117-a0d2-ee713523bcb1"

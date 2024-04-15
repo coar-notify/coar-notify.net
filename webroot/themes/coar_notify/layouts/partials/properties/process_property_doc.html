@@ -4,7 +4,7 @@
 {{ $property := index $inComingPayload $propertyName }}
 
 
-{{ if ne . "__exclude__"}}
+{{ if ne $property "__exclude__"}}
 
     {{ if and (ne $inComingPayloadDocs nil) (ne (index $inComingPayloadDocs $propertyName) nil)}}
         {{- print "\n#### `" $propertyName "`" -}}
@@ -13,7 +13,8 @@
         {{ if and (ne $inComingPayload nil) (ne (index $inComingPayload $propertyName) nil)}}
             {{- print "\n#### `" $propertyName "`" -}}
 
-            {{- $prefixToSpecificDescription := "This particular example has the following properties:\n\n" -}}
+            {{/*            {{- $prefixToSpecificDescription := "This particular example has the following properties:\n\n" -}}*/}}
+            {{- $prefixToSpecificDescription := "" -}}
 
             {{- $defaultDescription := "***UNDEFINED***"}}
             {{- with index site.Data.payloads.default_descriptions $propertyName -}}

@@ -15,7 +15,10 @@
                             <h5>Examples:</h5>
                             <ul>
                                 {{ range where site.Pages "Params.pattern_category" "eq" (lower .Title) }}
-                                    <li><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a></li>
+                                    <li>
+                                        <a href="{{ .Permalink}}"> {{ .LinkTitle }}</a>
+                                        {{ partial "status_badge" (dict "status" .Params.status "show_only_warnings" true) }}
+                                    </li>
                                 {{ end }}
                             </ul>
                         </div>

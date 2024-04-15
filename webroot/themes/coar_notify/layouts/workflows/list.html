@@ -26,8 +26,8 @@
             {{ $platformsItems = $platformsItems | append $platformsItem }}
         {{ end }}
     {{ end }}
-    <div style="text-align: right; font-size: 250%;">
-        {{ partial "workflows/status_badge" .Params.workflow_status }}
+    <div class="status-badge-large">
+        {{ partial "status_badge" (dict "status" .Params.status "show_only_warnings" true) }}
     </div>
     {{ .Description | markdownify }}
     <br/>

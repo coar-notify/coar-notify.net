@@ -10,7 +10,10 @@
     <tbody>
     {{ range .rows }}
         <tr>
-            <td class="nowrap"><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+            <td class="nowrap">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                {{ partial "status_badge" (dict "status" .Params.status "show_only_warnings" true) }}
+            </td>
             <td>{{ .Description | markdownify }}</td>
             <td>
                 <a href="/specification/pattern-categories/{{ .Params.pattern_category }}/">{{ .Params.pattern_category }}</a>

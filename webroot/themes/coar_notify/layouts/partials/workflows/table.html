@@ -2,9 +2,8 @@
     <caption>{{ .caption }}</caption>
     <thead>
     <tr class="column-header-row">
-        <th>System</th>
         <th>Workflow</th>
-        <th>Status</th>
+        <th>System</th>
         <th>Participants</th>
         <th>Use-case(s)</th>
     </tr>
@@ -13,9 +12,11 @@
     {{ range .rows }}
         {{ $ownerPage := site.GetPage (print "/catalogue/systems/" .Params.owner) }}
         <tr>
+            <td>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                {{ partial "status_badge" (dict "status" .Params.status "show_only_warnings" true) }}
+            </td>
             <td><a href="{{ $ownerPage.Permalink }}">{{ $ownerPage.Title }}</a></td>
-            <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
-            <td>{{ partial "workflows/status_badge" .Params.workflow_status }}</td>
             <td class="nowrap">{{ .Params.left_node }} <-> {{ .Params.right_node }}</td>
             <td>
                 {{ $useCaseItems := slice}}

@@ -36,6 +36,12 @@
     {{ end }}
 {{ end }}
 
+{{ with $inComingPayload.summary }}
+    {{ if ne . "__exclude__"}}
+        {{ $payload = merge  (partial "properties/process_property_json" (dict "payload" . "property" "summary" "class" "summaries")) $payload }}
+    {{ end }}
+{{ end }}
+
 {{ with $inComingPayload.target }}
     {{ if ne . "__exclude__"}}
         {{ $payload = merge  (partial "properties/process_property_json" (dict "payload" . "property" "target" "class" "systems")) $payload }}

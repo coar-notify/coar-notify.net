@@ -13,7 +13,10 @@
         <tbody>
         {{ range .Data.Pages }}
             <tr>
-                <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+                <td>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{ partial "status_badge" (dict "status" .Params.status "show_only_warnings" true) }}
+                </td>
                 <td>{{ .Description }}</td>
                 {{/*                        <td>{{ .Params.pid }}</td>*/}}
             </tr>

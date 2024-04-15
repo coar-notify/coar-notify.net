@@ -9,7 +9,7 @@ date: 2021-03-08
 type: workflows
 use-cases: [peer-review,endorsement]
 owner: pci
-workflow_status: draft
+status: draft
 ---
 
 This workflow was originally developed between PCI and HAL, but it can be used by other repositories wishing to interoperate with PCI.

@@ -1,6 +1,9 @@
 {{ define "main" }}
     <h1 class="page-title">{{ .Title }}</h1>
     <p>{{ .Description | markdownify }}</p>
+    <div class="status-badge-large">
+        {{ partial "status_badge" (dict "status" .Params.status "show_only_warnings" true) }}
+    </div>
     {{/*            {{ .Content }}*/}}
     {{ with .Params.payload }}
         <div class="row">

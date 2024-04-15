@@ -15,6 +15,8 @@
 
 {{- partial "properties/process_property_doc" (dict "payload" $inComingPayload "payloadDocs" $inComingPayloadDocs "property" "origin" "class" "systems") | markdownify -}}
 
+{{- partial "properties/process_property_doc" (dict "payload" $inComingPayload "payloadDocs" $inComingPayloadDocs "property" "summary" "class" "summaries") | markdownify -}}
+
 {{- partial "properties/process_property_doc" (dict "payload" $inComingPayload "payloadDocs" $inComingPayloadDocs "property" "target" "class" "systems") | markdownify -}}
 
 {{ partial "properties/type/doc" $inComingPayload | markdownify }}

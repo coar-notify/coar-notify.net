@@ -4,7 +4,8 @@ description: 'This pattern is used to `Undo` (retract) an `Offer` previously mad
 date: "2021-03-08"
 type: patterns
 event_notifications_pattern: []
-pattern_category: undo
+status: published
+pattern_category: process
 payload:
   id: "urn:uuid:46956915-e3fe-4528-8789-1d325a356e4f"
   type: "Undo"

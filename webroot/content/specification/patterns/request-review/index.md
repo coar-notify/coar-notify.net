@@ -4,6 +4,7 @@ description: 'This pattern is used to request a review of a resource owned by th
 date: "2021-03-08"
 type: patterns
 event_notifications_pattern: []
+status: published
 pattern_category: requests
 payload:
   id: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"

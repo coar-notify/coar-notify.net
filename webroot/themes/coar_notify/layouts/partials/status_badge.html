@@ -1,0 +1,11 @@
+{{ if eq .status "draft" }}
+    <span class="badge bg-danger">Draft</span>
+{{ else if eq .status "deprecated" }}
+    <span class="badge bg-warning">Deprecated</span>
+{{ else if eq .show_only_warnings false }}
+    {{ if eq .status "published" }}
+        <span class="badge bg-success">Published</span>
+    {{ else }}
+        <span class="badge bg-secondary">Unknown</span>
+    {{ end }}
+{{ end }}
