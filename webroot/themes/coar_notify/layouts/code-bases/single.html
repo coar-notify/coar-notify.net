@@ -1,7 +1,11 @@
 {{ define "main" }}
     {{/*    {{ partial "section_badge" "Use-case" }}*/}}
     <h1 class="page-title">{{ .Title }}</h1>
-    {{ .Content }}
+    {{ if and (ne .Content nil) (ne .Content "") }}
+        {{ .Content}}
+    {{ else }}
+        {{ .Description | markdownify}}
+    {{ end }}
 
     {{ $patterns := where (where site.Pages "Type" "patterns" ) "Params.use-cases" "intersect" (slice .File.ContentBaseName) }}
     {{ with $patterns }}
