@@ -1,8 +1,8 @@
 ---
 title: PCI Endorsement
-id: 67680ceb-327b-4a5a-8fb9-4d396fca2570
+id: repository-pci-1
 description: |
-  This is a workflow where authors of preprints stored in repositories can request an endorsement from PCI.
+  This is a workflow where the author of a preprint stored in a repository can request an endorsement from PCI.
 left_node: "Repository"
 right_node: "PCI"
 date: 2021-03-08
@@ -10,6 +10,8 @@ type: workflows
 use-cases: [peer-review,endorsement]
 owner: pci
 status: published
+aliases:
+  - /catalogue/workflows/67680ceb-327b-4a5a-8fb9-4d396fca2570
 ---
 
 This workflow was originally developed between PCI and HAL, but it can be used by other repositories wishing to interoperate with PCI.

@@ -8,6 +8,6 @@ layout: systems_single
 type: systems
 system_url: "https://hal.science/?lang=en"
 workflows:
-  - 67680ceb-327b-4a5a-8fb9-4d396fca2570
+  - repository-pci-1
 ---
 
