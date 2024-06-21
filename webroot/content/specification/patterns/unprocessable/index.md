@@ -4,7 +4,7 @@ description: 'This pattern is used to indicate that a previously received Notify
 date: "2021-03-08"
 type: patterns
 event_notifications_pattern: []
-status: draft
+status: published
 pattern_category: process
 payload:
   id: "urn:uuid:49dae4d9-4a16-4dcf-8ae0-a0cef139254c"
