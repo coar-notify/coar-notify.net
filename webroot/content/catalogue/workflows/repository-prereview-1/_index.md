@@ -9,7 +9,7 @@ date: 2024-06-20
 type: workflows
 use-cases: [peer-review]
 owner: prereview
-status: draft
+status: published
 ---
 
 This workflow was originally developed between BiorXiv and PREreview, but it can be used by other repositories wishing to interoperate with PREreview.
