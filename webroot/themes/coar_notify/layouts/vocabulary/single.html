@@ -1,6 +1,9 @@
 {{ define "main" }}
     {{/*    {{ partial "section_badge" "Vocabulary Term" }}*/}}
     <h1 class="page-title">{{ .Title }}</h1>
+    <div class="status-badge-large">
+        {{ partial "status_badge" (dict "status" .Params.status "category" "term" "show_only_warnings" true) }}
+    </div>
     <h2>Description</h2>
     {{ .Description }}
     <br/><br/>

@@ -20,7 +20,7 @@
         </div>
     {{ end }}
     <div class="card-body notify-card-body">
-        <p>{{ $stepPage.Description }}</p>
+        <p>{{ $stepPage.Description | markdownify }}</p>
 
 
         <div class="accordion" id="accordionCenter_{{$stepPosition }}">

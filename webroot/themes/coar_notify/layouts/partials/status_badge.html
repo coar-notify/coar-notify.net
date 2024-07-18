@@ -1,11 +1,17 @@
+{{ $category := "" }}
+{{ with .category }}
+    {{ $category = . }}
+{{ end }}
+
+
 {{ if eq .status "draft" }}
-    <span class="badge bg-danger">Draft</span>
+    <span class="badge bg-danger">Draft {{ $category }}</span>
 {{ else if eq .status "deprecated" }}
-    <span class="badge bg-warning">Deprecated</span>
+    <span class="badge bg-warning">Deprecated {{ $category }}</span>
 {{ else if eq .show_only_warnings false }}
     {{ if eq .status "published" }}
-        <span class="badge bg-success">Published</span>
+        <span class="badge bg-success">Published {{ $category }}</span>
     {{ else }}
-        <span class="badge bg-secondary">Unknown</span>
+        <span class="badge bg-secondary">Unknown {{ $category }}</span>
     {{ end }}
 {{ end }}

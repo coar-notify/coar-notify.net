@@ -14,7 +14,7 @@
         <tr>
             <td>
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
-                {{ partial "status_badge" (dict "status" .Params.status "show_only_warnings" true) }}
+                {{ partial "status_badge" (dict "status" .Params.status "category" "workflow" "show_only_warnings" true) }}
             </td>
             <td><a href="{{ $ownerPage.Permalink }}">{{ $ownerPage.Title }}</a></td>
             <td class="nowrap">{{ .Params.left_node }} <-> {{ .Params.right_node }}</td>

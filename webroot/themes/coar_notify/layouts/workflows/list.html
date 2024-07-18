@@ -27,7 +27,7 @@
         {{ end }}
     {{ end }}
     <div class="status-badge-large">
-        {{ partial "status_badge" (dict "status" .Params.status "show_only_warnings" true) }}
+        {{ partial "status_badge" (dict "status" .Params.status "category" "workflow" "show_only_warnings" true) }}
     </div>
     {{ .Description | markdownify }}
     <br/>

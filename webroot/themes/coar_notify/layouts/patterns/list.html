@@ -17,7 +17,7 @@
                                 {{ range where site.Pages "Params.pattern_category" "eq" (lower .Title) }}
                                     <li>
                                         <a href="{{ .Permalink}}"> {{ .LinkTitle }}</a>
-                                        {{ partial "status_badge" (dict "status" .Params.status "show_only_warnings" true) }}
+                                        {{ partial "status_badge" (dict "status" .Params.status "category" "pattern" "show_only_warnings" true) }}
                                     </li>
                                 {{ end }}
                             </ul>

@@ -1,4 +1,5 @@
 {{ define "main" }}
+    {{ $workflowPage := .Page.CurrentSection}}
     <div data-pagefind-ignore>
         {{ if eq .Params.scope "notify" }}
             <h1 class="page-title">{{ .Page.CurrentSection.Title }} workflow: {{ .Title }}</h1>
@@ -11,7 +12,11 @@
             {{ end }}
 
             {{ $patternTitle := $patternPage.Title }}
-            (This is a <i>Notify</i> notification from the <i><a href="{{ .Page.CurrentSection.Permalink }}">{{ .Page.CurrentSection.Title }}</a></i> workflow, using the <i><a href="{{ $patternPath }}/">{{ $patternTitle }}</a></i>
+
+            <div class="status-badge-large">
+                {{ partial "status_badge" (dict "status" $workflowPage.Params.status "category" "workflow" "show_only_warnings" true) }}
+            </div>
+            (This is a <i>Notify</i> notification from the <i><a href="{{ $workflowPage.Permalink }}">{{ .Page.CurrentSection.Title }}</a></i> workflow, using the <i><a href="{{ $patternPath }}/">{{ $patternTitle }}</a></i>
             notification pattern).
             <hr/>
             <div class="row">
@@ -29,6 +34,9 @@
         {{ else }}
             {{/*        {{ partial "section_badge" "Workflow Step from Example Scenario" }}*/}}
             <h1 class="page-title">{{ .Title }}</h1>
+            <div class="status-badge-large">
+                {{ partial "status_badge" (dict "status" $workflowPage.Params.status "category" "workflow" "show_only_warnings" true) }}
+            </div>
             <p>(This is not a <i>Notify</i> notification, but is included as an indication of a logical step in the workflow. The details of this step are out-of-scope of <i>Notify</i> and should be considered opaque to the service
                 undertaking the step.)</p>
         {{ end }}

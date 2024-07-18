@@ -15,7 +15,7 @@
             <tr>
                 <td>
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
-                    {{ partial "status_badge" (dict "status" .Params.status "show_only_warnings" true) }}
+                    {{ partial "status_badge" (dict "status" .Params.status "category" "term" "show_only_warnings" true) }}
                 </td>
                 <td>{{ .Description }}</td>
                 {{/*                        <td>{{ .Params.pid }}</td>*/}}

@@ -5,7 +5,7 @@
         <span class="step-number">{{ $stepPosition }}</span>&nbsp;<a href="{{ $stepPage.Permalink }}">{{ $stepPage.Title }}</a>
     </div>
     <div class="card-body">
-        {{ $stepPage.Description }}
+        {{ $stepPage.Description | markdownify }}
         {{ if ne $stepPage.Content "" }}
             <div class="accordion" id="accordionLeft_{{$stepPosition }}">
                 <div class="accordion-item">
