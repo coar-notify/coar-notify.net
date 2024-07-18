@@ -26,9 +26,10 @@ notification patterns:
   * `origin`: The originator of the activity, typically the service responsible for *sending* the notification.
   * `object`: This should be the focus of the activity. Other object properties may appear in notifications, as properties of other properties.
   * `target`: The intended destination of the activity, typically the service which *consumes* the notification.
-* The `activity` property **may** (and often will) contain the following properties:
+* The `activity` property **may** contain the following properties:
   * `actor`: This identifies the party or process that initiated the activity.
-  * `inReplyTo`: This property is used when the notification is a direct response to a previous notification (usually a request) and references the _Activity Streams 2.0_ `activity` _id_ of the previous notification.
+  * `inReplyTo`: This property is used when the notification is a direct response to a previous notification (usually a request) and references the _Activity Streams 2.0_ activity `id` of the previous notification.
   * `context`: This identifies another resource which is relevant to understanding the notification.
+  * `summary`: this is used rarely, but may be used to provide a brief textual summary of the notification (for example in the case of an error)
 
 The following notification patterns are defined to be widely reusable.
