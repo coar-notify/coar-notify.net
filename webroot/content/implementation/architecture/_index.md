@@ -51,6 +51,7 @@ In this arrangement, the minimum development is done to allow the repository to 
 * tight coupling between repository and LDN Receiver creates potentially 'brittle' deployment - if the repository is offline, so is the *Receiver* and *Inbox*.
 * no support for secondary consumers (e.g. aggregators, audit systems, backups, archiving etc.)
 * may be difficult to scale to take advantage of more/disparate opportunities to interoperate with other LDN-enabled systems
+* HTTP timeout calculations run the risk of including the time taken to consume the notification, which distorts the whole network-timeout aspect.
 
 ### Option 2: Embedded, but separate *Consumer* and *Receiver* with stored notifications
 
