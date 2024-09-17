@@ -4,7 +4,7 @@
     <div class="status-badge-large">
         {{ partial "status_badge" (dict "status" .Params.status "category" "pattern" "show_only_warnings" true) }}
     </div>
-    {{/*            {{ .Content }}*/}}
+    {{/* {{ .Content }}*/}}
     {{ with .Params.payload }}
         <div class="row">
             <div class="col">
@@ -21,7 +21,8 @@
     {{ end }}
 
 
-    {{ $workflowSteps := where site.Pages "Params.pattern" "eq" .File.ContentBaseName }}
+{{/*    {{ $workflowSteps := where site.Pages "Params.pattern" "eq" .Params.id }}*/}}
+    {{ $workflowSteps := where (where site.Pages "Params.pattern" "eq" .Params.id) "Params.pattern_version" "eq" .Params.version }}
     {{ $workflows := slice }}
     {{ range $workflowSteps }}
         {{ $workflows = $workflows | append .CurrentSection }}

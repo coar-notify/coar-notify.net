@@ -1,7 +1,7 @@
 {{ $stepPosition := .stepPosition }}
 {{ $stepPage := .stepPage }}
 
-{{ $patternPage := site.GetPage (print "/specification/patterns/" $stepPage.Params.pattern) }}
+{{ $patternPage := site.GetPage (print "/specification/patterns/" $stepPage.Params.pattern "/" "v" $stepPage.Params.pattern_version) }}
 {{ $mergedPayload := $patternPage.Params.Payload }}
 {{ $scenarioStepPayloadContainerMap := $stepPage.Params.Payload }}
 {{ with $scenarioStepPayloadContainerMap }}
