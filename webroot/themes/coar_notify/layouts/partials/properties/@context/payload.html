@@ -1,7 +1,0 @@
-{{ $contextUris := newScratch }}
-
-{{ range (index site.Data.payloads "@context") }}
-    {{ $contextUris.Add "contexts" (slice .uri) }}
-{{ end }}
-
-{{ return dict "@context" ($contextUris.Get "contexts") }}

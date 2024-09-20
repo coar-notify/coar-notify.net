@@ -1,0 +1,19 @@
+{{ $inputPayload := .Resources.Get "payload.yaml" | transform.Unmarshal }}
+{{ $notify_version := partial "versioning/function_get_version" . }}
+{{ $patternPage := site.GetPage (printf "/specification/v%s/%s/index.md" $notify_version .Params.pattern) }}
+{{ $patternPayload := $patternPage.Resources.Get "payload.yaml" | transform.Unmarshal }}
+
+
+{{ $mergedPayload := partial "payload/build_base_payload"}}
+
+{{ range $k, $v := $patternPayload }}
+    {{ $mergedPayload = merge $mergedPayload (partial "payload/process_property" (dict "label" $k "value" $v)) }}
+{{ end }}
+
+{{ range $k, $v := $inputPayload }}
+    {{ $mergedPayload = merge $mergedPayload (partial "payload/process_property" (dict "label" $k "value" $v)) }}
+{{ end }}
+
+{{ partial "payload/validate_payload" $mergedPayload }}
+
+{{ return $mergedPayload }}

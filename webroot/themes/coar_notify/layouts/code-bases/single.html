@@ -1,6 +1,6 @@
 {{ define "main" }}
     {{/*    {{ partial "section_badge" "Use-case" }}*/}}
-    <h1 class="page-title">{{ .Title }}</h1>
+    <h1>{{ .Title }}</h1>
     {{ if and (ne .Content nil) (ne .Content "") }}
         {{ .Content}}
     {{ else }}

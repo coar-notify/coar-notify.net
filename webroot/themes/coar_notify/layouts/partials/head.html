@@ -25,7 +25,7 @@
 
 <title>{{ site.Title }}{{ if .Title }}: {{ .Title }}{{ end }}</title>
 
-{{ $variablesStyle := resources.Get "css/_variables.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $variablesStyle := resources.Get "css/_variables.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $variablesStyle.Permalink }}">
 
 {{ $bootstrapStyle := resources.Get "css/bootstrap.min.css" | resources.Fingerprint }}
@@ -34,37 +34,40 @@
 {{ $datatablesBootstrapStyle := resources.Get "css/dataTables.bootstrap5.min.css" | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $datatablesBootstrapStyle.Permalink }}">
 
-{{ $mainStyle := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $mainStyle := resources.Get "css/main.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $mainStyle.Permalink }}">
 
-{{ $headerAndFooterStyle := resources.Get "css/header_and_footer.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $headerAndFooterStyle := resources.Get "css/header_and_footer.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $headerAndFooterStyle.Permalink }}">
 
-{{ $guideStyle := resources.Get "css/guide.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $guideStyle := resources.Get "css/guide.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $guideStyle.Permalink }}">
 
-{{ $swimlanesStyle := resources.Get "css/swim_lanes.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $swimlanesStyle := resources.Get "css/swim_lanes.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $swimlanesStyle.Permalink }}">
 
-{{ $tablesStyle := resources.Get "css/tables.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $tablesStyle := resources.Get "css/tables.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $tablesStyle.Permalink }}">
 
-{{ $cardsStyle := resources.Get "css/cards.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $cardsStyle := resources.Get "css/cards.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $cardsStyle.Permalink }}">
 
-{{ $postStyle := resources.Get "css/post.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $postStyle := resources.Get "css/post.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $postStyle.Permalink }}">
 
-{{ $sidebarStyle := resources.Get "css/sidebar.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $sidebarStyle := resources.Get "css/sidebar.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $sidebarStyle.Permalink }}">
 
-{{ $catalogueStyle := resources.Get "css/catalogue.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $catalogueStyle := resources.Get "css/catalogue.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $catalogueStyle.Permalink }}">
 
-{{ $mermaidStyle := resources.Get "css/mermaid.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $specificationStyle := resources.Get "css/specification.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $specificationStyle.Permalink }}">
+
+{{ $mermaidStyle := resources.Get "css/mermaid.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $mermaidStyle.Permalink }}">
 
-{{ $syntaxPageStyle := resources.Get "css/syntax_pygments.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ $syntaxPageStyle := resources.Get "css/syntax_pygments.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $syntaxPageStyle.Permalink }}">
 
 {{ $jqueryJS := resources.Get "js/jquery-3.7.0.js" | resources.Minify | resources.Fingerprint }}

@@ -1,8 +1,0 @@
-"required-inReplyTo":
-  payload: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
-  description: |
-    `inReplyTo` is specified because this is a response to a previous notification. `inReplyTo` takes the URI (URN:UUID or HTTP URI) which identifies the `activity` for which this is a response.
-"optional-inReplyTo":
-  payload: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
-  description: |
-    `inReplyTo` may be specified if this is a response to a previous notification. `inReplyTo` takes the URI (URN:UUID or HTTP URI) which identifies the `activity` for which this is a response.

@@ -21,13 +21,12 @@ body, p, ol, ul, td {
 pre {
   padding: 15px;
   background-color: #F7F7F7;
-  //font-size: 80%;
+  font-size: 70%;
 }
 
 code, span.monospace {
   font-family: $monospace-font;
   font-weight: $monospace-font-weight-default;
-  font-size: 80% !important;
   color: $code-text-color;
 }
 
@@ -81,12 +80,14 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   border-bottom: 2px solid #555555;
   text-align: center;
-  font-size: 1.8em;
+  font-size: 2.0em;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 h2 {
-  font-size: 1.6em
+  font-size: 1.6em;
+  border-bottom: 1px solid #555555;
 }
 
 h3 {
@@ -154,4 +155,9 @@ a.external-link::after {
 
 .field-name::after {
   content: ": ";
+}
+
+.badge-header {
+  font-size: 1.2em;
+  text-align: right;
 }

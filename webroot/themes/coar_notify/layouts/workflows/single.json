@@ -1,11 +1,4 @@
 {{- if eq .Params.scope "notify" -}}
-    {{- $patternPath := print "/specification/patterns/" .Params.pattern -}}
-    {{- $patternPage := .Site.GetPage $patternPath -}}
-    {{- $mergedPayload := $patternPage.Params.Payload -}}
-    {{- $scenarioStepPayloadContainerMap := .Params.Payload -}}
-    {{- with $scenarioStepPayloadContainerMap -}}
-      {{- $mergedPayload = merge $mergedPayload . -}}
-    {{- end -}}
-    {{- $payload := partial "properties/json_payload" (dict "payload" $mergedPayload) -}}
-    {{- $payload | jsonify (dict "indent" "  ") -}}
+    {{- $mergedPayload := partial "payload/build_workflow_step_payload" . -}}
+    {{- partial "payload/render_json" $mergedPayload -}}
 {{- end -}}

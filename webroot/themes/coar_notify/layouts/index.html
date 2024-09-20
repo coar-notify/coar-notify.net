@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <h1 class="page-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
     <div class="row">
         <div class="col-md-10">
             {{ .Content }}
@@ -47,12 +47,12 @@
         </div>
         <div class="col-md-2">
             <h3>Recent News</h3>
-            {{ partial "sidebar_post" . }}
+            {{ partial "home/sidebar_post" . }}
         </div>
     </div>
 
     <br/>
     <br/>
 
-    {{ partial "funding_acknowledgement_with_logo"}}
+    {{ partial "acknowledgements/funding_acknowledgement_with_logo"}}
 {{ end }}

@@ -1,0 +1,19 @@
+id:
+  value: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
+origin:
+  lookup: "repository"
+target:
+  lookup: "pci"
+object:
+  lookup: "preprint"
+actor:
+  value:
+    id: "mailto:josiah.carberry@example.com"
+    name: "Josiah Carberry"
+    type: "Person"
+  requirement: REQUIRED
+  description: |
+    Describes the author of the preprint who is identified by their email (in URI form) so that PCI can contact them out of band of the Notify protocol.
+    - MUST have an `id` which MUST be a 'mailto' URI - e.g. *mailto:josiah.carberry@example.com*
+    - MUST have a `name`
+    - MUST have a `type` which MUST have the value *Person*

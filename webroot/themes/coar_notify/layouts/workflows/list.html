@@ -1,55 +1,27 @@
 {{ define "main" }}
+	<h1>{{ .Title }}</h1>
+  {{ partial "workflows/badges" . }}
+  {{ .Content }}
 
-    <h1 class="page-title">{{ .Title }}</h1>
-    {{ .Scratch.Set "left_node" .Params.left_node }}
-    {{ .Scratch.Set "right_node" .Params.right_node }}
-    {{ $useCaseItems := slice}}
-    {{ range index .Params "use-cases" }}
-        {{ $useCasePage := site.GetPage (print "/use-cases/" .)}}
-        {{ $useCaseItem := print "<a href=\"" $useCasePage.Permalink "\">" $useCasePage.Title "</a>" }}
-        {{ $useCaseItems = $useCaseItems | append $useCaseItem }}
-    {{ end }}
-    {{ $workflowID := .CurrentSection.Params.id }}
-    {{ $systemsUsingThisWorkflow := where (where site.Pages "Type" "systems") "Params.workflows" "intersect" (slice $workflowID)  }}
-    {{ $systemItems := slice }}
-    {{ range $systemsUsingThisWorkflow }}
-        {{ if ne page.Params.owner (path.Base .File.Dir) }}
-            {{ $systemItem := print "<a href=\"" .Permalink "\">" .Title "</a>" }}
-            {{ $systemItems = $systemItems | append $systemItem }}
-        {{ end }}
-    {{ end }}
-    {{ $platformsUsingThisWorkflow := where (where site.Pages "Type" "platforms") "Params.workflows" "intersect" (slice $workflowID)  }}
-    {{ $platformsItems := slice }}
-    {{ range $platformsUsingThisWorkflow }}
-        {{ if ne page.Params.owner (path.Base .File.Dir) }}
-            {{ $platformsItem := print "<a href=\"" .Permalink "\">" .Title "</a>" }}
-            {{ $platformsItems = $platformsItems | append $platformsItem }}
-        {{ end }}
-    {{ end }}
-    <div class="status-badge-large">
-        {{ partial "status_badge" (dict "status" .Params.status "category" "workflow" "show_only_warnings" true) }}
-    </div>
-    {{ .Description | markdownify }}
-    <br/>
-    {{ $ownerPage := site.GetPage (print "/catalogue/systems/" .Params.owner )}}
-    <b>Owner of this workflow:</b> <a href="{{ $ownerPage.Permalink }}">{{ $ownerPage.Title }}</a>
-    <br/>
-    <b>Systems using this workflow:</b> {{ delimit $systemItems ", " | markdownify}}
-    <br/>
-    <b>Platforms supporting this workflow:</b> {{ delimit $platformsItems ", " | markdownify}}
-    {{ .Content }}
-    <hr/>
+  {{ partial "workflows/render_mermaid" (.Resources.Get "flowchart.mermaid") }}
 
-    <div class="row">
-        <div class="col-3 column-left">
-            <h3 class="swim-lane-title">{{ .Scratch.Get "left_node" }}</h3>
-        </div>
-        <div class="col-6 column-center">
-            <h3 class="swim-lane-title">Notifications</h3>
-        </div>
-        <div class="col-3 column-right">
-            <h3 class="swim-lane-title">{{ .Scratch.Get "right_node" }}</h3>
-        </div>
-    </div>
-    {{ partial "workflows/steps" . }}
+
+  {{ $leftNode := .Params.left_node }}
+  {{ $rightNode := .Params.right_node }}
+  {{ $workflowID := .CurrentSection.Params.id }}
+
+	<div class="row">
+		<div class="col-3 column-left">
+			<h3 class="swim-lane-title">{{ $leftNode }}</h3>
+		</div>
+		<div class="col-6 column-center">
+			<h3 class="swim-lane-title">Notifications</h3>
+		</div>
+		<div class="col-3 column-right">
+			<h3 class="swim-lane-title">{{ $rightNode }}</h3>
+		</div>
+	</div>
+  {{ partial "workflows/steps" . }}
+  {{ partial "mermaid_initialisation" . }}
+
 {{ end }}

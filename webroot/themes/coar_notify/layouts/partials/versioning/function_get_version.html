@@ -1,0 +1,13 @@
+{{ $returnValue := "" }}
+{{ if isset .Params "version" }}
+    {{ $returnValue = .Params.version }}
+{{ else }}
+    {{ range .Ancestors}}
+        {{if (isset .Params "version") }}
+            {{ $returnValue = .Params.version }}
+            {{ break }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ return $returnValue }}

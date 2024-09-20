@@ -1,0 +1,2 @@
+{{ $mergedPayload := partial "payload/build_pattern_payload" . }}
+{{- partial "payload/render_json" $mergedPayload -}}

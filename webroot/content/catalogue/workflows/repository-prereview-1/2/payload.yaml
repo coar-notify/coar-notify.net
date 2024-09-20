@@ -1,0 +1,22 @@
+id:
+  value: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
+origin:
+  value:
+    id: "https://www.biorxiv.org/"
+    inbox: "https://api.biorxiv.org/coar_inbox/"
+    type: "Service"
+target:
+  value:
+    id: "https://www.prereview.org/"
+    inbox: "https://prereview-coar.fly.dev/inbox/"
+    type: "Service"
+object:
+  description: "NEEDS A DESCRIPTION"
+  value:
+    id: "10.1101/2024.05.10.593511"
+    "ietf:cite-as": "https://doi.org/10.1101/2024.05.10.593511"
+actor:
+  value:
+    id: "mailto:josiah.carberry@example.com"
+    name: "Josiah Carberry"
+    type: "Person"

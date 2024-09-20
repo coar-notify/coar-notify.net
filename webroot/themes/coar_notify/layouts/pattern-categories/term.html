@@ -1,0 +1,12 @@
+{{ define "main" }}
+    {{/*    {{ partial "section_badge" "Pattern Category" }}*/}}
+    <h1 class="page-title">{{ .Title | markdownify }}</h1>
+    {{ .Description | markdownify}}
+    <br/>
+    {{ .Content }}
+    <br/>
+    {{ partial "specification/patterns_table" (dict "caption" "Patterns in this category" "rows" .Pages) }}
+{{/*    <div class="d-flex justify-content-end" style="font-size:90%">*/}}
+{{/*        Categories:&nbsp;{{ partial "delmited_linked_page_list.html" .Parent.RegularPages}}*/}}
+{{/*    </div>*/}}
+{{ end }}

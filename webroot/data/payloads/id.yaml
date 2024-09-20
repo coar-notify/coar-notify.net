@@ -1,0 +1,4 @@
+default:
+  requirement: REQUIRED
+  description: |
+    Identifies an AS 2.0 activity. Its value MUST be a single URI, and the use of URN:UUID is RECOMMENDED. An HTTP URI may be used instead, and in such cases the URI SHOULD resolve to a useful resource.

@@ -1,0 +1,24 @@
+{{ if not (index . "@context") }}
+    {{ errorf "Error on page '%s': Mandatory property '@context' is missing" page.File.Path}}
+{{ end }}
+{{ if not (index . "id") }}
+    {{ errorf "Error on page '%s': Mandatory property 'id' is missing" page.File.Path}}
+{{ end }}
+{{ if not (index . "type") }}
+    {{ errorf "Error on page '%s': Mandatory property 'type' is missing" page.File.Path}}
+{{ end }}
+{{/*{{ if not (index . "object") }}*/}}
+{{/*    {{ errorf "Error on page '%s': Mandatory property 'object' is missing" page.File.Path}}*/}}
+{{/*{{ end }}*/}}
+
+
+{{ range $k, $v := . }}
+    {{ $description := index $v "description"}}
+    {{ $value := index $v "value"}}
+    {{ if not $description}}
+        {{ errorf "Error on page '%s': Missing description for property '%s'" page.File.Path $k }}
+    {{ end }}
+    {{ if not $value }}
+        {{ errorf "Error on page '%s': Missing value for property '%s'" page.File.Path $k }}
+    {{ end }}
+{{ end }}

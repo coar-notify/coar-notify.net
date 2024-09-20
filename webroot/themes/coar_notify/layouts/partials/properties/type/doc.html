@@ -1,6 +1,0 @@
-#### `type`
-{{ if reflect.IsSlice .type -}}
-    The `activity` has a `type` which should include *{{ delimit .type ", " " & "}}*
-{{- else -}}
-    The `activity` has a `type` with the value *{{ .type }}*
-{{- end -}}

@@ -1,0 +1,27 @@
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
+	<div class="row">
+		<div class="col-9">
+        {{ .Content }}
+		</div>
+		<div class="col-3">
+			<h3>Versions</h3>
+			<ul>
+          {{ range (where .Data.Pages "Type" "ne" "pattern-categories") }}
+						<li>
+							<a href="{{ .Permalink }}">{{ .Title }}</a>
+                {{ partial "versioning/version_is_latest_badge" . }}
+						</li>
+          {{ end }}
+			</ul>
+			<h3>Reference</h3>
+			<ul>
+				<li><a href="/specification/vocabulary">COAR Notify Activity Vocabulary</a></li>
+				<li><a href="/about/editorial/">Editorial Process</a></li>
+{{/*				<li><a href="/changelog/">Change Log</a></li>*/}}
+			</ul>
+		</div>
+
+	</div>
+
+{{ end }}

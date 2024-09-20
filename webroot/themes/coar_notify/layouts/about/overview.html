@@ -1,0 +1,36 @@
+{{ define "main" }}
+	<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+  {{ .Content }}
+	<div class="row">
+		<div class="col">
+			<h3>The COAR Notify Team</h3>
+			<ul>
+          {{ range page.Params.team }}
+						<li>{{.name}}, <a href="{{ .affiliation_link }}">{{ .affiliation }}</a></li>
+          {{ end }}
+			</ul>
+		</div>
+		<div class="col">
+			<h3>Technical Advisors</h3>
+			<ul>
+          {{ range page.Params.advisors }}
+						<li>{{.name}}, <a href="{{ .affiliation_link }}">{{ .affiliation }}</a></li>
+          {{ end }}
+			</ul>
+		</div>
+	</div>
+
+	<h3>Editorial Process</h3>
+	<p>The COAR Notify Protocol is overseen by an Editorial Board.  The Board and its processes are <a href="/about/editorial/">detailed here</a></p>
+
+	<h3>Funding Acknowledgement</h3>
+  {{ partial "acknowledgements/funding_acknowledgement_with_logo"}}
+
+	<h3>Website Development & Hosting</h3>
+	<ul>
+		<li>
+			<a href="https://www.antleaf.com/">Antleaf</a>
+		</li>
+	</ul>
+{{ end }}
+

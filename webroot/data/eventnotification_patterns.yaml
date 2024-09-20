@@ -1,4 +1,0 @@
-OneWayPatternDNSN:
-  url: https://www.eventnotifications.net/#OneWayPatternDNSN
-  sender: data_node
-  receiver: service_node

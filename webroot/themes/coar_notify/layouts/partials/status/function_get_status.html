@@ -1,0 +1,13 @@
+{{ $returnValue := "" }}
+{{ if isset .Params "status" }}
+    {{ $returnValue = .Params.status }}
+{{ else }}
+    {{ range .Ancestors}}
+        {{if (isset .Params "status") }}
+            {{ $returnValue = .Params.status }}
+            {{ break }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ return $returnValue }}

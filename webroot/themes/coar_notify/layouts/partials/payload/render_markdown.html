@@ -1,0 +1,7 @@
+{{ $md := "" }}
+{{ range $k, $v := . }}
+    {{ $md = printf "%s#### %s\n" $md $k}}
+    {{ $md = printf "%s`%s` is %s.\n" $md $k (index $v "requirement")}}
+    {{ $md = printf "%s%s\n" $md (index $v "description")}}
+{{ end }}
+{{ return ($md | markdownify)}}

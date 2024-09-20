@@ -1,0 +1,47 @@
+default:
+  requirement: RECOMMENDED
+  description: |
+    Describes the party responsible for this activity.
+    - MUST have an `id` which MUST be a URI identifying the `actor` (HTTP URIs are RECOMMENDED, but any valid URI is permitted)
+    - MUST have a `type` which MUST be one of: *Application*, *Group*, *Organization*, *Person* or *Service* from AS 2.0.
+    - MAY have a `name`
+review-service:
+  value:
+    id: "https://review-service.com"
+    name: "Review Service"
+    type: "Service"
+author:
+  value:
+    id: "https://orcid.org/0000-0002-1825-0097"
+    name: "Josiah Carberry"
+    type: "Person"
+generic-service:
+  value:
+    id: "https://generic-service.com"
+    name: "Generic Service"
+    type: "Service"
+generic-organisation:
+  value:
+    id: "https://some-organisation.org"
+    name: "Some Organisation"
+    type: "Organization"
+overlay-journal:
+  value:
+    id: "https://overlay-journal.com"
+    name: "Overlay Journal"
+    type: "Service"
+research-organisation:
+  value:
+    id: "https://research-organisation.org"
+    name: "Research Organisation"
+    type: "Organization"
+reviewer:
+  value:
+    id: "https://isni.org/isni/0000000122832703"
+    name: "H G Wells"
+    type: "Person"
+reviewer-2:
+  value:
+    id: "https://isni:org/isni/00000001214005623"
+    name: "Jules Verne"
+    type: "Person"

@@ -1,11 +1,11 @@
 {{ define "main" }}
-  <h1 class="page-title">{{ .Title }}</h1>
+  <h1>{{ .Title }}</h1>
   <div class="row">
     <div class="col-sm-2">
-      {{ partial "guide_sidebar" . }}
+      {{ partial "guide/guide_sidebar" . }}
     </div>
     <div class="col-sm-10">
-      {{ partial "guide" . }}
+      {{ partial "guide/guide" . }}
     </div>
   </div>
 {{ end }}

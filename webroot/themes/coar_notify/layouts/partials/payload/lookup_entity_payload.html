@@ -1,0 +1,3 @@
+{{ $lookupClassSource := index site.Data.payloads .label }}
+{{ $lookupEntity := index $lookupClassSource .key }}
+{{ return index $lookupEntity "value" }}

@@ -1,0 +1,11 @@
+{{ $returnValue := ""}}
+{{ with . }}
+{{ $returnValue := printf "```mermaid\n%s\n```" . | safeHTML }}
+		{{ end }}
+{{ return $returnValue}}
+
+{{/*{{ $mermaidResource := .Resources.Get "flowchart.mermaid"}}*/}}
+{{/*{{ with $mermaidResource }}*/}}
+{{/*	```mermaid*/}}
+{{/*  {{ .Content | safeHTML }}*/}}
+{{/*{{ end }}*/}}

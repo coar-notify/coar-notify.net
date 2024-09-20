@@ -1,0 +1,7 @@
+{{ $version := partial "versioning/function_get_version" . }}
+
+{{ $returnValue := false }}
+{{ if eq site.Params.currentSpecificationVersion $version }}
+    {{ $returnValue = true }}
+{{ end }}
+{{ return $returnValue }}

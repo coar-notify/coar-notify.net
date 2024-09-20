@@ -1,0 +1,10 @@
+
+{{ $lookupClassSource := index site.Data.payloads .label }}
+{{ $lookupEntity := index $lookupClassSource .key }}
+{{ $requirement := index $lookupEntity "requirement" }}
+{{ if eq $requirement nil }}
+    {{ $lookupEntity := index $lookupClassSource "default" }}
+    {{ $requirement = index $lookupEntity "requirement" }}
+{{ end}}
+
+{{ return $requirement }}

@@ -1,0 +1,43 @@
+{{ $property := dict "description" "" "requirement" "" "value" nil }}
+{{ $description := ""  }}
+{{ $value := ""  }}
+    {{ $requirement := ""}}
+
+{{/*should always be a map - ignore otherwise*/}}
+{{ if reflect.IsMap .value }}
+    {{/*    PROCESS DESCRIPTION*/}}
+    {{ if (index .value "lookup") }}
+        {{ $lookupParameter := dict "key" (index .value "lookup") "label" .label }}
+        {{ $description = partial "payload/lookup_entity_description" $lookupParameter }}
+    {{ else if not (index .value "description") }}
+        {{ $lookupParameter := dict "key" "default" "label" .label }}
+        {{ $description = partial "payload/lookup_entity_description" $lookupParameter }}
+    {{ else }}
+        {{ $description = index .value "description" }}
+    {{ end }}
+
+    {{/*    PROCESS REQUIREMENT*/}}
+    {{ if (index .value "lookup") }}
+        {{ $lookupParameter := dict "key" (index .value "lookup") "label" .label }}
+        {{ $requirement = partial "payload/lookup_entity_requirement" $lookupParameter }}
+    {{ else if not (index .value "requirement") }}
+        {{ $lookupParameter := dict "key" "default" "label" .label }}
+        {{ $requirement = partial "payload/lookup_entity_requirement" $lookupParameter }}
+    {{ else }}
+        {{ $requirement = index .value "requirement" }}
+    {{ end }}
+
+    {{/*    PROCESS PAYLOAD*/}}
+    {{ if (index .value "lookup") }}
+        {{ $lookupParameter := dict "key" (index .value "lookup") "label" .label }}
+        {{ $value = partial "payload/lookup_entity_payload" $lookupParameter }}
+    {{ else }}
+        {{ $value = index .value "value" }}
+    {{ end }}
+{{ end }}
+
+{{ $property = merge $property (dict "description" $description) }}
+{{ $property = merge $property (dict "requirement" $requirement) }}
+{{ $property = merge $property (dict "value" $value) }}
+
+{{ return (dict .label $property)}}

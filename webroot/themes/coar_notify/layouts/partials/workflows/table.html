@@ -3,9 +3,11 @@
     <thead>
     <tr class="column-header-row">
         <th>Workflow</th>
-        <th>System</th>
+        <th>Owner</th>
         <th>Participants</th>
-        <th>Use-case(s)</th>
+{{/*        <th>Use-case(s)</th>*/}}
+        <th>Notify Version</th>
+        <th>Status</th>
     </tr>
     </thead>
     <tbody>
@@ -14,18 +16,23 @@
         <tr>
             <td>
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
-                {{ partial "status_badge" (dict "status" .Params.status "category" "workflow" "show_only_warnings" true) }}
             </td>
             <td><a href="{{ $ownerPage.Permalink }}">{{ $ownerPage.Title }}</a></td>
             <td class="nowrap">{{ .Params.left_node }} <-> {{ .Params.right_node }}</td>
+{{/*            <td>*/}}
+{{/*                {{ $useCaseItems := slice}}*/}}
+{{/*                {{ range index .Params "use-cases" }}*/}}
+{{/*                    {{ $useCasePage := site.GetPage (print "/use-cases/" . )}}*/}}
+{{/*                    {{ $useCaseItem := print "<a href=\"" $useCasePage.Permalink "\">" $useCasePage.Title "</a>" }}*/}}
+{{/*                    {{ $useCaseItems = $useCaseItems | append $useCaseItem }}*/}}
+{{/*                {{ end }}*/}}
+{{/*                {{ delimit $useCaseItems ", " | markdownify}}*/}}
+{{/*            </td>*/}}
             <td>
-                {{ $useCaseItems := slice}}
-                {{ range index .Params "use-cases" }}
-                    {{ $useCasePage := site.GetPage (print "/use-cases/" . )}}
-                    {{ $useCaseItem := print "<a href=\"" $useCasePage.Permalink "\">" $useCasePage.Title "</a>" }}
-                    {{ $useCaseItems = $useCaseItems | append $useCaseItem }}
-                {{ end }}
-                {{ delimit $useCaseItems ", " | markdownify}}
+                {{ partial "versioning/function_get_version" . }}
+            </td>
+            <td>
+                {{ partial "status/status_badge" . }}
             </td>
         </tr>
     {{ end }}

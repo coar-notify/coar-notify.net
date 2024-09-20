@@ -1,0 +1,3 @@
+{{ $basePayload := dict}}
+{{ $basePayload = merge $basePayload (partial "payload/process_property" (dict "label" "@context" "value" (dict "lookup" "default"))) }}
+{{ return $basePayload }}

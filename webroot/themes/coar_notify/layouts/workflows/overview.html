@@ -1,9 +1,12 @@
 {{ define "main" }}
-    <div>
-        <h1 class="page-title">{{ .Title }}</h1>
-        {{ .Content }}
-    </div>
-    <div>
-        {{ partial "workflows/table" (dict "caption" "Workflows" "rows" .Sections) }}
-    </div>
+	<h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ partial "workflows/table" (dict "caption" "Workflows" "rows" .Sections) }}
+  {{/*    <div>*/}}
+  {{/*        <ul>*/}}
+  {{/*            {{ range .Data.Pages }}*/}}
+  {{/*                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>*/}}
+  {{/*            {{ end }}*/}}
+  {{/*        </ul>*/}}
+  {{/*    </div>*/}}
 {{ end }}

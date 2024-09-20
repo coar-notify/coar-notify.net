@@ -1,17 +1,22 @@
 {{ define "main" }}
-    <h1 class="page-title">{{ .Title }}</h1>
-    <div class="row">
-        <div class="col-sm-10">
-            {{ .Content }}
-        </div>
-        <div class="col-sm-2">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="/specification/patterns/">Notification Patterns</a></li>
-                <li><a href="/specification/vocabulary/">Vocabulary</a></li>
-                <li><a href="/specification/editorial/">Editorial Board</a></li>
-                <li><a href="/changelog/">Change Log</a></li>
-            </ul>
-        </div>
-    </div>
+    {{ partial "specification/badges" . }}
+		<h1>{{ .Title }}</h1>
+		<div class="row">
+			<div class="col-9">
+          {{ .Content }}
+			</div>
+			<div class="col-3">
+          {{ range index site.Taxonomies "pattern-categories" }}
+						<h4>{{ .Page.Title }}</h4>
+						<ul>
+                {{ range .Pages }}
+									<li>
+										<a href="{{ .Permalink}}"> {{ .LinkTitle }}</a>
+									</li>
+                {{ end }}
+						</ul>
+          {{ end }}
+			</div>
+		</div>
+
 {{ end }}

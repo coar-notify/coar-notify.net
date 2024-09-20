@@ -1,0 +1,16 @@
+@import 'variables';
+
+div.rfc2119-statement {
+  font-size: 0.75em;
+  //border-top: 0.5px solid $border-colour;
+  //border-bottom: 0.5px solid $border-colour;
+  border: 0.5px solid $border-colour;
+  background-color: $callout-colour;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+div.status-badge-large {
+  text-align: right;
+  font-size: 200%;
+}

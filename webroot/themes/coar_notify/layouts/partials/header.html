@@ -1,47 +1,54 @@
+{{- with site.Params.siteHeaderMessage -}}
+    {{ if .enable }}
+			<div id="site-header-message" class="alert alert-danger" role="alert">
+          {{- .text | markdownify -}}
+			</div>
+    {{ end }}
+{{- end -}}
+
 <div id="site-header" data-pagefind-ignore>
-    <div class="row">
-        <div id="header-col-left" class="col-md-2">
-            <a href="/"><img id="header-coar-logo" src="/images/logos/notify_logo.svg"/></a>
-        </div>
-        <div id="header-col-right" class="col-md-10">
-            <div id="header-icon-bar">
-                {{- with site.Menus.main }}
-                    {{- range . }}
-                        <a class="site-header-link" href="{{ .URL }}">{{ .Name }}</a>
-                    {{ end }}
-                {{ end }}
-                <a href="/posts/index.xml">
-                    <img src="/images/icons/rss.svg" alt="RSS" title="RSS"/>
-                </a>
-                <a href="{{ site.Params.gitHubRepoForSources }}">
-                    <img src="/images/icons/github.svg" alt="GitHub" title="GitHub"/>
-                </a>
-                <a href="/search/">
-                    <img src="/images/icons/search.svg" alt="Search" title="Search"/>
-                </a>
-            </div>
-        </div>
-    </div>
-    <nav id="breadcrumbs" aria-label="breadcrumbs" data-pagefind-ignore>
-        <ol class="breadcrumb">
-            {{- range .Ancestors.Reverse }}
-                {{ $breadcrumbTitle := .Title }}
-                {{ with .Params.breadcrumb_title }}
-                    {{ $breadcrumbTitle = . }}
-                {{ end }}
-                <li class="breadcrumb-item">
-                    <a href="{{ .RelPermalink }}">{{ $breadcrumbTitle }}</a>
-                </li>
-                <span class="" aria-hidden="true">&nbsp;/&nbsp;</span>
-            {{- end }}
+	<div class="row">
+		<div id="header-col-left" class="col-md-2">
+			<a href="/"><img id="header-coar-logo" src="/images/logos/notify_logo.svg"/></a>
+		</div>
+		<div id="header-col-right" class="col-md-10">
+			<div id="header-icon-bar">
+          {{- with site.Menus.main }}
+              {{- range . }}
+								<a class="site-header-link" href="{{ .URL }}">{{ .Name }}</a>
+              {{ end }}
+          {{ end }}
+				<a href="/posts/index.xml">
+					<img src="/images/icons/rss.svg" alt="RSS" title="RSS"/>
+				</a>
+				<a href="{{ site.Params.gitHubRepoForSources }}">
+					<img src="/images/icons/github.svg" alt="GitHub" title="GitHub"/>
+				</a>
+				<a href="/search/">
+					<img src="/images/icons/search.svg" alt="Search" title="Search"/>
+				</a>
+			</div>
+		</div>
+	</div>
+	<nav id="breadcrumbs" aria-label="breadcrumbs" data-pagefind-ignore>
+		<ol class="breadcrumb">
+        {{- range .Ancestors.Reverse }}
             {{ $breadcrumbTitle := .Title }}
             {{ with .Params.breadcrumb_title }}
                 {{ $breadcrumbTitle = . }}
             {{ end }}
-            <li class="breadcrumb-item active">
-                {{/*                        <a href="{{ .RelPermalink }}" aria-current="location">{{ $breadcrumbTitle }}</a>*/}}
-                {{ $breadcrumbTitle }}
-            </li>
-        </ol>
-    </nav>
+						<li class="breadcrumb-item">
+							<a href="{{ .RelPermalink }}">{{ $breadcrumbTitle }}</a>
+						</li>
+						<span class="" aria-hidden="true">&nbsp;/&nbsp;</span>
+        {{- end }}
+        {{ $breadcrumbTitle := .Title }}
+        {{ with .Params.breadcrumb_title }}
+            {{ $breadcrumbTitle = . }}
+        {{ end }}
+			<li class="breadcrumb-item active">
+          {{ $breadcrumbTitle }}
+			</li>
+		</ol>
+	</nav>
 </div>

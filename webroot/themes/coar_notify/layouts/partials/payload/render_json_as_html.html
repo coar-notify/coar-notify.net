@@ -1,0 +1,7 @@
+{{ $payloadMap := dict }}
+{{ range $k, $v := . }}
+    {{ $payloadMap = merge $payloadMap (dict $k (index $v "value")) }}
+{{ end }}
+{{ $jsonCodeSection := printf "```json\n%s\n```" ($payloadMap | jsonify (dict "indent" "  ") )}}
+{{ return ($jsonCodeSection | markdownify) }}
+

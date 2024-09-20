@@ -1,6 +1,5 @@
 ---
 theme: "coar_notify"
-#resourceDir: this is configured with env variable "$HUGO_RESOURCEDIR"
 languageCode: "en-gb"
 uglyURLs: false
 title: "COAR Notify"
@@ -28,6 +27,7 @@ permalinks:
     posts: "/:year/:filename/"
 taxonomies:
   tag: "tags"
+  pattern-category: "pattern-categories"
 caches:
   getjson:
     dir: :cacheDir/:project
@@ -39,6 +39,13 @@ caches:
     dir: :cacheDir/:project
     maxAge: 5s
 params:
+  siteHeaderMessage:
+    enable: true
+    text: |
+      This is a development version of the COAR Notify documentation website.
+      The content here is **subject to change without warning**.
+      The current, supported version is at [https://notify.coar-repositories.org](https://notify.coar-repositories.org).
+  currentSpecificationVersion: "1.0.0"
   systemLogoMaxWidth: 250
   eventNotificationsPatternsBaseURL: "https://www.eventnotifications.net/"
   enableAnalytics: false  # this param may be overridden in production/development envs
@@ -57,6 +64,17 @@ markup:
       table: true
       taskList: true
       typographer: false
+      extras:
+        delete:
+          enable: true
+        insert:
+          enable: true
+        mark:
+          enable: true
+        subscript:
+          enable: true
+        superscript:
+          enable: true
     parser:
       attribute:
         block: true

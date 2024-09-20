@@ -1,6 +1,9 @@
-notify:
-  name: "Notify"
-  uri: "https://purl.org/coar/notify"
-as2:
-  name: "Activity Streams 2.0"
-  uri: "https://www.w3.org/ns/activitystreams"
+default:
+  requirement: REQUIRED
+  description: |
+    An array of URIs which MUST include:
+      - https://purl.org/coar/notify
+      - https://www.w3.org/ns/activitystreams
+  value:
+    - "https://www.w3.org/ns/activitystreams"
+    - "https://purl.org/coar/notify"

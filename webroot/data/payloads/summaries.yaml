@@ -1,4 +1,0 @@
-"unprocessable_url":
-  payload: "Unable to process URL: http://www.example.com/broken-url - returns HTTP error 404"
-  description: |
-    The `summary` is used to describe the reason (in plain text) that the request could not be processed.

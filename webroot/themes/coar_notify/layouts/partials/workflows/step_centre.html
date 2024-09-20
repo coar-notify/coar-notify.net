@@ -1,72 +1,65 @@
-{{ $stepPosition := .stepPosition }}
-{{ $stepPage := .stepPage }}
+{{ $stepPosition := .File.ContentBaseName }}
+{{ $stepPage := . }}
 
-{{ $patternPage := site.GetPage (print "/specification/patterns/" $stepPage.Params.pattern "/" "v" $stepPage.Params.pattern_version) }}
-{{ $mergedPayload := $patternPage.Params.Payload }}
-{{ $scenarioStepPayloadContainerMap := $stepPage.Params.Payload }}
-{{ with $scenarioStepPayloadContainerMap }}
-    {{ $mergedPayload = merge $mergedPayload . }}
-{{ end }}
-
+{{ $mergedPayload := partial "payload/build_workflow_step_payload" . }}
 
 <div class="card notify-card">
     {{ if eq $stepPage.Params.sender "left_node" }}
-        <div class="card-header notify-card-header notify-card-header-right">
-            <span class="step-number">{{ $stepPosition }}</span>&nbsp;<a href="{{ $stepPage.Permalink }}">{{ $stepPage.Title }}</a> <img src="/images/arrow_right_small.svg" alt="right arrow" class="big-arrow-right"/>
-        </div>
+			<div class="card-header notify-card-header notify-card-header-right">
+				<span class="step-number">{{ $stepPosition }}</span>&nbsp;<a href="{{ $stepPage.Permalink }}">{{ $stepPage.Title }}</a> <img src="/images/arrow_right_small.svg" alt="right arrow" class="big-arrow-right"/>
+			</div>
     {{ else }}
-        <div class="card-header notify-card-header notify-card-header-left">
-            <img src="/images/arrow_left_small.svg" alt="left arrow" class="big-arrow-left"/> <span class="step-number">{{ $stepPosition }}</span>&nbsp;<a href="{{ $stepPage.Permalink }}">{{ $stepPage.Title }}</a>
-        </div>
+			<div class="card-header notify-card-header notify-card-header-left">
+				<img src="/images/arrow_left_small.svg" alt="left arrow" class="big-arrow-left"/> <span class="step-number">{{ $stepPosition }}</span>&nbsp;<a href="{{ $stepPage.Permalink }}">{{ $stepPage.Title }}</a>
+			</div>
     {{ end }}
-    <div class="card-body notify-card-body">
-        <p>{{ $stepPage.Description | markdownify }}</p>
+	<div class="card-body notify-card-body">
+		<p>{{ $stepPage.Description | markdownify }}</p>
 
 
-        <div class="accordion" id="accordionCenter_{{$stepPosition }}">
-            {{ if ne $stepPage.Content "" }}
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="accordionCenterDetailHeading_{{$stepPosition }}">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCenterDetails_{{$stepPosition }}" aria-expanded="true"
-                                aria-controls="accordionCenterDetails_{{$stepPosition }}">
-                            More Details
-                        </button>
-                    </h2>
-                    <div id="accordionCenterDetails_{{$stepPosition }}" class="accordion-collapse collapse" aria-labelledby="accordionCenterDetailHeading_{{$stepPosition }}" data-bs-parent="#accordionCenter_{{$stepPosition }}">
-                        <div class="accordion-body">
-                            {{ $stepPage.Content }}
-                        </div>
-                    </div>
-                </div>
-            {{ end }}
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="accordionCenterPropertiesHeading_{{$stepPosition }}">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCenterProperties_{{$stepPosition }}" aria-expanded="true"
-                            aria-controls="accordionCenterProperties_{{$stepPosition }}">
-                        Properties
-                    </button>
-                </h2>
-                <div id="accordionCenterProperties_{{$stepPosition }}" class="accordion-collapse collapse" aria-labelledby="accordionCenterPropertiesHeading_{{$stepPosition }}" data-bs-parent="#accordionCenter_{{$stepPosition }}">
-                    <div class="accordion-body">
-                        {{ partial "properties/all_properties" (dict "payload" $mergedPayload) }}
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="accordionCenterJsonHeading_{{$stepPosition }}">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCenterJson_{{$stepPosition }}" aria-expanded="false"
-                            aria-controls="accordionCenterJson_{{$stepPosition }}">
-                        Example JSON-LD Payload
-                    </button>
-                </h2>
-                <div id="accordionCenterJson_{{$stepPosition }}" class="accordion-collapse collapse" aria-labelledby="accordionCenterJsonHeading_{{$stepPosition }}" data-bs-parent="#accordionCenter_{{$stepPosition }}">
-                    <div class="accordion-body">
-                        {{ $payload := partial "properties/json_payload" (dict "payload" $mergedPayload) }}
-                        {{ (partial "render_json" $payload) | markdownify }}
-                    </div>
-                </div>
-            </div>
-        </div>
+		<div class="accordion" id="accordionCenter_{{$stepPosition }}">
+        {{ if ne $stepPage.Content "" }}
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="accordionCenterDetailHeading_{{$stepPosition }}">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCenterDetails_{{$stepPosition }}" aria-expanded="true"
+											aria-controls="accordionCenterDetails_{{$stepPosition }}">
+								More Details
+							</button>
+						</h2>
+						<div id="accordionCenterDetails_{{$stepPosition }}" class="accordion-collapse collapse" aria-labelledby="accordionCenterDetailHeading_{{$stepPosition }}" data-bs-parent="#accordionCenter_{{$stepPosition }}">
+							<div class="accordion-body">
+                  {{ $stepPage.Content }}
+							</div>
+						</div>
+					</div>
+        {{ end }}
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="accordionCenterPropertiesHeading_{{$stepPosition }}">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCenterProperties_{{$stepPosition }}" aria-expanded="true"
+									aria-controls="accordionCenterProperties_{{$stepPosition }}">
+						Properties
+					</button>
+				</h2>
+				<div id="accordionCenterProperties_{{$stepPosition }}" class="accordion-collapse collapse" aria-labelledby="accordionCenterPropertiesHeading_{{$stepPosition }}" data-bs-parent="#accordionCenter_{{$stepPosition }}">
+					<div class="accordion-body">
+              {{ partial "payload/render_markdown" $mergedPayload }}
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="accordionCenterJsonHeading_{{$stepPosition }}">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCenterJson_{{$stepPosition }}" aria-expanded="false"
+									aria-controls="accordionCenterJson_{{$stepPosition }}">
+						Example JSON-LD Payload
+					</button>
+				</h2>
+				<div id="accordionCenterJson_{{$stepPosition }}" class="accordion-collapse collapse" aria-labelledby="accordionCenterJsonHeading_{{$stepPosition }}" data-bs-parent="#accordionCenter_{{$stepPosition }}">
+					<div class="accordion-body">
+              {{ (partial "payload/render_json_as_html" $mergedPayload) }}
+					</div>
+				</div>
+			</div>
+		</div>
 
-    </div>
+	</div>
 </div>

@@ -1,0 +1,10 @@
+required-inReplyTo:
+  requirement: REQUIRED
+  value: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
+  description: |
+    MUST be specified because this is a response to a previous notification. It takes the URI (URN:UUID or HTTP URI) which identifies the activity for which this is a response.
+optional-inReplyTo:
+  requirement: OPTIONAL
+  value: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
+  description: |
+    MAY be specified if this is a response to a previous notification. It takes the URI (URN:UUID or HTTP URI) which identifies the activity for which this is a response.

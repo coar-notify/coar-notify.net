@@ -1,0 +1,6 @@
+{{ $payloadMap := dict }}
+{{ range $k, $v := . }}
+    {{ $payloadMap = merge $payloadMap (dict $k (index $v "value")) }}
+{{ end }}
+
+{{- return ($payloadMap | jsonify (dict "indent" "  ")) -}}

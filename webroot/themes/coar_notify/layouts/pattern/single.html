@@ -1,0 +1,19 @@
+{{ define "main" }}
+    {{ partial "specification/badges" . }}
+		<h1>{{ .Title }}</h1>
+    {{ partial "rfc2119" . }}
+		<p>{{ .Description | markdownify }}</p>
+    {{ $mergedPayload := partial "payload/build_pattern_payload" . }}
+<div class="row">
+	<div class="col">
+		<h3>Properties</h3>
+      {{ partial "payload/render_markdown" $mergedPayload }}
+	</div>
+	<div class="col">
+		<h3>Example JSON-LD Payload</h3>
+      {{ (partial "payload/render_json_as_html" $mergedPayload) }}
+		<p class="read-more"><a href="./index.json">Get raw JSON-LD</a></p>
+	</div>
+</div>
+
+{{ end }}
