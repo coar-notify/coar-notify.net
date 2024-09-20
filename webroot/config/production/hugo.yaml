@@ -1,4 +1,4 @@
-baseURL: "https://notify.coar-repositories.org"
+#baseURL: "https://notify.coar-repositories.org"
 buildDrafts: false
 params:
   showDebugInfo: false
