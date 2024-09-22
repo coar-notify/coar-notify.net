@@ -49,6 +49,7 @@ The COAR Notify Protocol is intended to be implemented and, as such, the Editori
 
 Decisions about changes to the COAR Notify Protocol are the sole responsibility of the Editorial Board. The Board will maintain a fair and open approach to the consideration of requests for changes, and will communicate its reasoning where appropriate.
 
-### Change control
+[//]: # (### Change control)
 
-A detailed [Change Log](https://notify.coar-repositories.org/changelog/) is maintained on the Protocol website.
+[//]: # ()
+[//]: # (A detailed [Change Log]&#40;https://notify.coar-repositories.org/changelog/&#41; is maintained on the Protocol website.)

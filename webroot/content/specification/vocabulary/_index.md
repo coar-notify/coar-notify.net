@@ -1,5 +1,5 @@
 ---
-title: Notify Vocabulary
+title: COAR Notify Vocabulary
 description: "Vocabulary of activity types and resource relations to be used in *Notify* notification payloads."
 date: 2018-12-20
 type: vocabulary

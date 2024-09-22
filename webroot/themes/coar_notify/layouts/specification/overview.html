@@ -2,12 +2,15 @@
 	<h1>{{ .Title }}</h1>
 	<div class="row">
 		<div class="col-9">
+			<div class="current-version-callout">
+				The current version of the COAR Notify Protocol is <a href="/specification/v{{site.Params.currentSpecificationVersion}}">{{site.Params.currentSpecificationVersion}}</a>
+			</div>
         {{ .Content }}
 		</div>
 		<div class="col-3">
 			<h3>Versions</h3>
 			<ul>
-          {{ range (where .Data.Pages "Type" "ne" "pattern-categories") }}
+          {{ range (where .Data.Pages "Type" "ne" "vocabulary") }}
 						<li>
 							<a href="{{ .Permalink }}">{{ .Title }}</a>
                 {{ partial "versioning/version_is_latest_badge" . }}

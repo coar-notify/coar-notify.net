@@ -1,5 +1,7 @@
 {{ define "main" }}
-    {{/*    {{ partial "section_badge" "Vocabulary Term" }}*/}}
+    <div class="badge-header">
+        {{ partial "status/status_badge" . }}
+    </div>
     <h1>{{ .Title }}</h1>
     <h2>Description</h2>
     {{ .Description }}

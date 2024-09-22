@@ -14,3 +14,13 @@ div.status-badge-large {
   text-align: right;
   font-size: 200%;
 }
+
+div.current-version-callout {
+  border: 2px solid #555555;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: $callout-colour;
+  font-size: 1.2em;
+  text-align: center;
+}
+

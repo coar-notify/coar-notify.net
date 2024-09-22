@@ -9,9 +9,11 @@ author: Paul Walk
 
 ![Group Photo](group-photo.jpeg)
 
-On the 7th and 8th March 2024 a core group of developers came together to compare their experiences with implementing COAR Notify in their systems. We were generously hosted by Isabel Bernal of [CSIC](https://www.csic.es/es) in Madrid. In keeping with all COAR activities, a range of nationalities and domains was represented.
+On the 7th and 8th March 2024 a core group of developers came together to compare their experiences with implementing COAR Notify in their systems.
 
 <!--more-->
+
+We were generously hosted by Isabel Bernal of [CSIC](https://www.csic.es/es) in Madrid. In keeping with all COAR activities, a range of nationalities and domains was represented.
 
 We discussed a range of technical issues, comparing notes on what had worked well, and what needed improvement or clarification. It was also a chance for begin to establish a community of COAR Notify developers. Judging by the level of engagement, and the conversations over dinner, I think we were successful in this!
 

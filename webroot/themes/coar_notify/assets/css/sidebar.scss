@@ -4,3 +4,18 @@ div.sidebar img {
   width: 100%;
   //margin-bottom: 10px;
 }
+
+div.sidebar p {
+    //font-size: 0.5em;
+    margin-bottom: 0px;
+}
+
+div.sidebar div.read-more {
+  font-style: italic;
+  font-size: 0.8em;
+  text-align: right;
+  border-bottom: 1px solid #555555;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+

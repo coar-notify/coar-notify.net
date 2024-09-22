@@ -6,8 +6,9 @@
 		<thead>
 		<tr>
 			<th>Term</th>
-			<th class="no-sort">Description</th>
+{{/*			<th class="no-sort">Description</th>*/}}
 			<th>PID</th>
+			<th>Status</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -16,8 +17,9 @@
 				<td>
 					<a href="{{ .Permalink }}">{{ .Title }}</a>
 				</td>
-				<td>{{ .Description }}</td>
+{{/*				<td>{{ .Description }}</td>*/}}
 				<td>{{ .Params.pid }}</td>
+				<td>{{ partial "status/status_badge" . }}</td>
 			</tr>
     {{ end }}
 		</tbody>

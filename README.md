@@ -1,4 +1,5 @@
-# COAR Notify (test system)
+# COAR Notify
+
 These are the sources for the Notify documentation at [https://notify.coar-repositories.org](https://notify.coar-repositories.org)
 
 This GitHub repository is also intended to be a "one-stop shop" for all Notify-related development discussions, issues, and documentation.
