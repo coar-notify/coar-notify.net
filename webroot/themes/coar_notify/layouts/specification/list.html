@@ -1,8 +1,10 @@
 {{ define "main" }}
+    {{ $specificationVersion := partial "versioning/function_get_version" . }}
     {{ partial "specification/badges" . }}
-		<h1>{{ .Title }}</h1>
+		<h1>{{ .Title }} {{ .Params.version }}</h1>
 		<div class="row">
 			<div class="col-9">
+          {{ partial "specification/current_version_callout" . }}
           {{ .Content }}
 			</div>
 			<div class="col-3">
@@ -10,9 +12,11 @@
 						<h4>{{ .Page.Title }}</h4>
 						<ul>
                 {{ range .Pages }}
-									<li>
-										<a href="{{ .Permalink}}"> {{ .LinkTitle }}</a>
-									</li>
+                    {{ if eq (partial "versioning/function_get_version" .) $specificationVersion }}
+											<li>
+												<a href="{{ .Permalink}}"> {{ .LinkTitle }}</a>
+											</li>
+                    {{ end }}
                 {{ end }}
 						</ul>
           {{ end }}

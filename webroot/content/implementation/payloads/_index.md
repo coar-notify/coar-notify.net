@@ -2,11 +2,11 @@
 title: Payloads
 date: 2022-07-29
 description: ""
-draft: false
-menu:
-    guide_toc:
-        identifier: payloads
-        weight: 60
+draft: true
+#menu:
+#    guide_toc:
+#        identifier: payloads
+#        weight: 60
 ---
 
 All *Notify* payloads define an *Activity Streams 2.0* `activity`, and include other properties from the *Notify* context. They may also, optionally, include other properties from other contexts. The following properties from _Activity Streams 2.0_ are used consistently in all the

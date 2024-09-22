@@ -1,0 +1,16 @@
+id:
+  value: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
+type:
+  value: ["Offer","coar-notify:EndorsementAction"]
+  description: |
+    The `type` of this activity MUST include the values:
+    - `Offer`
+    - `coar-notify:EndorsementAction`
+actor:
+  lookup: "author"
+origin:
+  lookup: "repository"
+target:
+  lookup: "overlay-journal"
+object:
+  lookup: "preprint"

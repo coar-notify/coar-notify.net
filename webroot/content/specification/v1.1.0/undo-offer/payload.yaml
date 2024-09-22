@@ -1,0 +1,13 @@
+id:
+  value: "urn:uuid:46956915-e3fe-4528-8789-1d325a356e4f"
+type:
+  value: "Undo"
+  description: "The `type` of this activity MUST include the value `Undo`"
+actor:
+  lookup: "generic-organisation"
+origin:
+  lookup: "generic-organisation"
+target:
+  lookup: "generic-service"
+object:
+  lookup: "offer"
