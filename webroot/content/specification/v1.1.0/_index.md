@@ -5,7 +5,7 @@ latest_version: true
 description: |
   The _COAR Notify Protocol_ consists of documented community conventions for the use of W3C Linked Data Notifications (LDN) to integrate repository systems with relevant services in a distributed, resilient and web-native architecture.
 date: 2022-08-02
-draft: false
+draft: true
 status: published
 ---
 

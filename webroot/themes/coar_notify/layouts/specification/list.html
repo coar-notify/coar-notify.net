@@ -8,8 +8,9 @@
           {{ .Content }}
 			</div>
 			<div class="col-3">
+					<h3>Patterns</h3>
           {{ range index site.Taxonomies "pattern-categories" }}
-						<h4>{{ .Page.Title }}</h4>
+						<h5>{{ .Page.Title }}</h5>
 						<ul>
                 {{ range .Pages }}
                     {{ if eq (partial "versioning/function_get_version" .) $specificationVersion }}
@@ -20,6 +21,8 @@
                 {{ end }}
 						</ul>
           {{ end }}
+
+
 			</div>
 		</div>
 

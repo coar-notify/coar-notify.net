@@ -8,8 +8,7 @@
 		<div class="col-3">
 			<h3>Versions</h3>
 			<ul>
-{{/*          {{ range (where .Data.Pages "Type" "ne" "vocabulary") }}*/}}
-              {{ range sort (where .Data.Pages "Type" "ne" "vocabulary") "Params.version" "desc" }}
+          {{ range sort (where .Data.Pages "Type" "ne" "vocabulary") "Params.version" "desc" }}
 						<li>
 							<a href="{{ .Permalink }}">{{ .Title }} {{ .Params.version }}</a>
                 {{ partial "versioning/version_is_latest_badge" (dict "page" . "showIfNotMostRecent" false) }}
