@@ -9,7 +9,7 @@ date: 2018-12-20
 breadcrumb_title: "Home"
 ---
 
-#### Welcome to COAR Notify!!
+#### Welcome to COAR Notify!
 
 The COAR Notify Protocol is a set of profiles, constraints and conventions around the use of W3C Linked Data Notifications (LDN) to integrate repository systems with relevant services in a distributed, resilient and web-native architecture.
 
