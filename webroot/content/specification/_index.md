@@ -17,7 +17,7 @@ Notify notification patterns are more specific implementations of the generic pa
 
 The _COAR Notify Protocol_ specifies:
 
-* [Notification Patterns](/specification/patterns/) (templates) which describe the payload for re-usable notifications. These notifications describe the individual linked data notifications sent between repositories and services, one or more of which may be used in a *workflow*.
+* Notification Patterns (templates) which describe the payload for re-usable notifications. These notifications describe the individual linked data notifications sent between repositories and services, one or more of which may be used in a *workflow*.
 * [A vocabulary](/specification/vocabulary/) which is used to provide values for certain properties in the notification payloads.
 
 
