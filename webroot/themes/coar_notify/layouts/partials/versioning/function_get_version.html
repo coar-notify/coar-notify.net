@@ -1,13 +1,7 @@
 {{ $returnValue := "" }}
-{{ if isset .Params "version" }}
+{{ $specificationPageForVersion := partial "versioning/function_get_specification_page_for_version" . }}
+{{ with $specificationPageForVersion }}
     {{ $returnValue = .Params.version }}
-{{ else }}
-    {{ range .Ancestors}}
-        {{if (isset .Params "version") }}
-            {{ $returnValue = .Params.version }}
-            {{ break }}
-        {{ end }}
-    {{ end }}
 {{ end }}
 
 {{ return $returnValue }}

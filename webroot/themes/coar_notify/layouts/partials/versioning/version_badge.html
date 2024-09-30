@@ -1,6 +1,6 @@
-{{ $version := partial "versioning/function_get_version" . }}
-{{ with $version }}
-  <span class="badge text-bg-secondary">COAR Notify Protocol version {{ . }}</span>
+{{ $specificationPage := partial "versioning/function_get_specification_page_for_version" . }}
+{{ with $specificationPage }}
+  <a href="{{ .Permalink }}"><span class="badge text-bg-light">COAR Notify Protocol version {{ .Params.version }}</span></a>
 {{ end }}
 {{/*{{ $returnValue := printf "<span class=\"badge text-bg-secondary\">version %s</span>" $version }}*/}}
 {{/*{{ if eq (partial "specification/function_is_latest_version" . ) true }}*/}}

@@ -7,8 +7,13 @@ description: |
 date: 2022-08-02
 draft: false
 status: published
+vocabulary_terms:
+  - EndorsementAction
+  - IngestAction
+  - RelationshipAction
+  - ReviewAction
+  - UnprocessableNotification
 ---
-{{% rfc2119 %}}
 
 COAR Notify notifications are designed to be sent and received using the [W3C Linked Data Notifications (LDN)](https://www.w3.org/TR/2017/REC-ldn-20170502/) standard. Payloads have a predictable structure, based primarily
 on [Activity Streams 2.0](https://www.w3.org/TR/activitystreams-core/), with some additional vocabularies included for particular properties. COAR Notify implements the generic notifications described by the _[Event Notifications in Value-Adding Networks](https://www.eventnotifications.net)_ specification.

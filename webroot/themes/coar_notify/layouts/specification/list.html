@@ -2,13 +2,14 @@
     {{ $specificationVersion := partial "versioning/function_get_version" . }}
     {{ partial "specification/badges" . }}
 		<h1>{{ .Title }} {{ .Params.version }}</h1>
+    {{ partial "rfc2119" . }}
 		<div class="row">
 			<div class="col-9">
-{{/*          {{ partial "specification/current_version_callout" . }}*/}}
+
           {{ .Content }}
 			</div>
 			<div class="col-3">
-					<h3>Patterns</h3>
+				<h3>Notify Patterns</h3>
           {{ range index site.Taxonomies "pattern-categories" }}
 						<h5>{{ .Page.Title }}</h5>
 						<ul>
@@ -21,8 +22,16 @@
                 {{ end }}
 						</ul>
           {{ end }}
-
-
+				<h3>Notify Activity Types</h3>
+				<ul>
+            {{ range .Params.vocabulary_terms}}
+                {{ $vocabTermPage := site.GetPage (printf "/specification/vocabulary/%s" . ) }}
+                {{ if not $vocabTermPage }}
+                    {{ errorf "Error on page '%s': Page for vocabulary term '%s' not found" .File.Path . }}
+                {{ end }}
+								<li><a href="{{ $vocabTermPage.Permalink }}">{{ $vocabTermPage.Title }}</a></li>
+            {{ end }}
+				</ul>
 			</div>
 		</div>
 
