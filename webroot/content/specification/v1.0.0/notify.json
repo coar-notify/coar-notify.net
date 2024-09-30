@@ -9,6 +9,7 @@
     "EndorsementAction": "coar-notify:EndorsementAction",
     "IngestAction": "coar-notify:IngestAction",
     "RelationshipAction": "coar-notify:RelationshipAction",
+    "UnprocessableNotification": "coar-notify:UnprocessableNotification",
     "ietf:cite-as": {
         "@type" : "@id"
     }

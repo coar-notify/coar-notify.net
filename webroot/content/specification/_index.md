@@ -1,5 +1,6 @@
 ---
 title: COAR Notify Protocol Specification
+breadcrumb_title: Specification
 description: |
   The _COAR Notify Protocol_ consists of documented community conventions for the use of W3C Linked Data Notifications (LDN) to integrate repository systems with relevant services in a distributed, resilient and web-native architecture.
 date: 2022-08-02
@@ -12,14 +13,6 @@ menus:
 ---
 
 The _COAR Notify Protocol_ consists of documented community conventions for the use of W3C [Linked Data Notifications](https://www.w3.org/TR/2017/REC-ldn-20170502/) (LDN) to integrate repository systems with relevant services in a distributed, resilient and web-native architecture.
-
-Notify notification patterns are more specific implementations of the generic patterns described by _[Event Notifications in Value-Adding Networks](https://www.eventnotifications.net)_.
-
-The _COAR Notify Protocol_ specifies:
-
-* Notification Patterns (templates) which describe the payload for re-usable notifications. These notifications describe the individual linked data notifications sent between repositories and services, one or more of which may be used in a *workflow*.
-* [A vocabulary](/specification/vocabulary/) which is used to provide values for certain properties in the notification payloads.
-
 
 ## Design Principles
 The design and implementation of the COAR Notify Initiative is informed by the following design principles:
