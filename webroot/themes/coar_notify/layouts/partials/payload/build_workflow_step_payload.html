@@ -1,6 +1,6 @@
 {{ $inputPayload := .Resources.Get "payload.yaml" | transform.Unmarshal }}
 {{ $notify_version := partial "versioning/function_get_version" . }}
-{{ $patternPage := site.GetPage (printf "/specification/v%s/%s/index.md" $notify_version .Params.pattern) }}
+{{ $patternPage := site.GetPage (printf "/specification/%s/%s/index.md" $notify_version .Params.pattern) }}
 {{ $patternPayload := $patternPage.Resources.Get "payload.yaml" | transform.Unmarshal }}
 
 
