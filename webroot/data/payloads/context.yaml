@@ -1,7 +1,7 @@
 default:
   requirement: REQUIRED
   description: |
-    This identifies another resource which is relevant to understanding the notification.
+    It identifies another resource which is relevant to understanding the notification.
 review:
   value:
     id: "https://review-service.com/review/geo/202103/0021"

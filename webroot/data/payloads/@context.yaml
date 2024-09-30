@@ -1,7 +1,7 @@
 default:
   requirement: REQUIRED
   description: |
-    An array of URIs which MUST include:
+    It takes an array of URIs which MUST include:
     - *https://purl.org/coar/notify*
     - *https://www.w3.org/ns/activitystreams*
   value:

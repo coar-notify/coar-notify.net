@@ -1,7 +1,7 @@
 default:
   requirement: RECOMMENDED
   description: |
-    Describes the party responsible for this activity.
+    It describes the party responsible for this activity.
     - MUST have an `id` which MUST be a URI identifying the `actor` (HTTP URIs are RECOMMENDED, but any valid URI is permitted)
     - MUST have a `type` which MUST be one of: *Application*, *Group*, *Organization*, *Person* or *Service* from AS 2.0.
     - MAY have a `name`

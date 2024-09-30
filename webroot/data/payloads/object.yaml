@@ -1,7 +1,7 @@
 default:
   requirement: REQUIRED
   description: |
-    The focus of the activity. Other `object` properties MAY appear in notifications, as sub-properties.
+    It is the focus of the activity. Other `object` properties MAY appear in notifications, as sub-properties.
     * MUST have an `id` which MUST be a URI identifying the `object`.
 review:
   value:
