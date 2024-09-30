@@ -1,6 +1,9 @@
+{{ $lookupParameter := .lookupParameter}}
+{{ $version := .version }}
 
-{{ $lookupClassSource := index site.Data.payloads .label }}
-{{ $lookupEntity := index $lookupClassSource .key }}
+{{ $payloadsVersion := index site.Data.payloads $version }}
+{{ $lookupClassSource := index $payloadsVersion $lookupParameter.label }}
+{{ $lookupEntity := index $lookupClassSource $lookupParameter.key }}
 {{ $requirement := index $lookupEntity "requirement" }}
 {{ if eq $requirement nil }}
     {{ $lookupEntity := index $lookupClassSource "default" }}

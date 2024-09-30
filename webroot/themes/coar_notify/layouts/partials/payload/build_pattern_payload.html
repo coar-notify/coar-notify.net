@@ -1,8 +1,9 @@
 {{ $inputPayload := .Resources.Get "payload.yaml" | transform.Unmarshal }}
-{{ $mergedPayload := partial "payload/build_base_payload"}}
+{{ $mergedPayload := partial "payload/build_base_payload" . }}
+{{ $version := partial "versioning/function_get_version" . }}
 
 {{ range $k, $v := $inputPayload }}
-    {{ $mergedPayload = merge $mergedPayload (partial "payload/process_property" (dict "label" $k "value" $v)) }}
+    {{ $mergedPayload = merge $mergedPayload (partial "payload/process_property" (dict "version" $version "label" $k "value" $v)) }}
 {{ end }}
 
 {{ partial "payload/validate_payload" $mergedPayload }}

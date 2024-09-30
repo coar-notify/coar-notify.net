@@ -1,3 +1,4 @@
+{{ $version := .version}}
 {{ $property := dict "description" "" "requirement" "" "value" nil }}
 {{ $description := ""  }}
 {{ $value := ""  }}
@@ -8,10 +9,10 @@
     {{/*    PROCESS DESCRIPTION*/}}
     {{ if (index .value "lookup") }}
         {{ $lookupParameter := dict "key" (index .value "lookup") "label" .label }}
-        {{ $description = partial "payload/lookup_entity_description" $lookupParameter }}
+        {{ $description = partial "payload/lookup_entity_description" (dict "lookupParameter" $lookupParameter "version" $version) }}
     {{ else if not (index .value "description") }}
         {{ $lookupParameter := dict "key" "default" "label" .label }}
-        {{ $description = partial "payload/lookup_entity_description" $lookupParameter }}
+        {{ $description = partial "payload/lookup_entity_description" (dict "lookupParameter" $lookupParameter "version" $version) }}
     {{ else }}
         {{ $description = index .value "description" }}
     {{ end }}
@@ -19,10 +20,10 @@
     {{/*    PROCESS REQUIREMENT*/}}
     {{ if (index .value "lookup") }}
         {{ $lookupParameter := dict "key" (index .value "lookup") "label" .label }}
-        {{ $requirement = partial "payload/lookup_entity_requirement" $lookupParameter }}
+        {{ $requirement = partial "payload/lookup_entity_requirement" (dict "lookupParameter" $lookupParameter "version" $version) }}
     {{ else if not (index .value "requirement") }}
         {{ $lookupParameter := dict "key" "default" "label" .label }}
-        {{ $requirement = partial "payload/lookup_entity_requirement" $lookupParameter }}
+        {{ $requirement = partial "payload/lookup_entity_requirement" (dict "lookupParameter" $lookupParameter "version" $version) }}
     {{ else }}
         {{ $requirement = index .value "requirement" }}
     {{ end }}
@@ -30,7 +31,7 @@
     {{/*    PROCESS PAYLOAD*/}}
     {{ if (index .value "lookup") }}
         {{ $lookupParameter := dict "key" (index .value "lookup") "label" .label }}
-        {{ $value = partial "payload/lookup_entity_payload" $lookupParameter }}
+        {{ $value = partial "payload/lookup_entity_payload" (dict "lookupParameter" $lookupParameter "version" $version) }}
     {{ else }}
         {{ $value = index .value "value" }}
     {{ end }}

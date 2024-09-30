@@ -1,3 +1,4 @@
 {{ $basePayload := dict}}
-{{ $basePayload = merge $basePayload (partial "payload/process_property" (dict "label" "@context" "value" (dict "lookup" "default"))) }}
+{{ $version := partial "versioning/function_get_version" . }}
+{{ $basePayload = merge $basePayload (partial "payload/process_property" (dict "version" $version "label" "@context" "value" (dict "lookup" "default"))) }}
 {{ return $basePayload }}

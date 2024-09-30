@@ -1,3 +1,7 @@
-{{ $lookupClassSource := index site.Data.payloads .label }}
-{{ $lookupEntity := index $lookupClassSource .key }}
+{{ $lookupParameter := .lookupParameter}}
+{{ $version := .version }}
+
+{{ $payloadsVersion := index site.Data.payloads $version }}
+{{ $lookupClassSource := index $payloadsVersion $lookupParameter.label }}
+{{ $lookupEntity := index $lookupClassSource $lookupParameter.key }}
 {{ return index $lookupEntity "value" }}
