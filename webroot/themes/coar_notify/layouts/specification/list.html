@@ -10,10 +10,10 @@
 			</div>
 			<div class="col-3">
 				<h3>Notify Patterns</h3>
-          {{ range index site.Taxonomies "pattern-categories" }}
+          {{ range sort (index site.Taxonomies "pattern-categories") ".Page.Weight" "asc"}}
 						<h5>{{ .Page.Title }}</h5>
 						<ul>
-                {{ range .Pages }}
+                {{ range .Pages.ByWeight }}
                     {{ if eq (partial "versioning/function_get_version" .) $specificationVersion }}
 											<li>
 												<a href="{{ .Permalink}}"> {{ .LinkTitle }}</a>

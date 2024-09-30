@@ -1,7 +1,7 @@
 {{ $version := partial "versioning/function_get_version" .page }}
 
 {{ if eq (partial "versioning/function_is_latest_version" .page ) true }}
-    <span class="badge text-bg-success">Most recent version</span>
+    <span class="badge text-bg-success">Current version!</span>
 {{ else if .showIfNotMostRecent }}
     <span class="badge text-bg-warning">More recent version available</span>
 {{ end }}
