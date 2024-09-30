@@ -2,8 +2,8 @@ default:
   requirement: REQUIRED
   description: |
     An array of URIs which MUST include:
-      - https://purl.org/coar/notify
-      - https://www.w3.org/ns/activitystreams
+    - *https://purl.org/coar/notify*
+    - *https://www.w3.org/ns/activitystreams*
   value:
     - "https://www.w3.org/ns/activitystreams"
     - "https://purl.org/coar/notify"

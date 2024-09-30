@@ -1,5 +1,8 @@
 default:
   requirement: REQUIRED
+  description: |
+    The focus of the activity. Other `object` properties MAY appear in notifications, as sub-properties.
+    * MUST have an `id` which MUST be a URI identifying the `object`.
 review:
   value:
     id: "https://review-service.com/review/geo/202103/0021"

@@ -1,3 +1,7 @@
+default:
+  requirement: OPTIONAL
+  description: |
+    Provides a brief, free-text summary of the notification (for example in the case of an error)
 "unprocessable_url":
   requirement: REQUIRED
   value: "Unable to process URL: http://www.example.com/broken-url - returns HTTP error 404"
