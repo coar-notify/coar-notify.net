@@ -1,8 +1,9 @@
 {{ define "main" }}
 	<h1>{{ .Title }}</h1>
+  {{ partial "specification/current_version_callout" . }}
 	<div class="row">
 		<div class="col-9">
-        {{ partial "specification/current_version_callout" . }}
+
         {{ .Content }}
 		</div>
 		<div class="col-3">
