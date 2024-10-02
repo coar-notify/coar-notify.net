@@ -1,0 +1,6 @@
+{{ define "main" }}
+    {{ $specificationVersion := partial "versioning/function_get_version" . }}
+    {{ partial "specification/badges" . }}
+    <h1>{{ .Title }} {{ $specificationVersion }}</h1>
+    {{ .Content }}
+{{ end }}
