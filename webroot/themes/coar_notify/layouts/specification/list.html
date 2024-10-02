@@ -30,20 +30,24 @@
           {{ end }}
 			</div>
 			<div class="col-3">
-				<h4>Notify Patterns</h4>
+				<h3>Patterns</h3>
           {{ range sort (index site.Taxonomies "pattern-categories") ".Page.Weight" "asc"}}
-						<h5>{{ .Page.Title }}</h5>
 						<ul>
-                {{ range .Pages.ByWeight }}
-                    {{ if eq (partial "versioning/function_get_version" .) $specificationVersion }}
-											<li>
-												<a href="{{ .Permalink}}"> {{ .LinkTitle }}</a>
-											</li>
+							<li>
+								<b>{{ .Page.Title }}</b>
+								<ul>
+                    {{ range .Pages.ByWeight }}
+                        {{ if eq (partial "versioning/function_get_version" .) $specificationVersion }}
+													<li>
+														<a href="{{ .Permalink}}"> {{ .LinkTitle }}</a>
+													</li>
+                        {{ end }}
                     {{ end }}
-                {{ end }}
+								</ul>
+							</li>
 						</ul>
           {{ end }}
-				<h4>Notify Activity Types</h4>
+				<h3>Notify Activity Types</h3>
 				<ul>
             {{ range .Params.vocabulary_terms}}
                 {{ $vocabTermPage := site.GetPage (printf "/specification/vocabulary/%s" . ) }}
