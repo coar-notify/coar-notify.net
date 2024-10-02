@@ -11,6 +11,7 @@ use-cases: [peer-review]
 owner: prereview
 status: published
 version: 1.0.0
+draft: true
 ---
 
 This workflow was originally developed between BiorXiv and PREreview, but it can be used by other repositories wishing to interoperate with PREreview.
