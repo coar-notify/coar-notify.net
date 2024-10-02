@@ -22,16 +22,6 @@ preprint:
       * An `id` containing the HTTP URI of the content file for the resource.
       * A `type` describing the content file.
       * A `mediaType` which contains the MIME Type of the content file.
-offer:
-  value:
-    id: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
-    type: 'Offer'
-    object: "https://some-organisation.org/resource/0021"
-  description: |
-    * An `id` which identifies the original `offer` activity which this notification is acknowledging.
-    * An `object` which identifies the resource which was the `object` of the original `offer`
-    * The type which is *Offer*
-
 endorsement-offer:
   description: >
     It is the complete payload (without the `@context` property) of the *Offer* `activity` to which this pattern is a response.

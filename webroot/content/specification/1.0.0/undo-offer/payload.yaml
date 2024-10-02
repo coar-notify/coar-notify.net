@@ -10,4 +10,12 @@ origin:
 target:
   lookup: "generic-service"
 object:
-  lookup: "offer"
+  value:
+    id: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
+    type: 'Offer'
+    object: "https://some-organisation.org/resource/0021"
+  description: |
+    This is the *Offer* `activity` which is being "undone". It:
+    * MUST have an `id` which identifies the original *Offer* `activity` which this notification is "undoing".
+    * MUST have an `object` which MUST contain the `id` of the `object` of the original *Offer*
+    * MUST have a `type` which MUST include *Offer*
