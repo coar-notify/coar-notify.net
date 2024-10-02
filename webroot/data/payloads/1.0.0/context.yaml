@@ -17,7 +17,7 @@ preprint:
       type: [ "Article","sorg:ScholarlyArticle" ]
       "mediaType": "application/pdf"
   description: |
-    In this example, this identifies a preprint resource on the `target` which is relevant to understanding the notification.
+    In this example, this identifies a preprint resource on the `target` which is relevant to understanding the notification. It:
     * MUST have an `id` which in this example is the HTTP URI of the "landing page" for the resource.
     * SHOULD have a `type` which, in the case of a repository landing page, SHOULD include the value *AboutPage* from schema.org.
     * SHOULD have an `ietf:cite-as` which SHOULD contain the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.
