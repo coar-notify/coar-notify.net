@@ -11,7 +11,11 @@ origin:
 target:
   lookup: "generic-service"
 object:
-  lookup: "preprint"
+  description: >
+    The `object` refers to the previous `activity` that was not processable.
+    It MUST contain an `id`.
+  value:
+    id: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
 inReplyTo:
   lookup: "required-inReplyTo"
 summary:
