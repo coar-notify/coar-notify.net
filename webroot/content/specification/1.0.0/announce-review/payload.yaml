@@ -13,7 +13,19 @@ origin:
 target:
   lookup: "generic-service"
 object:
-  lookup: "review"
+  value:
+    id: "https://review-service.com/review/geo/202103/0021"
+    type: [ "Document","sorg:Review" ]
+    "ietf:cite-as": "https://doi.org/10.3214/987654"
+  description: |
+    This represents the review. It:
+    * MUST have an `id` which identifies the review resource.
+    * `type` should include the value *Document* from *Activity Streams 2.0*, and *sorg:Review*
+    * `ietf:cite-as` contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.
+    * SHOULD have an `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the endorsement resource.
+    * SHOULD have a `type` describing the content file, which SHOULD include the values:
+      * *Document* from *Activity Streams 2.0*
+      * *sorg:Review*
 context:
   lookup: "preprint"
 inReplyTo:

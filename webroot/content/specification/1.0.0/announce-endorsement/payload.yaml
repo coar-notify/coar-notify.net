@@ -13,7 +13,15 @@ origin:
 target:
   lookup: "repository"
 object:
-  lookup: "endorsement"
+  value:
+    id: "https://overlay-journal.com/articles/00001/"
+    type: [ "Page","sorg:WebPage" ]
+    "ietf:cite-as": "https://overlay-journal.com/articles/00001/"
+  description: |
+    This represents the endorsement. It:
+    * MUST have an `id` which identifies the endorsement resource.
+    * SHOULD have an `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the endorsement resource.
+    * A `type` describing the content file.
 context:
   lookup: "preprint"
 inReplyTo:
