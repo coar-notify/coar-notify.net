@@ -8,15 +8,13 @@ layout: release-notes
 **Important note:**
 Version control was added to the COAR Notify Protocol specification from [version 1.0.0](/specification/1.0.0/) onwards. These release notes (below) record some of the development which preceded version 1.0.0. We have given this the notional version number 0.9.0.
 
-The following is provided for historical interest only and is certainly not comprehensive. The notes refer to "scenarios" which are broadly equivalent to the [workflows](/catalogue/workflows) in the current specification.
+The following history is provided for interest only and is not necessarily comprehensive. The notes refer to "scenarios" which are broadly equivalent to the [workflows](/catalogue/workflows) in the current specification.
 
 ## Most recent changes
 Removed Acknowledge and Tentatively Reject pattern.
 
 ## 2024-03-21
 Previously, some uses of the `object` and `context` properties included a `url` property. We have replaced `url` with `ietf:item` to improve interoperability with related initiatives - notably signposting.org. The content of this sub-property is unchanged, so this is simply a change to the property name.
-
-See the [Request Endorsement pattern](/specification/patterns/request-endorsement/) for an example of this.
 
 ## 2023-05-02
 Added three new patterns:
@@ -41,8 +39,8 @@ This means that there is no change to the relationship between the example scena
 Part of the reasoning for this is to build a relationship between the (slightly more specific) _Notify_ patterns, and the (more generic) patterns specified in _[Event Notifications in Value-Adding Networks](https://www.eventnotifications.net)_.
 
 #### Exceptional Changes to Patterns
-* The [Rescinding an Offer](/specification/patterns/undo-offer/) pattern has had the `context` property removed
-* A `context` property has been added to the [Announce Ingest](/specification/patterns/announce-ingest/) pattern.
+* The _Undo Offer_ pattern has had the `context` property removed
+* A `context` property has been added to the _Announce Ingest_ pattern.
 
 #### Other Changes
 * The PURL used for the _COAR Notify Vocabulary_ - `https://purl.org/coar/notify_vocabulary/` - now uses HTTPS instead of HTTP. However the HTTP form will continue to resolve correctly.
