@@ -1,0 +1,7 @@
+default:
+  requirement: REQUIRED
+  description: |
+    This is the JSON-LD 'context' for the activity.
+  value:
+    - "https://www.w3.org/ns/activitystreams"
+    - "https://purl.org/coar/notify"

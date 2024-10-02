@@ -1,7 +1,7 @@
 default:
-  requirement: OPTIONAL
+  requirement: REQUIRED
   description: |
-    It identifies another resource which is relevant to understanding the notification.
+    This should be the focus of the activity. Other object properties may appear in notifications, as properties of other properties.
 review:
   value:
     id: "https://review-service.com/review/geo/202103/0021"

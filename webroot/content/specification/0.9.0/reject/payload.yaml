@@ -1,0 +1,17 @@
+id:
+  value: "urn:uuid:668f26e0-2c8d-4117-a0d2-ee713523bcb1"
+type:
+  value: "Reject"
+  description: "The `type` of this activity MUST include the value `Reject`"
+#  actor:
+#    lookup: "generic-service"
+origin:
+  lookup: "generic-service"
+target:
+  lookup: "generic-organisation"
+#  object:
+#    lookup: "offer"
+#  context:
+#    lookup: "offer-for-context"
+inReplyTo:
+  lookup: "required-inReplyTo"

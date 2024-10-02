@@ -11,7 +11,7 @@ default:
     inbox: "https://generic-service-2.com/target-system/inbox/"
 pci:
   value:
-    id: "https://https://peercommunityin.org"
+    id: "https://peercommunityin.org"
     type: "Service"
     inbox: "https://peercommunityin.org/inbox/"
 # GENERIC SYSTEMS FOR PATTERNS

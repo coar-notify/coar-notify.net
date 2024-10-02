@@ -1,0 +1,9 @@
+default:
+  requirement: OPTIONAL
+  description: |
+    This is used rarely, but may be used to provide a brief textual summary of the notification (for example in the case of an error)
+"unprocessable_url":
+  requirement: REQUIRED
+  value: "Unable to process URL: http://www.example.com/broken-url - returns HTTP error 404"
+  description: |
+    Describes the reason (in plain text) that the request could not be processed.

@@ -1,0 +1,4 @@
+default:
+  requirement: REQUIRED
+  description: |
+    This must be a URI, and the use of URN:UUID is recommended. An HTTP URI may be used, but in such cases the URI should resolve to a resource which represents the activity.

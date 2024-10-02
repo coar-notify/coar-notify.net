@@ -1,0 +1,5 @@
+default:
+  requirement: REQUIRED
+  description: >
+    This should include one of the [Activity Stream 2.0 Activity Types](https://www.w3.org/TR/activitystreams-vocabulary/).
+    It may (depending on the activity) also include a type from the [Notify Activity Types vocabulary](/specification/vocabulary/)

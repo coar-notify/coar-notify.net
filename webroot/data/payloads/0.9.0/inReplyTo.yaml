@@ -1,0 +1,15 @@
+default:
+  requirement: OPTIONAL
+  value: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
+  description: |
+    This property is used when the notification is a direct response to a previous notification (usually a request) and references the _Activity Streams 2.0_ activity `id` of the previous notification.
+required-inReplyTo:
+  requirement: REQUIRED
+  value: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
+  description: |
+    It MUST be specified because this is a response to a previous notification. It takes the URI (URN:UUID or HTTP URI) which identifies the `activity` for which this is a response.
+optional-inReplyTo:
+  requirement: OPTIONAL
+  value: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
+  description: |
+    It SHOULD be specified if this is a response to a previous notification. It takes the URI (URN:UUID or HTTP URI) which identifies the `activity` for which this is a response.

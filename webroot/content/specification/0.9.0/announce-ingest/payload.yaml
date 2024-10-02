@@ -1,0 +1,20 @@
+id:
+  value: "urn:uuid:94ecae35-dcfd-4182-8550-22c7164fe23f"
+type:
+  value: ["Announce","coar-notify:IngestAction"]
+  description: |
+    The `type` of this activity MUST include the values:
+    - `Announce`
+    - `coar-notify:IngestAction`
+actor:
+  lookup: "research-organisation"
+origin:
+  lookup: "repository"
+target:
+  lookup: "overlay-journal"
+object:
+  lookup: "preprint"
+inReplyTo:
+  lookup: "optional-inReplyTo"
+context:
+  lookup: "preprint"

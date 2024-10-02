@@ -1,14 +1,11 @@
 default:
   requirement: REQUIRED
   description: |
-    It describes the system which has sent the notification.
-    - MUST have an `id` which MUST be an HTTP URI identifying the sending system
-    - MUST have a `type` which SHOULD include the value *Service* from AS 2.0
-    - MUST have an `inbox` which MUST have the HTTP URI of the LDN inbox for the `origin`.
+    The intended destination of the activity, typically the service which *consumes* the notification.
   value:
-    id: "https://generic-service-1.com/origin-system"
+    id: "https://generic-service-2.com/target-system"
     type: "Service"
-    inbox: "https://generic-service-1.com/origin-system/inbox/"
+    inbox: "https://generic-service-2.com/target-system/inbox/"
 pci:
   value:
     id: "https://peercommunityin.org"
