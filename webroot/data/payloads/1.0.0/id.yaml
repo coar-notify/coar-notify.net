@@ -2,3 +2,5 @@ default:
   requirement: REQUIRED
   description: |
     It identifies an *Activity Streams 2.0* activity. Its value MUST be a single URI, and the use of URN:UUID is RECOMMENDED. An HTTP URI may be used instead, and in such cases the URI SHOULD resolve to a useful resource.
+  value:
+    id: "urn:uuid:ff1a3adb-876f-4d3d-bc48-071f54f6a963"

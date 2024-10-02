@@ -3,6 +3,8 @@ default:
   description: |
     It is the focus of the activity. Other `object` properties MAY appear in notifications, as sub-properties.
     * MUST have an `id` which MUST be a URI identifying the `object`.
+  value:
+    id: "urn:uuid:82c9ac16-abc2-4cd2-9238-340f3c9f8a90"
 review:
   value:
     id: "https://review-service.com/review/geo/202103/0021"
