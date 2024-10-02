@@ -9,7 +9,7 @@ review:
     "ietf:cite-as": "https://doi.org/10.3214/987654"
   description: |
     * `id` is the HTTP URI of the "landing page" for the resource.
-    * `type` should include the value *Document* from AS 2.0, and *sorg:Review*
+    * `type` should include the value *Document* from *Activity Streams 2.0*, and *sorg:Review*
     * `ietf:cite-as` contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.
 "journal-review":
   value:
@@ -18,7 +18,7 @@ review:
     "ietf:cite-as": "https://doi.org/10.3214/987654"
   description: |
     * `id` is the HTTP URI of the "landing page" for the resource.
-    * `type` should include the value *Document* from AS 2.0, and *sorg:Review*
+    * `type` should include the value *Document* from *Activity Streams 2.0*, and *sorg:Review*
     * `ietf:cite-as` contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.
 "repository-review":
   value:
@@ -27,7 +27,7 @@ review:
     "ietf:cite-as": "https://doi.org/10.3214/000001"
   description: |
     * `id` is the HTTP URI of the "landing page" for the resource.
-    * `type` should include the value *Document* from AS 2.0, and *sorg:Review*
+    * `type` should include the value *Document* from *Activity Streams 2.0*, and *sorg:Review*
     * `ietf:cite-as` contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.
 preprint:
   value:
@@ -98,7 +98,7 @@ submission:
     "as:object": "https://another-research-organisation.org/repository/datasets/item/201203421/"
   description: |
     * An `id` which contains the URI for the relationship with the target-hosted resource
-    * A `type` which should describes the type of the relationship and should include a value from AS 2.0
+    * A `type` which should describes the type of the relationship and should include a value from *Activity Streams 2.0*
     * A 'triple' describing the relationship, in the form:
       * `as:subject`: containing the URI for the local resource
       * `as:relationship`: containing a relationship URI

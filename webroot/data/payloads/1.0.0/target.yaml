@@ -3,7 +3,7 @@ default:
   description: |
     It describes the system which is intended to receive the notification.
       - MUST have an `id` which MUST be an HTTP URI identifying the receiving system
-      - MUST have a `type` which SHOULD include the value *Service* from AS 2.0
+      - MUST have a `type` which SHOULD include the value *Service* from *Activity Streams 2.0*
       - MUST have an `inbox` which MUST have the HTTP URI of the LDN inbox for the `target`.
   value:
     id: "https://generic-service-2.com/target-system"
