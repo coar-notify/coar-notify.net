@@ -1,3 +1,9 @@
+{{ if .Draft }}
+	<div id="site-header-message" class="alert alert-danger" role="alert">
+		This page is a <b>draft</b> (in the Hugo sense) so it will not be published.
+	</div>
+{{ end }}
+
 {{- with site.Params.siteHeaderMessage -}}
     {{ if .enable }}
 			<div id="site-header-message" class="alert alert-danger" role="alert">

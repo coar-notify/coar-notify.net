@@ -6,7 +6,5 @@ date: "2021-03-08"
 type: pattern
 event_notifications_pattern: []
 pattern-categories: [announcements]
-payload:
-
 ---
 
