@@ -2,10 +2,3 @@
 {{ with $specificationPage }}
   <a href="{{ .Permalink }}"><span class="badge text-bg-light">COAR Notify Protocol version {{ .Params.version }}</span></a>
 {{ end }}
-{{/*{{ $returnValue := printf "<span class=\"badge text-bg-secondary\">version %s</span>" $version }}*/}}
-{{/*{{ if eq (partial "specification/function_is_latest_version" . ) true }}*/}}
-{{/*    {{ $returnValue = printf "%s <span class=\"badge text-bg-success\">This is the latest version</span>" $returnValue }} }}*/}}
-{{/*{{ else }}*/}}
-{{/*    {{ $returnValue = printf "%s <span class=\"badge text-bg-warning\">This is not the latest version</span>" $returnValue }} }}*/}}
-{{/*{{ end }}*/}}
-{{/*{{ return ($returnValue | markdownify) }}*/}}

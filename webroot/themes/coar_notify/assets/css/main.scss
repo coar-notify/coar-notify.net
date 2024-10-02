@@ -161,3 +161,11 @@ a.external-link::after {
   font-size: 1.2em;
   text-align: right;
 }
+
+.badge a {
+  text-decoration: none;
+}
+
+.badge a:hover {
+  text-decoration: underline;
+}

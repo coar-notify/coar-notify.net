@@ -4,6 +4,6 @@
 	<span class="badge text-bg-success">Current version!</span>
 {{ else if .showIfNotMostRecent }}
     {{ $latestVersionLink := replace .page.RelPermalink $version site.Params.currentSpecificationVersion }}
-		<span class="badge text-bg-light"><a href="{{ $latestVersionLink }}">Go to most recent version</a></span>
+		<span class="badge bg-danger"><a href="{{ $latestVersionLink }}" style="color: white;">Deprecated version: Go to most recent</a></span>
 {{ end }}
 

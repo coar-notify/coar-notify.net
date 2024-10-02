@@ -1,17 +1,3 @@
-{{/*{{ $status := partial "status/function_get_status" . }}*/}}
-{{/*{{ $category := page.Type | singularize }}*/}}
-{{/*{{ with $status }}*/}}
-{{/*  {{ if eq $status "draft" }}*/}}
-{{/*    <span class="badge bg-danger">Draft {{ $category }}</span>*/}}
-{{/*  {{ else if eq $status "deprecated" }}*/}}
-{{/*    <span class="badge bg-warning">Deprecated {{ $category }}</span>*/}}
-{{/*  {{ else if eq $status "published" }}*/}}
-{{/*    <span class="badge bg-success">Published {{ $category }}</span>*/}}
-{{/*  {{ else }}*/}}
-{{/*    <span class="badge bg-danger">UNKNOWN STATUS</span>*/}}
-{{/*  {{ end }}*/}}
-{{/*{{ end }}*/}}
-
 {{ $status := partial "status/function_get_status" . }}
 {{ with $status }}
   {{ if eq $status "draft" }}
@@ -24,3 +10,4 @@
     <span class="badge bg-danger">UNKNOWN STATUS</span>
   {{ end }}
 {{ end }}
+

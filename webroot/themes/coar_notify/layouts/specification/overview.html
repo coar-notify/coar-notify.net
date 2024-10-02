@@ -1,19 +1,28 @@
 {{ define "main" }}
 	<h1>{{ .Title }}</h1>
-  {{ partial "specification/current_version_callout" . }}
+{{/*  {{ partial "specification/current_version_callout" . }}*/}}
 	<div class="row">
 		<div class="col-9">
-
         {{ .Content }}
 		</div>
 		<div class="col-3">
-			<h3>Versions</h3>
+			<h3>Current Version</h3>
+        {{ $currentVersionPage := site.GetPage (printf "/specification/%s" site.Params.currentSpecificationVersion) }}
+			<ul>
+				<li>
+					<a href="{{ $currentVersionPage.Permalink }}" style="font-weight: bold;">{{ $currentVersionPage.Title }}  {{ $currentVersionPage.Params.version }}</a>
+				</li>
+			</ul>
+			<h3>Previous Versions</h3>
 			<ul>
           {{ range sort (where .Data.Pages "Type" "not in" (slice "vocabulary" "changelog")) "Params.version" "desc" }}
-						<li>
-							<a href="{{ .Permalink }}">{{ .Title }} {{ .Params.version }}</a>
-                {{ partial "versioning/version_is_latest_badge" (dict "page" . "showIfNotMostRecent" false) }}
-						</li>
+              {{ if eq .Params.version site.Params.currentSpecificationVersion }}
+                  {{ continue }}
+              {{ end }}
+							<li>
+								<a href="{{ .Permalink }}">{{ .Title }} {{ .Params.version }}</a>
+                  {{ partial "versioning/version_is_latest_badge" (dict "page" . "showIfNotMostRecent" false) }}
+							</li>
           {{ end }}
 			</ul>
 			<h3>Reference</h3>
