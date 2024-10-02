@@ -6,3 +6,5 @@ layout: release-notes
 ---
 
 These are the release notes for the 1.0.0 version of the specification.
+
+1. Added the [_TentativeReject_ Pattern](/specification/1.0.0/tentative-reject)

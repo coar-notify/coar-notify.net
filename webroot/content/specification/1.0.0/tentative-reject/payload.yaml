@@ -1,0 +1,17 @@
+id:
+  value: "urn:uuid:b6c7c187-4df2-45c6-8b03-b516b134224b"
+type:
+  value: "TentativeReject"
+  description: "The `type` of this activity MUST include the value `TentativeReject`"
+#  actor:
+#    lookup: "generic-service"
+origin:
+  lookup: "generic-service"
+target:
+  lookup: "generic-organisation"
+#  object:
+#    lookup: "offer"
+#  context:
+#    lookup: "offer-for-context"
+inReplyTo:
+  lookup: "required-inReplyTo"
