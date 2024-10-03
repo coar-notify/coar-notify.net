@@ -47,7 +47,6 @@ params:
       The content here is **subject to change without warning**.
       The current, supported version is at [https://notify.coar-repositories.org](https://notify.coar-repositories.org).
   currentSpecificationVersion: "1.0.0"
-  systemLogoMaxWidth: 250
   eventNotificationsPatternsBaseURL: "https://www.eventnotifications.net/"
   enableAnalytics: false  # this param may be overridden in production/development envs
   googleSiteVerification:

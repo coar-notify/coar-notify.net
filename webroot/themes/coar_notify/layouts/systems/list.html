@@ -2,12 +2,13 @@
     <div>
         <h1>{{ .Title }}</h1>
         {{ .Content }}
+        {{ partial "catalogue/system_logos" . }}
     </div>
-    <div>
-        <ul>
-            {{ range .Data.Pages }}
-                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-            {{ end }}
-        </ul>
-    </div>
+{{/*    <div>*/}}
+{{/*        <ul>*/}}
+{{/*            {{ range .Data.Pages }}*/}}
+{{/*                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>*/}}
+{{/*            {{ end }}*/}}
+{{/*        </ul>*/}}
+{{/*    </div>*/}}
 {{ end }}

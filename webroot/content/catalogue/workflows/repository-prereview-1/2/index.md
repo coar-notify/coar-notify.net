@@ -7,6 +7,11 @@ type: workflows
 scope: notify
 sender: left_node
 pattern: request-review
+flowchart:
+  label: |
+    Request
+    review
+  flows_to: ["3"]
 #payload_docs:
 #  actor: |
 #    The author of the preprint.

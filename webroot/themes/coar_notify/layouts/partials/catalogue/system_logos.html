@@ -6,10 +6,6 @@
 <div class="row">
     {{ range $implementationPages }}
         <div class="col-12 col-sm-6 col-lg-3">
-            {{ $logo_max_width := .Params.logo_max_width}}
-            {{ if eq $logo_max_width nil }}
-                {{ $logo_max_width = site.Params.systemLogoMaxWidth }}
-            {{ end }}
             {{ $systemPageLink := .Permalink}}
             {{ $systemPageTitle := .Title}}
             <a href="{{ $systemPageLink }}" class="card-as-link">
