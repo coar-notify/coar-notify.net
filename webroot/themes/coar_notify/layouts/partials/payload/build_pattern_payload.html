@@ -6,6 +6,6 @@
     {{ $mergedPayload = merge $mergedPayload (partial "payload/process_property" (dict "version" $version "label" $k "value" $v)) }}
 {{ end }}
 
-{{ partial "payload/validate_payload" $mergedPayload }}
+{{ partial "payload/validate_payload" (dict "payload" $mergedPayload "specificationVersion" $version) }}
 
 {{ return $mergedPayload }}
