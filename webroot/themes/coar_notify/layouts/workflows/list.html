@@ -2,14 +2,9 @@
 	<h1>{{ .Title }}</h1>
   {{ partial "workflows/badges" . }}
   {{ .Content }}
-
-  {{ with .Resources.Get "flowchart.mermaid" }}
-      {{ $mermaidDiagram :=  partial "workflows/render_mermaid" . }}
-
-      {{ $mermaidDiagram | markdownify}}
+  {{ with .Resources.Get "flowchart2.mermaid" }}
+      {{ partial "workflows/render_mermaid" . }}
   {{ end }}
-
-
 
   {{ $leftNode := .Params.left_node }}
   {{ $rightNode := .Params.right_node }}

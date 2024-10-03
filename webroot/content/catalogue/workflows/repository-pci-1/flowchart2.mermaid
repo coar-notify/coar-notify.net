@@ -1,0 +1,29 @@
+flowchart LR
+    1(["1 Initiate"])
+    2["`2 Request Endorsement`"]
+    3{"`3 Process request`"}
+    4["`4 Reject`"]
+    5(["`5 Accept decision`"])
+    6["`6 Tentative Accept`"]
+    7["`7 Note under review`"]
+    8{"`8 Conduct review`"}
+    9["`9 Reject`"]
+    10(["`10 Accept decision`"])
+    11["`11 Announce Review`"]
+    12["`12 Record review`"]
+    13["`13 Announce Endorsement`"]
+    14(["`14 Record decision`"])
+
+    1 --> 2
+    2 --> 3
+    3 --> 4
+    4 --> 5
+    3 --> 6
+    6 --> 7
+    7 --> 8
+    8 --> 9
+    9 --> 10
+    8 --> 11
+    11 --> 12
+    12 --> 13
+    13 --> 14

@@ -1,31 +1,31 @@
-{{/*{{ if .Store.Get "hasMermaid" }}*/}}
-{{/*	<script type="module">*/}}
-{{/*      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';*/}}
-{{/*      mermaid.initialize({*/}}
-{{/*          startOnLoad: true,*/}}
-{{/*          theme: 'base',*/}}
-{{/*          themeVariables: {*/}}
-{{/*              fontSize: '48px',*/}}
-{{/*              primaryColor: '#efefef',*/}}
-{{/*              // mainBkg: '#ffffff',*/}}
-{{/*              primaryBorderColor: '#000000',*/}}
-{{/*              // mainBkg: 'rgb(145,198,239)'*/}}
-{{/*          },*/}}
-{{/*      });*/}}
-{{/*	</script>*/}}
-{{/*{{ end }}*/}}
+{{ if .Store.Get "hasMermaid" }}
+	<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({
+          startOnLoad: true,
+          theme: 'base',
+          themeVariables: {
+              fontSize: '48px',
+              primaryColor: '#efefef',
+              // mainBkg: '#ffffff',
+              primaryBorderColor: '#000000',
+              // mainBkg: 'rgb(145,198,239)'
+          },
+      });
+	</script>
+{{ end }}
 
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'base',
-    themeVariables: {
-      fontSize: '48px',
-      primaryColor: '#efefef',
-      // mainBkg: '#ffffff',
-      primaryBorderColor: '#000000',
-      // mainBkg: 'rgb(145,198,239)'
-    },
-  });
-</script>
+{{/*<script type="module">*/}}
+{{/*  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';*/}}
+{{/*  mermaid.initialize({*/}}
+{{/*    startOnLoad: true,*/}}
+{{/*    theme: 'base',*/}}
+{{/*    themeVariables: {*/}}
+{{/*      fontSize: '48px',*/}}
+{{/*      primaryColor: '#efefef',*/}}
+{{/*      // mainBkg: '#ffffff',*/}}
+{{/*      primaryBorderColor: '#000000',*/}}
+{{/*      // mainBkg: 'rgb(145,198,239)'*/}}
+{{/*    },*/}}
+{{/*  });*/}}
+{{/*</script>*/}}

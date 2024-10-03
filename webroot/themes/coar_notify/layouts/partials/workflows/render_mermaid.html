@@ -1,9 +1,2 @@
-
-{{ return (printf "```mermaid\n%s\n```" .Content)}}
-
-
-{{/*{{ $mermaidResource := .Resources.Get "flowchart.mermaid"}}*/}}
-{{/*{{ with $mermaidResource }}*/}}
-{{/*	```mermaid*/}}
-{{/*  {{ .Content | safeHTML }}*/}}
-{{/*{{ end }}*/}}
+{{ page.Store.Set "hasMermaid" true }}
+{{ printf "<pre class=\"mermaid\">\n%s\n</pre>\n" .Content | safeHTML }}
