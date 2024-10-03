@@ -9,7 +9,6 @@ draft: false
 status: published
 vocabulary_terms:
   - EndorsementAction
-  - IngestAction
   - RelationshipAction
   - ReviewAction
   - UnprocessableNotification

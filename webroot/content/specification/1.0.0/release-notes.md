@@ -11,4 +11,4 @@ These are the release notes for the 1.0.0 version of the specification.
 2. Added `object` property to the "acknowledgement" patterns: [_Accept_](/specification/1.0.0/accept), [_Reject_](/specification/1.0.0/reject), [_TentativeAccept_](/specification/1.0.0/tentative-accept), [_TentativeReject_](/specification/1.0.0/tentative-reject)
 3. Changed all example `origin` and `target` types to _Service_
 4. Made requirement for an `id` in `object` explicit
-5. Removed unused *Announce Ingest* pattern
+5. Removed unused *Request Ingest* and *Announce Ingest* patterns
