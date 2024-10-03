@@ -7,5 +7,10 @@ type: workflows
 scope: notify
 sender: right_node
 pattern: announce-endorsement
+flowchart:
+  label: |
+    Announce
+    endorsement
+  flows_to: ["14"]
 ---
 

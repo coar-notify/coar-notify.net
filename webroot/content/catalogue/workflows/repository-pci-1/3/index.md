@@ -21,6 +21,11 @@ description: |
 date: 2021-03-08
 type: workflows
 scope: right_node
+flowchart:
+  label: |
+    Process
+    request
+  flows_to: ["4","6"]
 ---
 
 

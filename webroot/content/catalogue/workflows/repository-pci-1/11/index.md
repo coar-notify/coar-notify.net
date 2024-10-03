@@ -7,4 +7,9 @@ type: workflows
 scope: notify
 sender: right_node
 pattern: announce-review
+flowchart:
+  label: |
+    Announce
+    review
+  flows_to: ["12"]
 ---

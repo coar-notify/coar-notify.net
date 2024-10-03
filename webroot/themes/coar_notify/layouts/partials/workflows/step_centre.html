@@ -3,7 +3,7 @@
 
 {{ $mergedPayload := partial "payload/build_workflow_step_payload" . }}
 
-<div class="card notify-card">
+<div class="card notify-card" id="step_{{ $stepPosition }}">
     {{ if eq $stepPage.Params.sender "left_node" }}
 			<div class="card-header notify-card-header notify-card-header-right">
 				<span class="step-number">{{ $stepPosition }}</span>&nbsp;<a href="{{ $stepPage.Permalink }}">{{ $stepPage.Title }}</a> <img src="/images/arrow_right_small.svg" alt="right arrow" class="big-arrow-right"/>

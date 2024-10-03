@@ -4,5 +4,10 @@ description: The repositorymay wish to internally prevent the preprint from bein
 date: 2021-03-08
 type: workflows
 scope: left_node
+flowchart:
+  label: |
+    Note
+    status
+  flows_to: ["8"]
 ---
 

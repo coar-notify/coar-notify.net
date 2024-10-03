@@ -1,0 +1,29 @@
+{{ $returnValue := "flowchart LR\n" }}
+
+{{ range sort page.Data.Pages "File.ContentBaseName" }}
+    {{ $stepPage := . }}
+    {{ $stepPosition := .File.ContentBaseName }}
+    {{ with $stepPage.Params.flowchart }}
+        {{ $startTag := "["}}
+        {{ $endTag := "]"}}
+        {{ if eq $stepPage.Params.scope "notify"}}
+            {{ $startTag = "[/"}}
+            {{ $endTag = "/]"}}
+        {{ else }}
+            {{ if or (eq $stepPosition "1") (eq (len .flows_to) 0) }}
+                {{ $startTag = "(["}}
+                {{ $endTag = "])"}}
+            {{ else if (gt (len .flows_to) 1) }}
+                {{ $startTag = "{"}}
+                {{ $endTag = "}"}}
+            {{ end }}
+        {{ end }}
+        {{ $nodeDescription := print $stepPosition " <a href='#step_" $stepPosition "'>" .label "</a>" }}
+        {{ $returnValue = print $returnValue $stepPosition $startTag $nodeDescription $endTag "\n"}}
+        {{ range .flows_to }}
+            {{ $returnValue = printf "%s%s --> %s\n" $returnValue $stepPosition . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ return $returnValue }}

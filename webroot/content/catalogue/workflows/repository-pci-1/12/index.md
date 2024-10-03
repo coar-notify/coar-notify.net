@@ -4,5 +4,10 @@ description: The repository records (and optionally displays) the link to the re
 date: 2021-03-08
 type: workflows
 scope: left_node
+flowchart:
+  label: |
+    Record
+    review
+  flows_to: ["13"]
 ---
 

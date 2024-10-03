@@ -9,6 +9,11 @@ description: |
 date: 2021-03-08
 type: workflows
 scope: right_node
+flowchart:
+  label: |
+    Conduct
+    review
+  flows_to: ["9","11"]
 ---
 
 

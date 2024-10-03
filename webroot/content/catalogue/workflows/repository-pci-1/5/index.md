@@ -6,5 +6,10 @@ type: workflows
 scope: left_node
 labels:
   - terminates
+flowchart:
+  label: |
+    Accept
+    decision
+  flows_to: []
 ---
 

@@ -7,5 +7,10 @@ type: workflows
 scope: notify
 sender: right_node
 pattern: tentative-accept
+flowchart:
+  label: |
+    Tentatively
+    Accept
+  flows_to: ["7"]
 ---
 

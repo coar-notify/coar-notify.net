@@ -12,4 +12,9 @@ type: workflows
 scope: notify
 sender: left_node
 pattern: request-endorsement
+flowchart:
+  label: |
+    Request
+    endorsement
+  flows_to: ["3"]
 ---

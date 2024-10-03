@@ -1,2 +1,2 @@
 {{ page.Store.Set "hasMermaid" true }}
-{{ printf "<pre class=\"mermaid\">\n%s\n</pre>\n" .Content | safeHTML }}
+{{ printf "<pre class=\"mermaid\">\n%s\n</pre>\n" . | safeHTML }}
