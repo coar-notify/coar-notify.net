@@ -12,3 +12,4 @@ These are the release notes for the 1.0.0 version of the specification.
 3. Changed all example `origin` and `target` types to _Service_
 4. Made requirement for an `id` in `object` explicit
 5. Removed unused *Request Ingest* and *Announce Ingest* patterns
+6. Re-introduced the IETF's [RFC2119](https://www.ietf.org/rfc/rfc2119.txt) language for requirements
