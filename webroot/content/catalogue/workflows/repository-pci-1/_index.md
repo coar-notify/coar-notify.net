@@ -1,9 +1,8 @@
 ---
 title: PCI Endorsement
-id: repository-pci-1
 description: |
   This is a workflow where the author of a preprint stored in a repository can request an endorsement from PCI.
-left_node: "Repository"
+left_node: "A repository"
 right_node: "PCI"
 date: 2021-03-08
 type: workflows

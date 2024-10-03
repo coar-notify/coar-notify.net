@@ -1,6 +1,5 @@
 ---
 title: PREreview Review
-id: repository-prereview-1
 description: |
   This is a workflow where the author of a preprint stored in a repository can request a review from PREreview.
 left_node: "Repository"
