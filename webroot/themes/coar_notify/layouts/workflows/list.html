@@ -3,7 +3,12 @@
   {{ partial "workflows/badges" . }}
   {{ .Content }}
 
-  {{ partial "workflows/render_mermaid" (.Resources.Get "flowchart.mermaid") }}
+  {{ with .Resources.Get "flowchart.mermaid" }}
+      {{ $mermaidDiagram :=  partial "workflows/render_mermaid" . }}
+
+      {{ $mermaidDiagram | markdownify}}
+  {{ end }}
+
 
 
   {{ $leftNode := .Params.left_node }}

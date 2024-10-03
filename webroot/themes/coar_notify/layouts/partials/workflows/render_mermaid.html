@@ -1,8 +1,6 @@
-{{ $returnValue := ""}}
-{{ with . }}
-    {{ $returnValue := printf "```mermaid\n%s\n```" . | safeHTML }}
-{{ end }}
-{{ return $returnValue}}
+
+{{ return (printf "```mermaid\n%s\n```" .Content)}}
+
 
 {{/*{{ $mermaidResource := .Resources.Get "flowchart.mermaid"}}*/}}
 {{/*{{ with $mermaidResource }}*/}}
