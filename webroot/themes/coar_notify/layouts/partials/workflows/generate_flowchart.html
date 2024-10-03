@@ -7,7 +7,7 @@
         {{ $startTag := "["}}
         {{ $endTag := "]"}}
         {{ if eq $stepPage.Params.scope "notify"}}
-            {{ $startTag = "[/"}}
+            {{ $startTag = "[/↗️ "}}
             {{ $endTag = "/]"}}
         {{ else }}
             {{ if or (eq $stepPosition "1") (eq (len .flows_to) 0) }}

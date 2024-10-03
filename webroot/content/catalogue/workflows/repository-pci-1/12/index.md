@@ -7,7 +7,7 @@ scope: left_node
 flowchart:
   label: |
     Record
-    review
+    Review
   flows_to: ["13"]
 ---
 

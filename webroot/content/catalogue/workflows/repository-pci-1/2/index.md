@@ -15,6 +15,6 @@ pattern: request-endorsement
 flowchart:
   label: |
     Request
-    endorsement
+    Endorsement
   flows_to: ["3"]
 ---

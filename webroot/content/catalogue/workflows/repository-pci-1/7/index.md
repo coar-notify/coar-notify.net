@@ -7,7 +7,7 @@ scope: left_node
 flowchart:
   label: |
     Note
-    status
+    Status
   flows_to: ["8"]
 ---
 

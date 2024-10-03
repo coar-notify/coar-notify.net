@@ -24,7 +24,7 @@ scope: right_node
 flowchart:
   label: |
     Process
-    request
+    Request
   flows_to: ["4","6"]
 ---
 

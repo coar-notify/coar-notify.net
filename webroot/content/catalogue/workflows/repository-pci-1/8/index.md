@@ -12,7 +12,7 @@ scope: right_node
 flowchart:
   label: |
     Conduct
-    review
+    Review
   flows_to: ["9","11"]
 ---
 

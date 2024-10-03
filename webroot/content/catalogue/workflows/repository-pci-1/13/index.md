@@ -10,7 +10,7 @@ pattern: announce-endorsement
 flowchart:
   label: |
     Announce
-    endorsement
+    Endorsement
   flows_to: ["14"]
 ---
 

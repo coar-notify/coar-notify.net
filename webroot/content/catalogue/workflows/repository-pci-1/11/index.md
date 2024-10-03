@@ -10,6 +10,6 @@ pattern: announce-review
 flowchart:
   label: |
     Announce
-    review
+    Review
   flows_to: ["12"]
 ---

@@ -9,7 +9,7 @@ labels:
 flowchart:
   label: |
     Record
-    decision
+    Decision
   flows_to: []
 ---
 
