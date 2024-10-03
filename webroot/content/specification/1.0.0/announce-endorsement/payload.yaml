@@ -4,8 +4,8 @@ type:
   value: ["Announce","coar-notify:EndorsementAction"]
   description: |
     The `type` of this activity MUST include the values:
-    - `Accept`
-    - `coar-notify:EndorsementAction`
+    - *Announce*
+    - *coar-notify:EndorsementAction*
 actor:
   lookup: "overlay-journal"
 origin:

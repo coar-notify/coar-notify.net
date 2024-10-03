@@ -2,7 +2,7 @@ default:
   requirement: OPTIONAL
   description: >
     It identifies a resource on the `target` which is relevant to understanding the notification.
-    It SHOULD be used if the `activity` is related to a resource on the `target`.
+    It SHOULD be used if the activity is related to a resource on the `target`.
     When used, `context` MUST at least have an `id` property, the value of which MUST be a URI.
   value:
     id: "https://some-organisation.org/resource/0021"

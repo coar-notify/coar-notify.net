@@ -4,8 +4,8 @@ type:
   value: ["Announce","coar-notify:ReviewAction"]
   description: |
     The `type` of this activity MUST include the values:
-    - `Announce`
-    - `coar-notify:ReviewAction`
+    - *Announce*
+    - *coar-notify:ReviewAction*
 actor:
   lookup: "review-service"
 origin:
@@ -20,11 +20,11 @@ object:
   description: |
     This represents the review. It:
     * MUST have an `id` which identifies the review resource.
-    * `type` should include the value *Document* from *Activity Streams 2.0*, and *sorg:Review*
+    * `type` should include the value *Document* from Activity Streams 2.0, and *sorg:Review*
     * `ietf:cite-as` contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.
     * SHOULD have an `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the endorsement resource.
     * SHOULD have a `type` describing the content file, which SHOULD include the values:
-      * *Document* from *Activity Streams 2.0*
+      * *Document* from Activity Streams 2.0
       * *sorg:Review*
 context:
   lookup: "preprint"

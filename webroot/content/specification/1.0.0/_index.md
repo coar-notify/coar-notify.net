@@ -21,4 +21,4 @@ on [Activity Streams 2.0](https://www.w3.org/TR/activitystreams-core/), with som
 In the COAR Notify protocol, we call these standardised payloads ***Patterns***.
 
 ## Patterns
-All COAR Notify patterns MUST define an *Activity Streams 2.0* `activity`. The following properties and their descriptions represents a **_baseline_** set of requirements. The individual patterns may add additional constraints. The workflows which use the patterns may, in turn, add additional constraints.
+All COAR Notify patterns MUST define an Activity Streams 2.0 activity. The following properties and their descriptions represents a **_baseline_** set of requirements. The individual patterns may add additional constraints. The workflows which use the patterns may, in turn, add additional constraints.

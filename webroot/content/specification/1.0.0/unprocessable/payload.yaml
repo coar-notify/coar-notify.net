@@ -4,15 +4,15 @@ type:
   value: ["Flag","coar-notify:UnprocessableNotification"]
   description: |
     The `type` of this activity MUST include the values:
-    - `Flag`
-    - `coar-notify:UnprocessableNotification`
+    - *Flag*
+    - *coar-notify:UnprocessableNotification*
 origin:
   lookup: "generic-organisation"
 target:
   lookup: "generic-service"
 object:
   description: >
-    The `object` refers to the previous `activity` that was not processable.
+    The `object` refers to the previous activity that was not processable.
     It MUST contain an `id`.
   value:
     id: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"

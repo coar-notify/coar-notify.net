@@ -2,7 +2,7 @@ id:
   value: "urn:uuid:94ecae35-dcfd-4182-8550-22c7164fe23f"
 type:
   value: ["Announce"]
-  description: "The `type` of this activity MUST include the value `Announce`"
+  description: "The `type` of this activity MUST include the value *Announce*"
 actor:
   lookup: "overlay-journal"
 origin:

@@ -15,18 +15,19 @@ preprint:
       type: [ "Article","sorg:ScholarlyArticle" ]
       "mediaType": "application/pdf"
   description: |
-    * An `id` which is the HTTP URI of the "landing page" for the resource.
-    * A `type` which should include the value *AboutPage* from schema.org.
-    * An `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.
-    * An `ietf:item` containing the details of the actual content resource. The `ietf:item` has:
-      * An `id` containing the HTTP URI of the content file for the resource.
-      * A `type` describing the content file.
-      * A `mediaType` which contains the MIME Type of the content file.
+    This `object` describes a preprint. It:
+    * MUST have an `id` which MUST be the HTTP URI of the "landing page" for the resource.
+    * MUST have a `type` which SHOULD include the value *AboutPage* from schema.org.
+    * SHOULD have an `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.
+    * MUST have an `ietf:item` containing the details of the actual content resource. The `ietf:item`:
+      * MUST have an `id` containing the HTTP URI of the content file for the resource.
+      * MUST have a `type` describing the content file.
+      * MUST have a `mediaType` which contains the MIME Type of the content file.
 endorsement-offer:
   description: >
-    It is the complete payload (without the `@context` property) of the *Offer* `activity` to which this pattern is a response.
-    In this case, the `object` contains an inner `object` which represents the resource which was being offered, rather than an `activity`.
-    Note that the value of the `inReplyTo` property is the same as the value of the `id` property of the `object`, because both point to the original *Offer* `activity`.
+    It is the complete payload (without the `@context` property) of the *Offer* activity to which this pattern is a response.
+    In this case, the `object` contains an inner `object` which represents the resource which was being offered, rather than an activity.
+    Note that the value of the `inReplyTo` property MUST be the same as the value of the `id` property of the `object`, because both point to the original *Offer* activity.
   value:
     actor:
       id: "https://orcid.org/0000-0002-1825-0097"

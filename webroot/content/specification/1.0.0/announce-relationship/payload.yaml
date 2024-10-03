@@ -4,8 +4,8 @@ type:
   value: ["Announce","coar-notify:RelationshipAction"]
   description: |
     The `type` of this activity MUST include the values:
-    - `Announce`
-    - `coar-notify:RelationshipAction`
+    - *Announce*
+    - *coar-notify:RelationshipAction*
 actor:
   lookup: "research-organisation"
 origin:
@@ -20,9 +20,10 @@ object:
     "as:relationship": "http://purl.org/vocab/frbr/core#supplement"
     "as:object": "https://another-research-organisation.org/repository/datasets/item/201203421/"
   description: |
-    * An `id` which contains the URI for the relationship with the target-hosted resource
-    * A `type` which should describes the type of the relationship and should include a value from *Activity Streams 2.0*
-    * A 'triple' describing the relationship, in the form:
+    This describes the relationship which is being announced. It:
+    * MUST have an `id` which contains the URI for the relationship with the target-hosted resource
+    * MUST have a `type` which describes the type of the relationship and which SHOULD include a value from Activity Streams 2.0
+    * MUST have a 'triple' describing the relationship, in the form:
       * `as:subject`: containing the URI for the local resource
       * `as:relationship`: containing a relationship URI
       * `as:object`: containing the URI for the remote resource
@@ -36,7 +37,7 @@ context:
       type: [ "Article","sorg:Dataset" ]
       "mediaType": "application/zip"
   description: |
-    In this example, this identifies the resource on the `target` which is the object of the relationship expressed as a "triple" in the `object`. Note that, therefore, the value of the `id` in the `context` is the same as the value of the `as:object` in the "triple".
+    In this example, this identifies the resource on the `target` which is the object of the relationship expressed as a "triple" in the `object`. Note that, therefore, the value of the `id` in the `context` MUST be the same as the value of the `as:object` in the "triple".
     * MUST have an `id` which in this example is the HTTP URI of the "landing page" for the resource.
     * SHOULD have a `type` which, in the case of a repository landing page, SHOULD include the value *AboutPage* from schema.org.
     * SHOULD have an `ietf:cite-as` which SHOULD contain the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.

@@ -2,7 +2,7 @@ id:
   value: "urn:uuid:46956915-e3fe-4528-8789-1d325a356e4f"
 type:
   value: "Undo"
-  description: "The `type` of this activity MUST include the value `Undo`"
+  description: "The `type` of this activity MUST include the value *Undo*"
 actor:
   lookup: "generic-organisation"
 origin:
@@ -15,7 +15,7 @@ object:
     type: 'Offer'
     object: "https://some-organisation.org/resource/0021"
   description: |
-    This is the *Offer* `activity` which is being "undone". It:
-    * MUST have an `id` which identifies the original *Offer* `activity` which this notification is "undoing".
+    This is the *Offer* activity which is being "undone". It:
+    * MUST have an `id` which identifies the original *Offer* activity which this notification is "undoing".
     * MUST have an `object` which MUST contain the `id` of the `object` of the original *Offer*
     * MUST have a `type` which MUST include *Offer*
