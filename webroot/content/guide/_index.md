@@ -11,6 +11,8 @@ menus:
   main:
     weight: 30
     name: "Guide"
+aliases:
+  - "/implementation/"
 ---
 
 Welcome to the COAR Notify Implementation Guide!
