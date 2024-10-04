@@ -49,12 +49,21 @@ a.undecorated-link {
   color: $main-content-text-color;
 }
 
-//a.a-img:link,
-//a.a-img:link:focus,
-//a.a-img:link:hover,
-//a.a-img:link:active {
-//  text-underline: none;
+//a.external-link:after {
+//    content: " ↗️";
+//    font-size: .5em;
 //}
+
+a.external-link:after {
+  display: inline-block;
+  content: "\F1C5";
+  font-family: "bootstrap-icons";
+  font-size: 0.5em;
+  vertical-align: super;
+  margin-left: 0.2em;
+  //background-size: 1rem 1rem;
+}
+
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, {
   text-decoration: none;

@@ -1,0 +1,33 @@
+<table class="table sortable-table table-sm table-striped">
+	<caption>{{ .caption }}</caption>
+	<thead>
+	<tr class="column-header-row">
+		<th>Name</th>
+
+		<th>Type(s)</th>
+		<th>Homepage</th>
+		<th>&nbsp;</th>
+	</tr>
+	</thead>
+	<tbody>
+  {{ range .rows }}
+		<tr>
+			<td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+			<td>{{ delimit .Params.implementation_types ", " }}</td>
+			<td>
+          {{ with .Params.homepage }}
+						<a href="{{ . }}" class="external-link">{{ . }}</a>
+          {{ end }}
+			</td>
+			<td>
+          {{- with .Resources.GetMatch "logo.*" -}}
+						<img src="{{ .RelPermalink }}" alt="{{ .Title }} logo" class="logo"/>
+          {{- end -}}
+			</td>
+		</tr>
+  {{ end }}
+	</tbody>
+</table>
+
+
+

@@ -1,0 +1,44 @@
+{{ define "main" }}
+	<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+	<div class="row">
+		<div class="col-9">
+			<div class="row">
+				<div class="col field-name">
+					System name
+				</div>
+				<div class="col">
+            {{ .Title }}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col field-name">
+					Description
+				</div>
+				<div class="col">
+            {{ .Description }}
+				</div>
+			</div>
+			<div class="row">
+				<div class="col field-name">
+					Homepage
+				</div>
+				<div class="col">
+					<a href="{{ .Params.homepage }}">{{ .Params.homepage }}</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col field-name">
+					Supported workflows
+				</div>
+				<div class="col">
+				</div>
+			</div>
+		</div>
+		<div class="col-3">
+        {{ with .Resources.GetMatch "logo.*" }}
+					<img src="{{ .Permalink }}" class="system-page-logo" alt="Logo for {{ page.Title }}"/>
+        {{ end }}
+		</div>
+	</div>
+  {{ .Content }}
+{{ end }}

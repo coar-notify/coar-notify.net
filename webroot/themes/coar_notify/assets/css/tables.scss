@@ -62,3 +62,9 @@ td.number {
 td.nowrap {
     white-space: nowrap;
 }
+
+td img.logo {
+    //max-width: 100px;
+    max-height: 40px;
+    text-align: left;
+}

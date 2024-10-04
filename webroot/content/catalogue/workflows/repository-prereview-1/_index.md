@@ -7,9 +7,11 @@ right_node: "PreReview"
 date: 2024-06-20
 type: workflows
 use-cases: [peer-review]
-owner: prereview
 status: draft
 version: 1.0.0
+implementations:
+  - bioRxiv
+  - PREreview
 ---
 
 This workflow was originally developed between BiorXiv and PREreview, but it can be used by other repositories wishing to interoperate with PREreview.

@@ -29,6 +29,7 @@ taxonomies:
   tag: "tags"
   pattern-category: "pattern-categories"
   use-case: "use-cases"
+  implementation-type: "implementation-types"
 caches:
   getjson:
     dir: :cacheDir/:project

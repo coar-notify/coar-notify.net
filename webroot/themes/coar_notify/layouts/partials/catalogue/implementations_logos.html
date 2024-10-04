@@ -1,0 +1,20 @@
+{{ $implementationPages := where site.RegularPages.ByTitle "Type" "implementations" }}
+
+
+<div class="row">
+    {{ range $implementationPages }}
+			<div class="col-12 col-sm-6 col-lg-3">
+          {{ $systemPageLink := .Permalink}}
+          {{ $systemPageTitle := .Title}}
+				<a href="{{ $systemPageLink }}" class="card-as-link">
+					<div style="margin: 10px; padding: 10px;">
+						<div>
+                {{ with .Resources.GetMatch "logo.*" }}
+									<img src="{{ .Permalink }}" class="system-list-logo" alt="Logo for {{ $systemPageTitle }}"/>
+                {{ end }}
+						</div>
+					</div>
+				</a>
+			</div>
+    {{ end }}
+</div>

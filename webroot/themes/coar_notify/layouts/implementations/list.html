@@ -1,0 +1,9 @@
+{{ define "main" }}
+    <div>
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+        {{ partial "catalogue/implementations_table" (dict "rows" .Data.Pages "caption" "Implementations") }}
+{{/*        {{ partial "catalogue/implementations_logos" . }}*/}}
+    </div>
+
+{{ end }}
