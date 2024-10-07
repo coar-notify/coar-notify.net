@@ -12,6 +12,9 @@ vocabulary_terms:
   - RelationshipAction
   - ReviewAction
   - UnprocessableNotification
+required_properties: ["@context","id","type","origin","target","object"]
+recommended_properties: ["actor"]
+optional_properties: ["inReplyTo","context","summary"]
 ---
 
 COAR Notify notifications are designed to be sent and received using the [W3C Linked Data Notifications (LDN)](https://www.w3.org/TR/2017/REC-ldn-20170502/) standard. Payloads have a predictable structure, based primarily

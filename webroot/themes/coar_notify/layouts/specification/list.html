@@ -7,8 +7,18 @@
 			<div class="col-9">
           {{ .Content }}
 				<h3>The <code>activity</code> MUST contain the following</h3>
-
-          {{ range slice "@context" "id" "type" "origin" "target" "object" }}
+          {{ range .Params.required_properties }}
+              {{ $label := . }}
+              {{ $p1 := index (partial "payload/process_property" (dict "version" $specificationVersion "label" $label "value" (dict "lookup" "default"))) $label }}
+							<h4 style="margin-bottom: 0;">{{ $label }}</h4>
+							<div style="margin-bottom: 15px;">
+                  {{ $documentation := printf "`%s` is %s. %s" $label $p1.requirement $p1.description }}
+                  {{ $documentation | markdownify }}
+							</div>
+          {{ end }}
+				<br/>
+				<h3>The <code>activity</code> SHOULD contain the following</h3>
+          {{ range .Params.recommended_properties }}
               {{ $label := . }}
               {{ $p1 := index (partial "payload/process_property" (dict "version" $specificationVersion "label" $label "value" (dict "lookup" "default"))) $label }}
 							<h4 style="margin-bottom: 0;">{{ $label }}</h4>
@@ -19,7 +29,7 @@
           {{ end }}
 				<br/>
 				<h3>The <code>activity</code> MAY contain the following</h3>
-          {{ range slice "actor" "inReplyTo" "context" "summary" }}
+          {{ range .Params.optional_properties }}
               {{ $label := . }}
               {{ $p1 := index (partial "payload/process_property" (dict "version" $specificationVersion "label" $label "value" (dict "lookup" "default"))) $label }}
 							<h4 style="margin-bottom: 0;">{{ $label }}</h4>
