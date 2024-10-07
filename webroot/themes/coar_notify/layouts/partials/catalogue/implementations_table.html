@@ -21,7 +21,7 @@
           {{ end }}
 			</td>
 			<td>
-          {{ $implementationID := path.Base .File.Dir }}
+          {{ $implementationID := .File.ContentBaseName }}
           {{ $workflows := where site.Pages ".Params.implementations" "intersect" (slice $implementationID) }}
           {{ with $workflows }}
               {{ partial "delimited_linked_page_list" $workflows.ByTitle }}
