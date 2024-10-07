@@ -21,10 +21,7 @@ object:
     This represents the review. It:
     * MUST have an `id` which identifies the review resource.
     * MUST have a `type` which MUST include the value *Document* from Activity Streams 2.0, and *sorg:Review*
-    * SHOULD have an `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the endorsement resource.
-    * SHOULD have a `type` describing the content file, which SHOULD include the values:
-      * *Document* from Activity Streams 2.0
-      * *sorg:Review*
+    * SHOULD have an `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the review resource.
 context:
   lookup: "preprint"
 inReplyTo:

@@ -20,8 +20,8 @@ object:
   description: |
     This represents the endorsement. It:
     * MUST have an `id` which identifies the endorsement resource.
+    * MUST have a `type` which MUST include the value *Document* from Activity Streams 2.0
     * SHOULD have an `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the endorsement resource.
-    * A `type` describing the content file.
 context:
   lookup: "preprint"
 inReplyTo:
