@@ -6,7 +6,7 @@
 
 		<th>Type(s)</th>
 		<th>Homepage</th>
-		<th>&nbsp;</th>
+		<th>Implemented Workflows</th>
 	</tr>
 	</thead>
 	<tbody>
@@ -20,9 +20,11 @@
           {{ end }}
 			</td>
 			<td>
-          {{- with .Resources.GetMatch "logo.*" -}}
-						<img src="{{ .RelPermalink }}" alt="{{ .Title }} logo" class="logo"/>
-          {{- end -}}
+          {{ $implementationID := path.Base .File.Dir }}
+          {{ $workflows := where site.Pages ".Params.implementations" "intersect" (slice $implementationID) }}
+          {{ with $workflows }}
+              {{ partial "delimited_linked_page_list" $workflows.ByTitle }}
+          {{ end }}
 			</td>
 		</tr>
   {{ end }}

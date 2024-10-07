@@ -24,10 +24,11 @@
 				</td>
 				<td>
             {{ with .Params.implementations }}
-                {{ $implementation := site.GetPage (printf "/catalogue/implementations/%s" .) }}
-                {{ with $implementation }}
-                    {{ .Title }}
+                {{ $pageArray := slice }}
+                {{ range . }}
+                    {{ $pageArray = $pageArray | append (site.GetPage (printf "/catalogue/implementations/%s" . )) }}
                 {{ end }}
+								{{ partial "delimited_linked_page_list" $pageArray.ByTitle }}
             {{ end }}
 				</td>
 				<td>
