@@ -1,15 +1,13 @@
 ---
-title: The repository accepts the decision and takes no further action
-description: If PCI sent a Reject notification in step 4 then the workflow ends here
+title: The repository notes that the preprint is under review
+description: The repositorymay wish to internally prevent the preprint from being offered elsewhere for review while this review is ongoing
 date: 2021-03-08
 type: workflows
 scope: left_node
-labels:
-  - terminates
 flowchart:
   label: |
-    Accept
-    Decision
-  flows_to: []
+    Note
+    Status
+  flows_to: ["6"]
 ---
 

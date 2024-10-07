@@ -1,13 +1,15 @@
 ---
-title: The repository notes that the preprint is under review
-description: The repositorymay wish to internally prevent the preprint from being offered elsewhere for review while this review is ongoing
+title: Announce Review
+description: |
+  Having decided to endorse the preprint, PCI publishes the review and announces this
 date: 2021-03-08
 type: workflows
-scope: left_node
+scope: notify
+sender: right_node
+pattern: announce-review
 flowchart:
   label: |
-    Note
-    Status
+    Announce
+    Review
   flows_to: ["8"]
 ---
-

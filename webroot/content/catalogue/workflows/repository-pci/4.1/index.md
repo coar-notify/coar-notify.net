@@ -9,6 +9,6 @@ sender: right_node
 pattern: reject
 flowchart:
   label: Reject
-  flows_to: ["5"]
+  flows_to: ["5.1"]
 ---
 
