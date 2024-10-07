@@ -1,0 +1,13 @@
+{{/*{{ $returnValue := slice }}*/}}
+{{/*{{ range where site.Pages "Type" "workflows" }}*/}}
+{{/*    {{ range .Params.implementations }}*/}}
+{{/*        {{ $implementationPage := site.GetPage (print "/catalogue/implementations/" .) }}*/}}
+{{/*        {{ $returnValue = $returnValue | append $implementationPage }}*/}}
+{{/*    {{ end }}*/}}
+{{/*{{ end }}*/}}
+{{/*{{ $returnValue = $returnValue | uniq }}*/}}
+{{/*{{ return $returnValue }}*/}}
+
+
+{{ $returnValue := (where site.RegularPages "Type" "implementations") }}
+{{ return $returnValue }}

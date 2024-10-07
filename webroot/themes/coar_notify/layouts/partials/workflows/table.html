@@ -3,7 +3,6 @@
 	<thead>
 	<tr class="column-header-row">
 		<th>Workflow</th>
-		<th>Owner</th>
 		<th>Participants</th>
 		<th>Notify Version</th>
 		<th>Implementations</th>
@@ -12,12 +11,10 @@
 	</thead>
 	<tbody>
   {{ range .rows }}
-      {{ $ownerPage := site.GetPage (print "/catalogue/systems/" .Params.owner) }}
 			<tr>
 				<td>
 					<a href="{{ .Permalink }}">{{ .Title }}</a>
 				</td>
-				<td><a href="{{ $ownerPage.Permalink }}">{{ $ownerPage.Title }}</a></td>
 				<td class="nowrap">{{ .Params.left_node }} <-> {{ .Params.right_node }}</td>
 				<td>
 					<a href="/specification/{{ partial "versioning/function_get_version" . }}/">{{ partial "versioning/function_get_version" . }}</a>

@@ -1,9 +1,10 @@
 {{ define "main" }}
-    <div>
-        <h1>{{ .Title }}</h1>
-        {{ .Content }}
-        {{ partial "catalogue/implementations_table" (dict "rows" .Data.Pages "caption" "Implementations") }}
-{{/*        {{ partial "catalogue/implementations_logos" . }}*/}}
-    </div>
+	<div>
+		<h1>{{ .Title }}</h1>
+      {{ .Content }}
+      {{ $liveImplementations := partial "catalogue/function_get_live_implementations.html" }}
+      {{ partial "catalogue/implementations_table" (dict "rows" $liveImplementations "caption" "Implementations") }}
+      {{ partial "catalogue/implementations_logos" $liveImplementations }}
+	</div>
 
 {{ end }}

@@ -1,7 +1,7 @@
 {{ define "main" }}
 	<h1>{{ .Title }}</h1>
   {{ .Content }}
-  {{ partial "workflows/table" (dict "caption" "Workflows" "rows" .Sections) }}
+  {{ partial "workflows/table" (dict "caption" "Implemented Workflows" "rows" .Sections) }}
   {{/*    <div>*/}}
   {{/*        <ul>*/}}
   {{/*            {{ range .Data.Pages }}*/}}
