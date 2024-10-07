@@ -10,6 +10,8 @@ origin:
   lookup: "generic-organisation"
 target:
   lookup: "generic-service"
+actor:
+  lookup: "default"
 object:
   description: >
     The `object` refers to the previous activity that was not processable.

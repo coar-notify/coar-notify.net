@@ -5,6 +5,8 @@ type:
   description: "The `type` of this activity MUST include the value *TentativeAccept*"
 object:
   lookup: "endorsement-offer"
+actor:
+  lookup: "default"
 origin:
   lookup: "generic-service"
 target:

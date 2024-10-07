@@ -7,6 +7,8 @@ origin:
   lookup: "generic-service"
 target:
   lookup: "generic-organisation"
+actor:
+  lookup: "default"
 object:
   lookup: "endorsement-offer"
 inReplyTo:

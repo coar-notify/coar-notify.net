@@ -9,6 +9,8 @@ object:
   lookup: "endorsement-offer"
 target:
   lookup: "default"
+actor:
+  lookup: "default"
 inReplyTo:
   requirement: REQUIRED
   value: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
