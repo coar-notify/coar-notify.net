@@ -11,9 +11,9 @@ default:
     inbox: "https://generic-service-1.com/origin-system/inbox/"
 pci:
   value:
-    id: "https://peercommunityin.org"
+    id: "https://evolbiol.peercommunityin.org/coar_notify/"
     type: "Service"
-    inbox: "https://peercommunityin.org/inbox/"
+    inbox: "https://evolbiol.peercommunityin.org/coar_notify/inbox/"
 # GENERIC SYSTEMS FOR PATTERNS
 review-service:
   value:
