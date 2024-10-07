@@ -4,7 +4,7 @@ type:
   value: ["Offer","coar-notify:ReviewAction"]
   description: |
     The `type` of this activity MUST include the values:
-    - `Offer`
+    - *Offer*
     - `coar-notify:ReviewAction`
 actor:
   lookup: "author"

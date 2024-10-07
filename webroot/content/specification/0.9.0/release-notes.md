@@ -67,7 +67,7 @@ These general changes have been made across all patterns and scenarios.
 `actor` added
 
 ##### Acknowledgement patterns
-* `inReplyTo` changed to just contain URI to `offer` activity
+* `inReplyTo` changed to just contain URI to *Offer* activity
 * `context` added
 * `actor` added
 
@@ -79,7 +79,7 @@ These general changes have been made across all patterns and scenarios.
 * `context` added
 
 ##### Announcement in reply to pattern
-* `inReplyTo` changed to just contain URI to `offer` activity
+* `inReplyTo` changed to just contain URI to *Offer* activity
 * `context` added
 * `actor` added
 
@@ -106,7 +106,7 @@ The following terms from the COAR Notify vocabulary have been removed:
 * `actor` added
 
 ##### Scenario 2
-* `inReplyTo` changed to just contain URI to `offer` activity in steps 4 and 6
+* `inReplyTo` changed to just contain URI to *Offer* activity in steps 4 and 6
 * `object` in steps 4 and 6 no longer references the resource that was reviewed
 * `context` added in steps 4 and 6
 * `actor` added
@@ -122,14 +122,14 @@ The following terms from the COAR Notify vocabulary have been removed:
 * `actor` added
 
 ##### Scenario 5
-* `inReplyTo` changed to just contain URI to `offer` activity in steps 3 and 5
+* `inReplyTo` changed to just contain URI to *Offer* activity in steps 3 and 5
 * `object` added in step 3
 * `object` in step 5 no longer references the resource that was reviewed
 * `context` added in steps 3 and 5
 * `actor` added
 
 ##### Scenario 6
-* `inReplyTo` changed to just contain URI to `offer` activity in step 4
+* `inReplyTo` changed to just contain URI to *Offer* activity in step 4
 * `object` in steps 7 and 9 no longer references the resource that was reviewed
 * `context` added in steps 4, 7 and 9
 * `actor` added
@@ -145,7 +145,7 @@ The following terms from the COAR Notify vocabulary have been removed:
 * `actor` added
 
 ##### Scenario 9
-* `inReplyTo` changed to just contain URI to `offer` activity in steps 5 and 9
+* `inReplyTo` changed to just contain URI to *Offer* activity in steps 5 and 9
 * `object` in steps 5 and 9 no longer references the resource that was reviewed
 * `context` added in steps 5 and 9
 * `actor` added
