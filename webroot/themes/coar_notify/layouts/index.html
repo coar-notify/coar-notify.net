@@ -44,6 +44,8 @@
                     </a>
                 </div>
             </div>
+            {{ $implementationPages := (where site.RegularPages "Type" "implementations")}}
+            {{ partial "catalogue/implementations_logos" $implementationPages }}
         </div>
         <div class="col-md-3">
             <h3>Recent News</h3>
