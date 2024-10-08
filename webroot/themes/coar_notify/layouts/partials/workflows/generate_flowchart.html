@@ -11,7 +11,11 @@
         {{ $label := print $stepPosition " <a href='#step_" $stepPosition "'>" .label "</a>"}}
         {{ $shape := "rect" }}
         {{ if eq $stepPage.Params.scope "notify"}}
-            {{ $shape = "doc" }}
+            {{ if .multiple}}
+                {{ $shape = "docs" }}
+            {{ else }}
+                {{ $shape = "doc" }}
+            {{ end }}
         {{ else }}
             {{ if eq $stepPosition "1" }}
                 {{ $shape = "circle" }}

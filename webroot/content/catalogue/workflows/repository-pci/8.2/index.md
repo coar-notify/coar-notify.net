@@ -1,11 +1,10 @@
 ---
 title: Revise Submission
-description: 
+description: |
+  The author revises their manuscript and provides a new version on the repository.
 date: 2021-03-08
 type: workflows
 scope: left_node
-labels:
-#  - terminates
 flowchart:
   label: |
     Revise

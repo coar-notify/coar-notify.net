@@ -1,7 +1,7 @@
 ---
-title: Announce Review
+title: Announce Review(s)
 description: |
-  Having decided to endorse the preprint, PCI publishes the review and announces this
+  Having decided to endorse the preprint, PCI publishes the review(s) and announces this
 date: 2021-03-08
 type: workflows
 scope: notify
@@ -10,6 +10,7 @@ pattern: announce-review
 flowchart:
   label: |
     Announce
-    Review
+    Review(s)
   flows_to: ["8"]
+  multiple: true
 ---
