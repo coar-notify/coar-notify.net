@@ -1,13 +1,14 @@
 ---
-title: The repository notes that the preprint is under review
-description: The repositorymay wish to internally prevent the preprint from being offered elsewhere for review while this review is ongoing
+title: Reject
+description: |
+  PCI rejects the offer to endorse the preprint
 date: 2021-03-08
 type: workflows
-scope: left_node
+scope: notify
+sender: right_node
+pattern: reject
 flowchart:
-  label: |
-    Note
-    Status
-  flows_to: ["6"]
+  label: Reject
+  flows_to: ["5.1"]
 ---
 

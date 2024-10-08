@@ -9,6 +9,6 @@ flowchart:
   label: |
     Revise
     Submission
-  flows_to: ["1"]
+  flows_to: []
 ---
 
