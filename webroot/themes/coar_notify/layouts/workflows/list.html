@@ -1,11 +1,12 @@
 {{ define "main" }}
 {{/*    {{ $leftNode := .Params.left_node }}*/}}
 {{/*    {{ $rightNode := .Params.right_node }}*/}}
+{{ partial "workflows/badges" . }}
 		<h1>{{ .Title }}</h1>
-    {{ partial "workflows/badges" . }}
-    {{ .Content }}
 
     {{ partial "workflows/display_flowchart" .}}
+{{ partial "rfc2119" . }}
+{{ .Content }}
 
 {{/*		<div class="row">*/}}
 {{/*			<div class="col-3 column-left">*/}}
