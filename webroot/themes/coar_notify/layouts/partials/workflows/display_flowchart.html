@@ -1,0 +1,52 @@
+{{ $flowchart := "flowchart LR\n" }}
+{{ $page := .}}
+
+{{ $flowchart = printf "%sclassDef left_node fill:%s;\n" $flowchart site.Params.mermaid.left_node_colour }}
+{{ $flowchart = printf "%sclassDef right_node fill:%s;\n" $flowchart site.Params.mermaid.right_node_colour }}
+{{ $flowchart = printf "%sclassDef notify fill:%s;\n" $flowchart site.Params.mermaid.notify_node_colour }}
+
+{{ range sort $page.Data.Pages "File.ContentBaseName" }}
+    {{ $stepPage := . }}
+    {{ $stepPosition := .File.ContentBaseName }}
+    {{ with $stepPage.Params.flowchart }}
+        {{ $label := print $stepPosition " <a href='" $page.Permalink  $stepPosition "'>" .label "</a>"}}
+        {{ $shape := "rect" }}
+        {{ if eq $stepPage.Params.scope "notify"}}
+            {{ if .multiple}}
+                {{ $shape = "docs" }}
+            {{ else }}
+                {{ $shape = "doc" }}
+            {{ end }}
+        {{ else }}
+            {{ if eq $stepPosition "1" }}
+                {{ $shape = "circle" }}
+            {{ else if eq (len .flows_to) 0 }}
+                {{ $shape = "stadium" }}
+            {{ else if (gt (len .flows_to) 1) }}
+                {{ $shape = "diamond" }}
+            {{ end }}
+        {{ end }}
+
+        {{ $flowchart = printf "%s%s@{shape: %s, label: \"%s\"}\n" $flowchart $stepPosition $shape $label}}
+        {{ range .flows_to }}
+            {{ $flowchart = printf "%s%s --> %s\n" $flowchart $stepPosition . }}
+        {{ end }}
+
+        {{ if eq $stepPage.Params.scope "notify"}}
+            {{ $flowchart = printf "%sclass %s %s\n" $flowchart $stepPosition "notify;" }}
+        {{else if eq $stepPage.Params.scope "left_node" }}
+            {{ $flowchart = printf "%sclass %s %s\n" $flowchart $stepPosition "left_node;" }}
+        {{ else if eq $stepPage.Params.scope "right_node" }}
+            {{ $flowchart = printf "%sclass %s %s\n" $flowchart $stepPosition "right_node;" }}
+        {{ end }}
+
+    {{ end }}
+{{ end }}
+
+{{ with $flowchart }}
+	<span class="key-label">Key (colour coding):</span>
+	<span class="key-colour-code-box" style="background-color: {{ site.Params.mermaid.left_node_colour }}; ">{{ $page.Params.left_node }}</span>
+	<span class="key-colour-code-box" style="background-color: {{ site.Params.mermaid.right_node_colour }}; ">{{ $page.Params.right_node }}</span>
+	<span class="key-colour-code-box" style="background-color: {{ site.Params.mermaid.notify_node_colour }}; ">notification</span>
+  {{ partial "workflows/render_mermaid" . }}
+{{ end }}

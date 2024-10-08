@@ -1,6 +1,10 @@
 {{ define "main" }}
+		{{ $workflowPage := .CurrentSection }}
     {{ partial "workflows/badges" . }}
-		<h1>{{ .CurrentSection.Title}} workflow, step {{ .File.ContentBaseName}}: {{ .Title }}</h1>
+
+		<h1>{{ $workflowPage.Title}} workflow</h1>
+    {{ partial "workflows/display_flowchart" $workflowPage }}
+		<h2>Step {{ .File.ContentBaseName}}: {{ .Title }}</h2>
     {{ partial "rfc2119" . }}
 		<p>{{ .Description | markdownify }}</p>
 		<div data-pagefind-ignore>
@@ -23,7 +27,7 @@
         {{ else }}
 
         {{ end }}
-
+		</div>
 
         {{/*    {{ partial "specification/badges" . }}*/}}
         {{/*    <h1>{{ .Title }}</h1>*/}}
@@ -41,5 +45,5 @@
         {{/*            <p class="read-more"><a href="./index.json">Get raw JSON-LD</a></p>*/}}
         {{/*        </div>*/}}
         {{/*    </div>*/}}
-
+    {{ partial "mermaid_initialisation" . }}
 {{ end }}
