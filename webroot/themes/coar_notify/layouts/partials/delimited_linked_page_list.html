@@ -1,7 +1,12 @@
 {{ $array := slice}}
+{{ $with_links := .with_links }}
 
-{{ range . }}
-    {{ $array = $array | append (print "<a href='" .Permalink "'>" (.Title) "</a>")}}
+{{ range .pages }}
+    {{ if $with_links }}
+        {{ $array = $array | append (print "<a href='" .Permalink "'>" (.Title) "</a>")}}
+    {{ else }}
+        {{ $array = $array | append .Title }}
+    {{ end}}
 {{ end }}
 
-{{ delimit $array "&nbsp;|&nbsp;" | markdownify }}
+{{ delimit $array ", " | markdownify }}

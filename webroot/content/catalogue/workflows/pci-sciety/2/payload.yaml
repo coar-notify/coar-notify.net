@@ -1,7 +1,7 @@
 origin:
   lookup: "pci"
 target:
-  lookup: "repository"
+  lookup: "sciety"
 object:
   lookup: "pci-endorsement"
 actor:

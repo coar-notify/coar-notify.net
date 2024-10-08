@@ -6,7 +6,7 @@ default:
     - MUST have a `type` which MUST be one of: *Application*, *Group*, *Organization*, *Person* or *Service* from Activity Streams 2.0.
     - MAY have a `name`
     
-    The inclusion of `actor` is `RECOMMENDED` in order to facilitate the broadest possible interoperability beyond the immediate COAR Notify context. Some external systems which can usefully consume notifications based on Activity Streams 2.0 may require the presence of an `actor` to function correctly.
+    The inclusion of `actor` is highly RECOMMENDED in order to facilitate the broadest possible interoperability beyond the immediate COAR Notify context. Some external systems which can usefully consume notifications based on Activity Streams 2.0 may require the presence of an `actor` to function correctly.
   value:
     id: "https://generic-service-1.com"
     name: "Generic Service"

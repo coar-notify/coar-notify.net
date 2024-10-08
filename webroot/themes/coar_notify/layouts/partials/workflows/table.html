@@ -23,9 +23,10 @@
             {{ with .Params.implementations }}
                 {{ $pageArray := slice }}
                 {{ range . }}
-                    {{ $pageArray = $pageArray | append (site.GetPage (printf "/catalogue/implementations/%s" . )) }}
+										{{ $implementationPage := (where site.RegularPages "File.ContentBaseName" . ) }}
+                    {{ $pageArray = $pageArray | append $implementationPage }}
                 {{ end }}
-								{{ partial "delimited_linked_page_list" $pageArray.ByTitle }}
+								{{ partial "delimited_linked_page_list" (dict "pages" $pageArray.ByTitle "with_links" true) }}
             {{ end }}
 				</td>
 				<td>

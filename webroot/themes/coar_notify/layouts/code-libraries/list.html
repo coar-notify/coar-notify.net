@@ -1,0 +1,35 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <table class="table sortable-table table-sm table-striped">
+        <thead>
+        <tr class="column-header-row">
+            <th>Name</th>
+            <th>Language</th>
+            <th>Sources</th>
+            <th class="no-sort">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+{{/*        {{ range .Data.Pages }}*/}}
+{{/*            <tr>*/}}
+{{/*                <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>*/}}
+{{/*                <td class="nowrap">{{ .Title }}</td>*/}}
+{{/*                <td>{{ .Params.programming_language }}</td>*/}}
+{{/*                <td class="nowrap"><a href="{{ .Params.sources }}" class="external-link">{{ .Params.sources }}</a></td>*/}}
+{{/*                <td>{{ .Description | markdownify }}</td>*/}}
+{{/*            </tr>*/}}
+{{/*        {{ end }}*/}}
+        {{ range site.Data.code_libraries }}
+            <tr>
+                <td class="nowrap">{{ .title }}</td>
+                <td>{{ .programming_language }}</td>
+                <td class="nowrap"><a href="{{ .sources }}" class="external-link">{{ .sources }}</a></td>
+                <td>{{ .description | markdownify }}</td>
+            </tr>
+        {{ end }}
+        </tbody>
+    </table>
+
+
+{{ end }}

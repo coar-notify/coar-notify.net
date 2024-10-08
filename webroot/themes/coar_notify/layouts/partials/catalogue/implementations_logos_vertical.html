@@ -1,0 +1,13 @@
+{{ range . }}
+    {{ $systemPageLink := .Permalink}}
+    {{ $systemPageTitle := .Title}}
+		<a href="{{ $systemPageLink }}" class="card-as-link">
+			<div style="margin: 10px; padding: 10px;">
+				<div>
+            {{ with .Resources.GetMatch "logo.*" }}
+							<img src="{{ .Permalink }}" class="system-list-logo" alt="Logo for {{ $systemPageTitle }}"/>
+            {{ end }}
+				</div>
+			</div>
+		</a>
+{{ end }}

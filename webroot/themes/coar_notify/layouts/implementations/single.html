@@ -29,6 +29,20 @@
 				</div>
 				<div class="row">
 					<div class="col field-name">
+						Implementation Type(s)
+					</div>
+					<div class="col">
+              {{ with .GetTerms "implementation-types" }}
+                  {{ partial "delimited_linked_page_list" (dict "pages" . "with_links" true) }}
+              {{ end }}
+					</div>
+				</div>
+
+
+
+
+				<div class="row">
+					<div class="col field-name">
 						Supported workflows
 					</div>
 					<div class="col">

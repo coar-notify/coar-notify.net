@@ -1,5 +1,7 @@
 <table class="table sortable-table table-sm table-striped">
-	<caption>{{ .caption }}</caption>
+    {{ if .caption }}
+			<caption>{{ .caption }}</caption>
+    {{ end }}
 	<thead>
 	<tr class="column-header-row">
 		<th>Name</th>
@@ -14,7 +16,11 @@
   {{ range .rows }}
 		<tr>
 			<td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
-			<td>{{ delimit .Params.implementation_types ", " }}</td>
+			<td>
+          {{ with .GetTerms "implementation-types" }}
+              {{ partial "delimited_linked_page_list" (dict "pages" . "with_links" true) }}
+          {{ end }}
+			</td>
 			<td>
           {{ with .Params.homepage }}
 						<a href="{{ . }}" class="external-link">{{ . }}</a>
@@ -24,7 +30,7 @@
           {{ $implementationID := .File.ContentBaseName }}
           {{ $workflows := where site.Pages ".Params.implementations" "intersect" (slice $implementationID) }}
           {{ with $workflows }}
-              {{ partial "delimited_linked_page_list" $workflows.ByTitle }}
+              {{ partial "delimited_linked_page_list" (dict "pages" $workflows.ByTitle "with_links" true)  }}
           {{ end }}
 			</td>
 		</tr>

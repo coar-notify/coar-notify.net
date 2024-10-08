@@ -14,6 +14,11 @@ pci:
     id: "https://evolbiol.peercommunityin.org/coar_notify/"
     type: "Service"
     inbox: "https://evolbiol.peercommunityin.org/coar_notify/inbox/"
+sciety:
+    value:
+      id: "https://sciety.org"
+      type: "Service"
+      inbox: "https://sciety.org/inbox/"
 # GENERIC SYSTEMS FOR PATTERNS
 review-service:
   value:
