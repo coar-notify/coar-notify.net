@@ -11,6 +11,6 @@ flowchart:
   label: |
     Announce
     Review(s)
-  flows_to: ["8"]
+  flows_to: ["7.1"]
   multiple: true
 ---

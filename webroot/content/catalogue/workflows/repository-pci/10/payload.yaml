@@ -1,0 +1,15 @@
+origin:
+  lookup: "pci"
+target:
+  lookup: "repository"
+object:
+  description: >
+    This is the "recommendation" published by PCI.
+  value:
+    id: "https://evolbiol.peercommunityin.org/articles/rec?articleId=794"
+    type:
+      - "Page"
+      - "sorg:WebPage"
+    "ietf:cite-as": "https://doi.org/10.24072/pci.evolbiol.100794"
+actor:
+  lookup: "pci"

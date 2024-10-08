@@ -13,7 +13,7 @@ flowchart:
   label: |
     Conduct
     Review
-  flows_to: ["7","7.1","7.2"]
+  flows_to: ["7","8","9"]
 ---
 
 

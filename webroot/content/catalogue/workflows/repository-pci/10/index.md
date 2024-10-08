@@ -1,13 +1,16 @@
 ---
-title: The repository records the link to the endorsement
-description: The repository records (and optionally displays) the link to the endorsement
+title: Announce Endorsement
+description: |
+  Having decided to endorse the preprint, PCI announces this
 date: 2021-03-08
 type: workflows
-scope: left_node
+scope: notify
+sender: right_node
+pattern: announce-endorsement
 flowchart:
   label: |
-    Record
-    Decision
-  flows_to: []
+    Announce
+    Endorsement
+  flows_to: ["11"]
 ---
 

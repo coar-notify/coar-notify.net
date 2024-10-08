@@ -1,13 +1,14 @@
 ---
-title: The repository records the link to the review
-description: The repository records (and optionally displays) the link to the review
+title: Reject
+description: |
+  Having reviewed the preprint, PCI rejects the offer to endorse it. The author is emailed to explain that the repository resource will not be endorsed.
 date: 2021-03-08
 type: workflows
-scope: left_node
+scope: notify
+sender: right_node
+pattern: reject
 flowchart:
-  label: |
-    Record
-    Review
-  flows_to: ["9"]
+  label: Reject
+  flows_to: ["8.1"]
 ---
 
