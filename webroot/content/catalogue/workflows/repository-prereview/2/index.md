@@ -12,11 +12,5 @@ flowchart:
     Request
     review
   flows_to: ["3"]
-#payload_docs:
-#  actor: |
-#    The author of the preprint.
-#    - id: "mailto:josiah.carberry@example.com"
-#    - name: "Josiah Carberry"
-#    - type: "Person"
 ---
 
