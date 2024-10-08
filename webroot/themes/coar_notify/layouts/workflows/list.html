@@ -1,33 +1,38 @@
 {{ define "main" }}
-	<h1>{{ .Title }}</h1>
-  {{ partial "workflows/badges" . }}
-  {{ .Content }}
+    {{ $leftNode := .Params.left_node }}
+    {{ $rightNode := .Params.right_node }}
+		<h1>{{ .Title }}</h1>
+    {{ partial "workflows/badges" . }}
+    {{ .Content }}
 
-  {{ $flowchart := partial "workflows/generate_flowchart" .}}
-  {{ with $flowchart }}
-      {{ partial "workflows/render_mermaid" . }}
-  {{ end }}
+		<span class="key-label">Key (colour coding):</span>
+		<span class="key-colour-code-box" style="background-color: {{ site.Params.mermaid.left_node_colour }}; ">{{ $leftNode }}</span>
+		<span class="key-colour-code-box" style="background-color: {{ site.Params.mermaid.right_node_colour }}; ">{{ $rightNode }}</span>
+		<span class="key-colour-code-box" style="background-color: {{ site.Params.mermaid.notify_node_colour }}; ">notification</span>
+
+    {{ $flowchart := partial "workflows/generate_flowchart" .}}
+    {{ with $flowchart }}
+        {{ partial "workflows/render_mermaid" . }}
+    {{ end }}
 
     {{ with .Resources.Get "flowchart2.mermaid" }}
         {{ partial "workflows/render_mermaid" .Content }}
     {{ end }}
 
-  {{ $leftNode := .Params.left_node }}
-  {{ $rightNode := .Params.right_node }}
-  {{ $workflowID := .CurrentSection.Params.id }}
 
-	<div class="row">
-		<div class="col-3 column-left">
-			<h3 class="swim-lane-title">{{ $leftNode }}</h3>
+
+		<div class="row">
+			<div class="col-3 column-left">
+				<h3 class="swim-lane-title">{{ $leftNode }}</h3>
+			</div>
+			<div class="col-6 column-center">
+				<h3 class="swim-lane-title">Notifications</h3>
+			</div>
+			<div class="col-3 column-right">
+				<h3 class="swim-lane-title">{{ $rightNode }}</h3>
+			</div>
 		</div>
-		<div class="col-6 column-center">
-			<h3 class="swim-lane-title">Notifications</h3>
-		</div>
-		<div class="col-3 column-right">
-			<h3 class="swim-lane-title">{{ $rightNode }}</h3>
-		</div>
-	</div>
-  {{ partial "workflows/steps" . }}
-  {{ partial "mermaid_initialisation" . }}
+    {{ partial "workflows/steps" . }}
+    {{ partial "mermaid_initialisation" . }}
 
 {{ end }}

@@ -1,28 +1,40 @@
 {{ $returnValue := "flowchart LR\n" }}
 
+{{ $returnValue = printf "%sclassDef left_node fill:%s;\n" $returnValue site.Params.mermaid.left_node_colour }}
+{{ $returnValue = printf "%sclassDef right_node fill:%s;\n" $returnValue site.Params.mermaid.right_node_colour }}
+{{ $returnValue = printf "%sclassDef notify fill:%s;\n" $returnValue site.Params.mermaid.notify_node_colour }}
+
 {{ range sort page.Data.Pages "File.ContentBaseName" }}
     {{ $stepPage := . }}
     {{ $stepPosition := .File.ContentBaseName }}
     {{ with $stepPage.Params.flowchart }}
-        {{ $startTag := "["}}
-        {{ $endTag := "]"}}
+        {{ $label := print $stepPosition " <a href='#step_" $stepPosition "'>" .label "</a>"}}
+        {{ $shape := "rect" }}
         {{ if eq $stepPage.Params.scope "notify"}}
-            {{ $startTag = "[/↗️ "}}
-            {{ $endTag = "/]"}}
+            {{ $shape = "doc" }}
         {{ else }}
-            {{ if or (eq $stepPosition "1") (eq (len .flows_to) 0) }}
-                {{ $startTag = "(["}}
-                {{ $endTag = "])"}}
+            {{ if eq $stepPosition "1" }}
+                {{ $shape = "circle" }}
+            {{ else if eq (len .flows_to) 0 }}
+                {{ $shape = "stadium" }}
             {{ else if (gt (len .flows_to) 1) }}
-                {{ $startTag = "{"}}
-                {{ $endTag = "}"}}
+                {{ $shape = "diamond" }}
             {{ end }}
         {{ end }}
-        {{ $nodeDescription := print $stepPosition " <a href='#step_" $stepPosition "'>" .label "</a>" }}
-        {{ $returnValue = print $returnValue $stepPosition $startTag $nodeDescription $endTag "\n"}}
+
+        {{ $returnValue = printf "%s%s@{shape: %s, label: \"%s\"}\n" $returnValue $stepPosition $shape $label}}
         {{ range .flows_to }}
             {{ $returnValue = printf "%s%s --> %s\n" $returnValue $stepPosition . }}
         {{ end }}
+
+        {{ if eq $stepPage.Params.scope "notify"}}
+            {{ $returnValue = printf "%sclass %s %s\n" $returnValue $stepPosition "notify;" }}
+        {{else if eq $stepPage.Params.scope "left_node" }}
+            {{ $returnValue = printf "%sclass %s %s\n" $returnValue $stepPosition "left_node;" }}
+        {{ else if eq $stepPage.Params.scope "right_node" }}
+            {{ $returnValue = printf "%sclass %s %s\n" $returnValue $stepPosition "right_node;" }}
+        {{ end }}
+
     {{ end }}
 {{ end }}
 

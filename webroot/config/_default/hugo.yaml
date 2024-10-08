@@ -54,6 +54,10 @@ params:
   fundingAcknowledgementText: "The development of this work is funded in part by a generous grant from [Arcadia](https://www.arcadiafund.org.uk)."
   gitHubRepoForSources: "https://github.com/coar-notify/notify.coar-repositories.org"
   feedbackFormURL: "https://github.com/coar-notify/notify.coar-repositories.org/issues/new?assignees=paulwalk&labels=feedback&template=feedback.md&title=PLACEHOLDER"
+  mermaid:
+    left_node_colour: "#ddedea"
+    right_node_colour: "#daeaf6"
+    notify_node_colour: "#e8dff5"
 markup:
   defaultMarkdownHandler: goldmark
   goldmark:
