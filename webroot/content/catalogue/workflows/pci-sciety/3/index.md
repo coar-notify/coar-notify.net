@@ -1,15 +1,16 @@
 ---
-title: Sciety processes the endorsement
+title: Announce Endorsement
 description: |
-  Sciety processes the endorsement announced by PCI
+  PCI announces the existence of a published endorsement
 date: 2021-03-08
 type: workflows
-scope: right_node
+scope: notify
+sender: left_node
+pattern: announce-endorsement
 flowchart:
   label: |
-    Process
+    Announce
     Endorsement
-  flows_to: []
+  flows_to: ["4"]
 ---
-
 

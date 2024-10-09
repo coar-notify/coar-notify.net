@@ -1,16 +1,16 @@
 ---
-title: Announce Endorsement
+title: Announce Review(s)
 description: |
-  Having endorsed the preprint, PCI announces this
+  PCI announces the existence of a published review
 date: 2021-03-08
 type: workflows
 scope: notify
 sender: left_node
-pattern: announce-endorsement
+pattern: announce-review
 flowchart:
   label: |
     Announce
-    Endorsement
-  flows_to: ["3"]
+    Review(s)
+  flows_to: ["4"]
+  multiple: true
 ---
-

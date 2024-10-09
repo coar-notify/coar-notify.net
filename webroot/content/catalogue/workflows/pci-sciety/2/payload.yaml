@@ -1,8 +1,15 @@
 origin:
   lookup: "pci"
 target:
-  lookup: "sciety"
-object:
-  lookup: "pci-endorsement"
+  lookup: "repository"
 actor:
   lookup: "pci"
+object:
+  description: >
+    This is a review published by PCI. The `ietf:cite-as` is empty because the review is not intended to be directly citable (rather the endorsement should be cited).
+  value:
+    id: "https://evolbiol.peercommunityin.org/articles/rec?articleId=794#review-3136"
+    type:
+      - "Page"
+      - "sorg:WebPage"
+    "ietf:cite-as": ""
