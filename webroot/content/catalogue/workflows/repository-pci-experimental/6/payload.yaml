@@ -1,0 +1,6 @@
+origin:
+  lookup: "pci"
+target:
+  lookup: "repository"
+actor:
+  lookup: "pci"

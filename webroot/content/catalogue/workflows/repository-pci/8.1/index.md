@@ -9,5 +9,6 @@ flowchart:
     Accept
     Decision
   flows_to: []
+  terminates: true
 ---
 

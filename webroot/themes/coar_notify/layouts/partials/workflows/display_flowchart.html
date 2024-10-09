@@ -20,9 +20,9 @@
         {{ else }}
             {{ if eq $stepPosition "1" }}
                 {{ $shape = "circle" }}
-            {{ else if eq (len .flows_to) 0 }}
+            {{ else if .terminates }}
                 {{ $shape = "stadium" }}
-            {{ else if (gt (len .flows_to) 1) }}
+            {{ else if .decision }}
                 {{ $shape = "diamond" }}
             {{ end }}
         {{ end }}

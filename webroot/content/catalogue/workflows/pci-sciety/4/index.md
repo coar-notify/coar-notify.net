@@ -10,6 +10,7 @@ flowchart:
     Record
     Review
   flows_to: []
+  terminates: true
 ---
 
 

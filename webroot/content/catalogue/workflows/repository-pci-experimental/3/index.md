@@ -25,7 +25,7 @@ flowchart:
   label: |
     Process
     Request
-  flows_to: ["4","5"]
+  flows_to: ["4a","4b"]
   decision: true
 ---
 

@@ -10,5 +10,6 @@ flowchart:
     Revise
     Submission
   flows_to: []
+  terminates: true
 ---
 

@@ -10,6 +10,7 @@ flowchart:
     Record
     Endorsement
   flows_to: []
+  terminates: true
 ---
 
 
