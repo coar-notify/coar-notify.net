@@ -46,9 +46,6 @@
 {{ $guideStyle := resources.Get "css/guide.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $guideStyle.Permalink }}">
 
-{{ $swimlanesStyle := resources.Get "css/swim_lanes.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $swimlanesStyle.Permalink }}">
-
 {{ $tablesStyle := resources.Get "css/tables.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $tablesStyle.Permalink }}">
 
