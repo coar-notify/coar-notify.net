@@ -1,25 +1,11 @@
 {{ define "main" }}
-{{/*    {{ $leftNode := .Params.left_node }}*/}}
-{{/*    {{ $rightNode := .Params.right_node }}*/}}
-{{ partial "workflows/badges" . }}
+    {{ partial "workflows/badges" . }}
 		<h1>{{ .Title }}</h1>
 
-    {{ partial "workflows/display_flowchart" .}}
-{{ partial "rfc2119" . }}
-{{ .Content }}
+    {{ partial "workflows/display_flowchart" (dict "workflowPage" . "page" .) }}
+    {{ partial "rfc2119" . }}
+    {{ .Content }}
 
-{{/*		<div class="row">*/}}
-{{/*			<div class="col-3 column-left">*/}}
-{{/*				<h3 class="swim-lane-title">{{ $leftNode }}</h3>*/}}
-{{/*			</div>*/}}
-{{/*			<div class="col-6 column-center">*/}}
-{{/*				<h3 class="swim-lane-title">Notifications</h3>*/}}
-{{/*			</div>*/}}
-{{/*			<div class="col-3 column-right">*/}}
-{{/*				<h3 class="swim-lane-title">{{ $rightNode }}</h3>*/}}
-{{/*			</div>*/}}
-{{/*		</div>*/}}
-{{/*    {{ partial "workflows/steps" . }}*/}}
     {{ partial "mermaid_initialisation" . }}
 
 {{ end }}

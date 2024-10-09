@@ -1,15 +1,22 @@
+{{ $workflowPage := .workflowPage}}
+{{ $currentPage := .page }}
+
+{{/*{{ $flowchart := "---\nconfig:\n  look: classic\n  theme: neutral\n---\n" }}*/}}
 {{ $flowchart := "flowchart LR\n" }}
-{{ $page := .}}
 
 {{ $flowchart = printf "%sclassDef left_node fill:%s;\n" $flowchart site.Params.mermaid.left_node_colour }}
 {{ $flowchart = printf "%sclassDef right_node fill:%s;\n" $flowchart site.Params.mermaid.right_node_colour }}
 {{ $flowchart = printf "%sclassDef notify fill:%s;\n" $flowchart site.Params.mermaid.notify_node_colour }}
 
-{{ range sort $page.Data.Pages "File.ContentBaseName" }}
+{{ range sort $workflowPage.Data.Pages "File.ContentBaseName" }}
     {{ $stepPage := . }}
     {{ $stepPosition := .File.ContentBaseName }}
     {{ with $stepPage.Params.flowchart }}
-        {{ $label := print $stepPosition " <a href='" $page.Permalink  $stepPosition "'>" .label "</a>"}}
+        {{ $label := print $stepPosition " <a href='" $stepPage.Permalink "'>" .label "</a>"}}
+        {{ if eq $stepPage $currentPage }}
+            {{ $flowchart = printf "%sstyle %s stroke-width:3px,stroke: #555\n" $flowchart $stepPosition }}
+
+        {{ end }}
         {{ $shape := "rect" }}
         {{ if eq $stepPage.Params.scope "notify"}}
             {{ if .multiple}}
@@ -43,10 +50,12 @@
     {{ end }}
 {{ end }}
 
+
+
 {{ with $flowchart }}
 	<span class="key-label">Key (colour coding):</span>
-	<span class="key-colour-code-box" style="background-color: {{ site.Params.mermaid.left_node_colour }}; ">{{ $page.Params.left_node }}</span>
-	<span class="key-colour-code-box" style="background-color: {{ site.Params.mermaid.right_node_colour }}; ">{{ $page.Params.right_node }}</span>
+	<span class="key-colour-code-box" style="background-color: {{ site.Params.mermaid.left_node_colour }}; ">{{ $workflowPage.Params.left_node }}</span>
+	<span class="key-colour-code-box" style="background-color: {{ site.Params.mermaid.right_node_colour }}; ">{{ $workflowPage.Params.right_node }}</span>
 	<span class="key-colour-code-box" style="background-color: {{ site.Params.mermaid.notify_node_colour }}; ">notification</span>
   {{ partial "workflows/render_mermaid" . }}
 {{ end }}
