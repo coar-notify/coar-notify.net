@@ -11,6 +11,6 @@ flowchart:
   label: |
     Announce
     Endorsement
-  flows_to: ["4"]
+  flows_to: ["5"]
 ---
 
