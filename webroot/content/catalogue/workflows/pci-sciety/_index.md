@@ -6,7 +6,7 @@ left_node: "PCI"
 right_node: "Sciety"
 date: 2021-03-08
 type: workflows
-use-cases: [peer-review,endorsement]
+use-cases: [dissemination]
 status: draft
 version: 1.0.0
 implementations:
