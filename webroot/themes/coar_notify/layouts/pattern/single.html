@@ -6,13 +6,15 @@
     {{ $mergedPayload := partial "payload/build_pattern_payload" . }}
 <div class="row">
 	<div class="col-6">
-		<h3>Properties</h3>
+		<h2>Properties</h2>
       {{ partial "payload/render_markdown" $mergedPayload }}
 	</div>
 	<div class="col-6">
-		<h3>Example JSON-LD Payload</h3>
+		<h2>Example JSON-LD Payload</h2>
+		<div class="get-raw-json-button">
+			<a class="btn btn-sm btn-secondary" href="./index.json">Get raw JSON</a>
+		</div>
       {{ (partial "payload/render_json_as_html" $mergedPayload) }}
-		<p class="read-more"><a href="./index.json">Get raw JSON-LD</a></p>
 	</div>
 </div>
 
