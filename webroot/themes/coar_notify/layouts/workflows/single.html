@@ -18,8 +18,11 @@
 							</div>
 							<div class="col">
 								<h2>Example JSON-LD Payload</h2>
+								<div class="text-end">
+									<a class="btn btn-sm btn-secondary" href="./index.json">Get raw JSON</a>
+								</div>
+									<br/>
                   {{ (partial "payload/render_json_as_html" $mergedPayload) }}
-								<p class="read-more"><a href="./index.json">Get raw JSON-LD</a></p>
 							</div>
 						</div>
         {{ end }}
