@@ -1,3 +1,5 @@
+{{ $includeTypes := .includeTypes}}
+
 <table class="table sortable-table table-sm table-striped">
     {{ if .caption }}
 			<caption>{{ .caption }}</caption>
@@ -5,7 +7,9 @@
 	<thead>
 	<tr class="column-header-row">
 		<th>Name</th>
-		<th>Type(s)</th>
+      {{ if $includeTypes }}
+				<th>Type(s)</th>
+      {{ end }}
 		<th>Homepage</th>
 		<th>
 			Implemented Workflows
@@ -16,11 +20,13 @@
   {{ range .rows }}
 		<tr>
 			<td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
-			<td>
-          {{ with .GetTerms "implementation-types" }}
-              {{ partial "delimited_linked_page_list" (dict "pages" . "with_links" true) }}
-          {{ end }}
-			</td>
+        {{ if $includeTypes }}
+					<td>
+              {{ with .GetTerms "implementation-types" }}
+                  {{ partial "delimited_linked_page_list" (dict "pages" . "with_links" true) }}
+              {{ end }}
+					</td>
+        {{ end }}
 			<td>
           {{ with .Params.homepage }}
 						<a href="{{ . }}" class="external-link">{{ . }}</a>

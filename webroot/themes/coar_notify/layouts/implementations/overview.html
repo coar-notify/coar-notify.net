@@ -3,6 +3,6 @@
 		<h1>Implementations: {{ .Title }}</h1>
       {{ .Content }}
       {{ $implementationPages := (where site.RegularPages "Type" "implementations")}}
-      {{ partial "catalogue/implementations_table" (dict "rows" $implementationPages "caption" "Implementations") }}
+      {{ partial "catalogue/implementations_table" (dict "rows" $implementationPages "caption" "Implementations" "includeTypes" true) }}
 	</div>
 {{ end }}
