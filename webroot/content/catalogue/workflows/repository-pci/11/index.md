@@ -1,13 +1,13 @@
 ---
-title: The repository records the link to the endorsement
-description: The repository records (and optionally displays) the link to the endorsement
+title: Record Link to Review
+description: The repository records (and optionally displays) the link to the review
 date: 2021-03-08
 type: workflows
 scope: left_node
 flowchart:
   label: |
-    Record
-    Decision
+    Record Link
+    to Review
   flows_to: []
   terminates: true
 ---

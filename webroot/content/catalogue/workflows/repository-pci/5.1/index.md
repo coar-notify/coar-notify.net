@@ -1,14 +1,16 @@
 ---
-title: The repository notes the decision
-description: The repository notes the decision and takes no further action. The workflow ends here.
+title: Tentatively Accept
+description: |
+  PCI tentatively accepts the offer to begin the process of reviewing and potentially endorsing the preprint
 date: 2021-03-08
 type: workflows
-scope: left_node
+scope: notify
+sender: right_node
+pattern: tentative-accept
 flowchart:
   label: |
+    Tentatively
     Accept
-    Decision
-  flows_to: []
-  terminates: true
+  flows_to: ["8"]
 ---
 
