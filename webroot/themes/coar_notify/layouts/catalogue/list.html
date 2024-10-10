@@ -1,18 +1,33 @@
 {{ define "main" }}
-    <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-    {{ .Content }}
-    <div class="row">
-        <div class="col-md-9">
-            {{ $workflowsIndexPage := site.GetPage "/catalogue/workflows/_index.md"}}
-            {{ partial "workflows/table" (dict "caption" "Implemented Workflows" "rows" $workflowsIndexPage.Sections) }}
-        </div>
-        <div class="col-md-3">
-            <h3>Catalogue Sections</h3>
-            <ul>
-                <li><a href="/catalogue/workflows/">Workflows</a></li>
-                <li><a href="/catalogue/implementations/">Implementations</a></li>
-                <li><a href="/catalogue/code-libraries/">Code-libraries</a></li>
-            </ul>
-        </div>
-    </div>
+	<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+  {{ .Content }}
+	<div class="row">
+		<div class="col-md-9">
+				<h2>Implemented Workflows</h2>
+        {{ $workflowsIndexPage := site.GetPage "/catalogue/workflows/_index.md"}}
+        {{ partial "workflows/table" (dict "caption" "" "rows" $workflowsIndexPage.Sections) }}
+			<br/>
+			<br/>
+			<h2>Implementations in Running Systems & Software Platforms</h2>
+        {{ range sort (index site.Taxonomies "implementation-types") ".Page.Weight" "asc"}}
+					<h4>{{ .Page.Title }}</h4>
+          {{ .Page.Description}}
+          {{ partial "catalogue/implementations_table" (dict "rows" . "caption" "") }}
+					<br/>
+        {{ end }}
+		</div>
+		<div class="col-md-3">
+			<h3>Catalogue Sections</h3>
+			<ul>
+				<li><a href="/catalogue/workflows/">Workflows</a></li>
+				<li><a href="/catalogue/implementations/">Implementations</a></li>
+				<li><a href="/catalogue/code-libraries/">Code-libraries</a></li>
+			</ul>
+			<h3>Implementations</h3>
+        {{ $implementationPages := (where site.RegularPages "Type" "implementations")}}
+        {{ partial "catalogue/implementations_logos_vertical" $implementationPages }}
+		</div>
+	</div>
+
+
 {{ end }}

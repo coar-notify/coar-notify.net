@@ -3,7 +3,5 @@
 		<h1>Implementations: {{ .Title }}</h1>
       {{ .Content }}
       {{ partial "catalogue/implementations_table" (dict "rows" .Pages "caption" "Implementations") }}
-{{/*      {{ partial "catalogue/implementations_logos" .Pages }}*/}}
 	</div>
-
 {{ end }}

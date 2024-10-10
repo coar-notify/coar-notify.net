@@ -1,25 +1,8 @@
 {{ define "main" }}
 	<div>
-		<h1>{{ .Title }}</h1>
+		<h1>Implementations: {{ .Title }}</h1>
       {{ .Content }}
       {{ $implementationPages := (where site.RegularPages "Type" "implementations")}}
-			<div class="row">
-				<div class="col-10">
-      {{/*      {{ partial "catalogue/implementations_logos" $implementationPages }}*/}}
-
-
-      {{ range sort (index site.Taxonomies "implementation-types") ".Page.Weight" "asc"}}
-				<h4>{{ .Page.Title }}</h4>
-        {{ .Page.Description}}
-        {{ partial "catalogue/implementations_table" (dict "rows" . "caption" "") }}
-				<br/>
-				<br/>
-      {{ end }}
-				</div>
-				<div class="col-2">
-            {{ partial "catalogue/implementations_logos_vertical" $implementationPages }}
-				</div>
-			</div>
+      {{ partial "catalogue/implementations_table" (dict "rows" $implementationPages "caption" "Implementations") }}
 	</div>
-
 {{ end }}
