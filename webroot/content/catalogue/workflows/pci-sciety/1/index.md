@@ -9,6 +9,6 @@ flowchart:
   label: |
     Create
     Endorsement
-  flows_to: ["2","3"]
+  flows_to: ["2.1","2.2"]
 ---
 

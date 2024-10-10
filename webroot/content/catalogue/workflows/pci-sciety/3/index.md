@@ -1,16 +1,16 @@
 ---
-title: Announce Endorsement
+title: Sciety records the review
 description: |
-  PCI announces the existence of a published endorsement
+  Sciety records the review announced by PCI
 date: 2021-03-08
 type: workflows
-scope: notify
-sender: left_node
-pattern: announce-endorsement
+scope: right_node
 flowchart:
   label: |
-    Announce
-    Endorsement
-  flows_to: ["5"]
+    Record
+    Review
+  flows_to: []
+  terminates: true
 ---
+
 
