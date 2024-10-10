@@ -11,10 +11,7 @@ target:
     inbox: "https://prereview-coar.fly.dev/inbox/"
     type: "Service"
 object:
-  description: "NEEDS A DESCRIPTION"
-  value:
-    id: "10.1101/2024.05.10.593511"
-    "ietf:cite-as": "https://doi.org/10.1101/2024.05.10.593511"
+  lookup: "preprint"
 actor:
   value:
     id: "mailto:josiah.carberry@example.com"
