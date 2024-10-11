@@ -1,7 +1,7 @@
 id:
   value: "urn:uuid:4fb3af44-d4f8-4226-9475-2d09c2d8d9e0"
 type:
-  description: "The `type` of this activity MUST include the value `Accept`"
+  description: "The `type` of this activity MUST include the value `Accept`. It MAY include additional values."
   value: "Accept"
 origin:
   lookup: "default"
@@ -9,3 +9,9 @@ target:
   lookup: "default"
 inReplyTo:
   lookup: "required-inReplyTo"
+actor:
+  lookup: "default"
+object:
+  lookup: "review-offer"
+context:
+  lookup: "preprint"

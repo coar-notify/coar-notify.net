@@ -1,8 +1,8 @@
 id:
   value: "urn:uuid:668f26e0-2c8d-4117-a0d2-ee713523bcb1"
 type:
-  value: ["Reject","coar-notify:ReviewAction"]
-  description: "The `type` of this activity MUST include the value `Reject`. It MAY include additional values."
+  value: ["TentativeReject","coar-notify:ReviewAction"]
+  description: "The `type` of this activity MUST include the value `TentativeReject`. It MAY include additional values."
 actor:
   lookup: "default"
 origin:

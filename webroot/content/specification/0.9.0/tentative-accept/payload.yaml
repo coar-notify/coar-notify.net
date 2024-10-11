@@ -1,17 +1,17 @@
 id:
   value: "urn:uuid:4fb3af44-d4f8-4226-9475-2d09c2d8d9e0"
 type:
-  value: "TentativeAccept"
-  description: "The `type` of this activity MUST include the value `TentativeAccept`"
-#  actor:
-#    lookup: "generic-service"
+  value: ["TentativeAccept","coar-notify:ReviewAction"]
+  description: "The `type` of this activity MUST include the value `TentativeAccept`. It MAY include additional values."
+actor:
+  lookup: "default"
 origin:
   lookup: "generic-service"
 target:
   lookup: "generic-organisation"
-#  object:
-#    lookup: "offer"
-#  context:
-#    lookup: "offer-for-context"
+object:
+  lookup: "review-offer"
+context:
+  lookup: "preprint"
 inReplyTo:
   lookup: "required-inReplyTo"

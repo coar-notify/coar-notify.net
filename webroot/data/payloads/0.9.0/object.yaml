@@ -55,6 +55,17 @@ offer:
     * An `id` which identifies the original `offer` activity which this notification is acknowledging.
     * An `object` which identifies the resource which was the `object` of the original `offer`
     * The type which is *Offer*
+review-offer:
+  value:
+    id: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
+    type: ['Offer','coar-notify:ReviewAction']
+    object: "https://research-organisation.org/repository/preprint/201203/421/"
+  description: |
+    * An `id` which identifies the original `offer` activity which this notification is acknowledging.
+    * An `object` which identifies the resource which was the `object` of the original `offer`
+    * The type which includes:
+      * *Offer*
+      * *coar-notify:ReviewAction*
 offer-for-context:
   value:
     id: "https://some-organisation.org/resource/0021"

@@ -1,7 +1,16 @@
 default:
   requirement: RECOMMENDED
   description: |
-    This identifies the party or process that initiated the activity.
+    It describes the party responsible for this activity. It:
+    - MUST have an `id` which MUST be a URI identifying the `actor` (HTTP URIs are RECOMMENDED, but any valid URI is permitted)
+    - MUST have a `type` which MUST be one of: *Application*, *Group*, *Organization*, *Person* or *Service* from Activity Streams 2.0.
+    - MAY have a `name`
+
+    The inclusion of `actor` is highly RECOMMENDED in order to facilitate the broadest possible interoperability beyond the immediate COAR Notify context. Some external systems which can usefully consume notifications based on Activity Streams 2.0 may require the presence of an `actor` to function correctly.
+  value:
+    id: "https://generic-service-1.com"
+    name: "Generic Service"
+    type: "Service"
 review-service:
   value:
     id: "https://review-service.com"
