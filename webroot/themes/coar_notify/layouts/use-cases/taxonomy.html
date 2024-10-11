@@ -11,6 +11,10 @@
                     </div>
                     <div class="card-body">
                         <p>{{ .Description | markdownify }}</p>
+{{/*                        {{ $workflows := where (where site.Pages "Type" "workflows" ) "Params.use-cases" "intersect" (slice .File.ContentBaseName) }}*/}}
+{{/*                        {{ with $workflows }}*/}}
+{{/*                            {{ partial "workflows/table" (dict "caption" "Workflows" "rows" $workflows)  }}*/}}
+{{/*                        {{ end }}*/}}
                     </div>
                 </div>
                 </a>
