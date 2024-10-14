@@ -15,12 +15,12 @@ target:
 object:
   value:
     id: "https://review-service.com/review/geo/202103/0021"
-    type: [ "Document","sorg:Review" ]
+    type: [ "Page","sorg:Review" ]
     "ietf:cite-as": "https://doi.org/10.3214/987654"
   description: |
     This represents the review. It:
     * MUST have an `id` which identifies the review resource.
-    * MUST have a `type` which MUST include the value *Document* from Activity Streams 2.0, and *sorg:Review*
+    * MUST have a `type` describing the resource, which MUST include an [Activity Streams 2.0 object type](https://www.w3.org/ns/activitystreams#objects), and SHOULD include a value from schema.org.
     * SHOULD have an `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the review resource.
 context:
   lookup: "preprint"

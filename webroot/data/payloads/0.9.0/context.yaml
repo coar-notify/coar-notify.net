@@ -40,7 +40,7 @@ preprint:
       "mediaType": "application/pdf"
   description: |
     * An `id` which is the HTTP URI of the "landing page" for the resource.
-    * A `type` which should include the value *AboutPage* from schema.org.
+    * A `type` which should include the value *sorg:AboutPage*.
     * An `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.
     * An `ietf:item` containing the details of the actual content resource. The `ietf:item` has:
       * An `id` containing the HTTP URI of the content file for the resource.
@@ -83,7 +83,7 @@ submission:
       "mediaType": "application/pdf"
   description: |
     * An `id` which is the HTTP URI of the "landing page" for the resource.
-    * A `type` which should include the value *AboutPage* from schema.org.
+    * A `type` which should include the value *sorg:AboutPage*.
     * An `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.
     * An `ietf:item` containing the details of the actual content resource. The `ietf:item` has:
       * An `id` containing the HTTP URI of the content file for the resource.
@@ -114,7 +114,7 @@ remote-resource:
       "mediaType": "application/zip"
   description: |
     * An `id` which is the HTTP URI of the "landing page" for the resource.
-    * A `type` which should include the value *AboutPage* from schema.org.
+    * A `type` which should include the value *sorg:AboutPage*.
     * An `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.
     * An `ietf:item` containing the details of the actual content resource. The `ietf:item` has:
       * An `id` containing the HTTP URI of the content file for the resource.

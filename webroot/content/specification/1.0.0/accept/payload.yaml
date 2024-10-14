@@ -12,8 +12,4 @@ target:
 actor:
   lookup: "default"
 inReplyTo:
-  requirement: REQUIRED
-  value: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
-  description: >
-    It MUST be specified because this is a response to a previous notification.
-    It takes the URI which identifies the activity for which this is a response.
+  lookup: "required-inReplyTo"

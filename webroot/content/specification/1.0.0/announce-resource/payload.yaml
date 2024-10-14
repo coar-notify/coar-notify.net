@@ -16,7 +16,7 @@ object:
   description: |
     This describes a resource containing information about the results of some service. It:
     * MUST have an `id` which identifies the resource representing the service result.
-    * SHOULD have a `type` describing the content file.
+    * MUST have a `type` describing the resource, which MUST include an [Activity Streams 2.0 object type](https://www.w3.org/ns/activitystreams#objects), and SHOULD include a value from schema.org.
 context:
   lookup: "preprint"
 inReplyTo:

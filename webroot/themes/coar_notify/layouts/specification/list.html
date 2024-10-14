@@ -7,11 +7,11 @@
 			<div class="col-9">
           {{ .Content }}
           {{ with .Params.required_properties }}
-						<h3>The <code>activity</code> MUST contain the following</h3>
+						<h3>The activity MUST contain the following</h3>
             {{ range . }}
                 {{ $label := . }}
                 {{ $p1 := index (partial "payload/process_property" (dict "version" $specificationVersion "label" $label "value" (dict "lookup" "default"))) $label }}
-								<h4 style="margin-bottom: 0;">{{ $label }}</h4>
+								<h4 style="margin-bottom: 0;"><code>{{ $label }}</code></h4>
 								<div style="margin-bottom: 15px;">
                     {{ $documentation := printf "`%s` is %s. %s" $label $p1.requirement $p1.description }}
                     {{ $documentation | markdownify }}
@@ -20,11 +20,11 @@
 						<br/>
           {{ end }}
           {{ with .Params.recommended_properties }}
-						<h3>The <code>activity</code> SHOULD contain the following</h3>
+						<h3>The activity SHOULD contain the following</h3>
             {{ range . }}
                 {{ $label := . }}
                 {{ $p1 := index (partial "payload/process_property" (dict "version" $specificationVersion "label" $label "value" (dict "lookup" "default"))) $label }}
-								<h4 style="margin-bottom: 0;">{{ $label }}</h4>
+								<h4 style="margin-bottom: 0;"><code>{{ $label }}</code></h4>
 								<div style="margin-bottom: 15px;">
                     {{ $documentation := printf "`%s` is %s. %s" $label $p1.requirement $p1.description }}
                     {{ $documentation | markdownify }}
@@ -33,11 +33,11 @@
 						<br/>
           {{ end }}
           {{ with .Params.optional_properties }}
-						<h3>The <code>activity</code> MAY contain the following</h3>
+						<h3>The activity MAY contain the following</h3>
             {{ range . }}
                 {{ $label := . }}
                 {{ $p1 := index (partial "payload/process_property" (dict "version" $specificationVersion "label" $label "value" (dict "lookup" "default"))) $label }}
-								<h4 style="margin-bottom: 0;">{{ $label }}</h4>
+								<h4 style="margin-bottom: 0;"><code>{{ $label }}</code></h4>
 								<div style="margin-bottom: 15px;">
                     {{ $documentation := printf "`%s` is %s. %s" $label $p1.requirement $p1.description }}
                     {{ $documentation | markdownify }}
