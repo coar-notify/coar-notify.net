@@ -13,7 +13,7 @@ actor:
     type: "Person"
   requirement: REQUIRED
   description: |
-    It describes the author of the preprint who is identified by their email (in URI form) so that PCI can contact them out of band of the Notify protocol. It:
+    It describes the author of the preprint who is identified by their email (in URI form) so that PCI can contact them out of band of the COAR Notify protocol. It:
     - MUST have an `id` which MUST be a 'mailto' URI - e.g. *mailto:josiah.carberry@example.com*
     - MUST have a `name`
     - MUST have a `type` which MUST have the value *Person*

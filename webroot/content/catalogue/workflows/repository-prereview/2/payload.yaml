@@ -13,7 +13,4 @@ target:
 object:
   lookup: "preprint"
 actor:
-  value:
-    id: "mailto:josiah.carberry@example.com"
-    name: "Josiah Carberry"
-    type: "Person"
+  lookup: "author"
