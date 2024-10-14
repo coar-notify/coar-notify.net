@@ -1,0 +1,30 @@
+{{ $workflowPage := page}}
+<table class="table sortable-table table-sm table-striped">
+	<caption>{{ .caption }}</caption>
+	<thead>
+	<tr class="column-header-row">
+		<th>Workflow step</th>
+		<th>Sender</th>
+		<th>Receiver</th>
+		<th>Activity type</th>
+		<th>JSON example</th>
+	</tr>
+	</thead>
+	<tbody>
+  {{ range .rows }}
+      {{ $sender := index $workflowPage.Params "left_node" }}
+      {{ $receiver := index $workflowPage.Params "right_node"}}
+      {{ if eq .Params.sender "right_node"}}
+          {{ $sender = index $workflowPage.Params "right_node" }}
+          {{ $receiver = index $workflowPage.Params "left_node"}}
+      {{ end }}
+			<tr>
+				<td><a href="{{ .Permalink }}">{{ .File.ContentBaseName }}</a></td>
+				<td>{{ $sender }}</td>
+				<td>{{ $receiver }}</td>
+				<td>{{ .Params.flowchart.label }}</td>
+				<td><a href="{{ .Permalink }}index.json">example (JSON)</a></td>
+			</tr>
+  {{ end }}
+	</tbody>
+</table>

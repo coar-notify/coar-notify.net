@@ -1,11 +1,12 @@
 {{ define "main" }}
     {{ partial "workflows/badges" . }}
-		<h1>{{ .Title }}</h1>
+		<h1>{{ .Title }} workflow</h1>
 
     {{ partial "workflows/display_flowchart" (dict "workflowPage" . "page" .) }}
     {{ partial "rfc2119" . }}
     {{ .Content }}
-
+    {{ $notifications := where .Data.Pages "Params.scope" "notify" }}
+    {{ partial "workflows/table_of_notifications_in_workflow" (dict "caption" "Notifications sent in this Workflow" "rows" $notifications ) }}
     {{ partial "mermaid_initialisation" . }}
 
 {{ end }}
