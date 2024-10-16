@@ -66,7 +66,7 @@ markup:
       definitionList: true
       footnote: true
       linkify: false
-      strikethrough: true
+      strikethrough: false
       table: true
       taskList: true
       typographer: false
@@ -90,13 +90,13 @@ markup:
     renderer:
       hardWraps: false
       unsafe: true
-      xHTML: false
+      xhtml: false
   highlight:
     anchorLineNos: false
     codeFences: true
     guessSyntax: false
-    hl_Lines: ""
     lineAnchors: ""
+    hl_Lines: ""
     lineNoStart: 1
     lineNos: false
     lineNumbersInTable: true
