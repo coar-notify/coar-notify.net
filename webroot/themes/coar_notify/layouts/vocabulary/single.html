@@ -1,16 +1,18 @@
 {{ define "main" }}
 	<div class="badge-header">
-      {{ range (where (where site.Pages "Section" "specification" ) ".Params.vocabulary_terms"  "intersect" (slice "EndorsementAction")) }}
+      {{ range (where (where site.Pages "Section" "specification" ) ".Params.vocabulary_terms"  "intersect" (slice .Title )) }}
           {{ partial "versioning/version_badge" . }}
       {{ end }}
       {{ partial "status/status_badge" . }}
 	</div>
 	<h1>{{ .Title }}</h1>
-	<h2>Description</h2>
+	<h3>Description</h3>
   {{ .Description }}
 	<br/><br/>
-	<h2>Persistent ID</h2>
+	<h3>Persistent ID</h3>
   {{ .Params.pid }}
+	<br/><br/>
+			{{ .Content}}
   {{/*    <br/><br/>*/}}
   {{/*    {{ $thisTerm := print "coar-notify:" .File.ContentBaseName }}*/}}
   {{/*    {{ $thisTermAsSlice := slice $thisTerm }}*/}}
