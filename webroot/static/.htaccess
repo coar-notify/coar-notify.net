@@ -6,7 +6,7 @@ RedirectMatch 301 ^/patterns/(.*) /specification/v1.0.0/$1
 RedirectMatch 301 ^/specification/pattern-categories/(.*) /pattern-categories/$1
 RedirectMatch 301 ^/vocabulary/(.*) /specification/vocabulary/$1
 RedirectMatch 301 ^/scenarios/(.*) /catalogue/workflows
-RedirectMatch 301 ^/schema/notify.json /specification/v1.0.0/notify.json
+RedirectMatch 301 ^/schema/notify.json /index.json
 #RedirectMatch 301 ^/patterns/(.*) /specification/patterns/$1
 #RedirectMatch 301 ^/pattern-categories/(.*) /specification/pattern-categories/$1
 #RedirectMatch 301 ^/vocabulary/(.*) /specification/vocabulary/$1

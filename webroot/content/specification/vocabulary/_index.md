@@ -8,4 +8,4 @@ type: vocabulary
 The COAR Notify vocabulary is used to provide values for certain properties in the notification payloads.
 
 ## Namespace
-https://purl.org/coar/notify_vocabulary/
+http://coar-notify.net/specification/vocabulary/
