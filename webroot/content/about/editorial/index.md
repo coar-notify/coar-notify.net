@@ -52,4 +52,4 @@ Decisions about changes to the COAR Notify Protocol are the sole responsibility 
 [//]: # (### Change control)
 
 [//]: # ()
-[//]: # (A detailed [Change Log]&#40;https://notify.coar-repositories.org/changelog/&#41; is maintained on the Protocol website.)
+[//]: # (A detailed [Change Log]&#40;https://coar-notify.net/changelog/&#41; is maintained on the Protocol website.)

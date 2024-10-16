@@ -3,7 +3,9 @@ default:
   description: |
     It takes an array of URIs which MUST include:
     - *https://www.w3.org/ns/activitystreams*
-    - *https://purl.org/coar/notify*
+    - AND ONE of the following:
+      - *https://coar-notify.net*
+      - *https://purl.org/coar/notify* ***(deprecated)***
   value:
     - "https://www.w3.org/ns/activitystreams"
-    - "https://purl.org/coar/notify"
+    - "https://coar-notify.net"

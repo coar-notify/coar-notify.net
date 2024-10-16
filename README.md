@@ -1,13 +1,13 @@
 # COAR Notify
 
-These are the sources for the Notify documentation at [https://notify.coar-repositories.org](https://notify.coar-repositories.org)
+These are the sources for the Notify documentation at [https://coar-notify.net](https://coar-notify.net)
 
 This GitHub repository is also intended to be a "one-stop shop" for all Notify-related development discussions, issues, and documentation.
 
-- If you have a question or feature suggestion, or simply want to join the (mostly technical) discussion(s) about COAR Notify then please start with the [discussions](https://github.com/coar-notify/notify.coar-repositories.org/discussions)
-- If you have a definite issue (e.g. a bug or documentation error) then please [raise an issue](https://github.com/coar-notify/notify.coar-repositories.org/issues/new/choose).
+- If you have a question or feature suggestion, or simply want to join the (mostly technical) discussion(s) about COAR Notify then please start with the [discussions](https://github.com/coar-notify/coar-notify.net/discussions)
+- If you have a definite issue (e.g. a bug or documentation error) then please [raise an issue](https://github.com/coar-notify/coar-notify.net/issues/new/choose).
 
-We try to serve all technical documentation for COAR Notify on the website at [https://notify.coar-repositories.org/](https://notify.coar-repositories.org/). This includes:
+We try to serve all technical documentation for COAR Notify on the website at [https://coar-notify.net/](https://coar-notify.net/). This includes:
 - COAR Notify Protocol Specification
   - Notification Patterns
   - Vocabulary
