@@ -1,6 +1,7 @@
 # COAR Notify
 
 These are the sources for the Notify documentation at [https://coar-notify.net](https://coar-notify.net)
+(was previously at [https://notify.coar-repositories.org](https://notify.coar-repositories.org))
 
 This GitHub repository is also intended to be a "one-stop shop" for all Notify-related development discussions, issues, and documentation.
 
