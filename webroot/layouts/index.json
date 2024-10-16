@@ -1,0 +1,3 @@
+{{- $specificationPage := site.GetPage (printf "/specification/%s/_index.md" site.Params.currentSpecificationVersion) -}}
+{{- $jsonContent := $specificationPage.Resources.Get "notify.json" -}}
+{{- $jsonContent.Content -}}

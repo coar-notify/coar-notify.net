@@ -12,6 +12,7 @@ services:
 outputs:
   home:
     - html
+    - json
   section:
     - html
     - rss
