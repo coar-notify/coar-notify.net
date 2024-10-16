@@ -1,5 +1,6 @@
 Header set Access-Control-Allow-Origin "*"
 Options MultiViews
+DirectoryIndex index
 
 RedirectMatch 301 ^/patterns/(.*) /specification/v1.0.0/$1
 RedirectMatch 301 ^/specification/pattern-categories/(.*) /pattern-categories/$1
