@@ -10,4 +10,4 @@ flowchart:
   flows_to: ["2"]
 ---
 
-The API providing the list of PCI X communities is at [https://api.peercommunityin.org/all/coar_inbox](https://api.peercommunityin.org/all/coar_inbox).
+The API providing the list of PCI X communities is at: <a href="https://api.peercommunityin.org/all/coar_inbox" class="external-link">https://api.peercommunityin.org/all/coar_inbox</a>
