@@ -7,7 +7,7 @@ right_node: "PCI"
 date: 2021-03-08
 type: workflows
 use-cases: [peer-review,endorsement]
-status: draft
+status: published
 version: 1.0.0
 implementations:
   - pci

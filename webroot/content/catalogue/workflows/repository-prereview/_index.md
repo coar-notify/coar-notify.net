@@ -2,7 +2,7 @@
 title: PREreview Review
 description: |
   This is a workflow where the author of a preprint stored in a repository can request a review from PREreview.
-left_node: "Repository"
+left_node: "a repository"
 right_node: "PreReview"
 date: 2024-06-20
 type: workflows

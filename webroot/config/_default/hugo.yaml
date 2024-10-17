@@ -43,7 +43,7 @@ caches:
     maxAge: 5s
 params:
   siteHeaderMessage:
-    enable: true
+    enable: false
     text: |
       This is a development version of the COAR Notify documentation website.
       The content here is **subject to change without warning**.
