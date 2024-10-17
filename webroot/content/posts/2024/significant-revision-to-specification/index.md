@@ -13,7 +13,7 @@ This is in response to feedback from those developers who have been implementing
 
 <!--more-->
 
-In particular I'd like to thank Patrick Hochstenbach, Olivier Fambon and Stefano Maffei for their help with preparing this revised documentation.
+In particular I'd like to thank Patrick Hochstenbach, Olivier Fambon, Richard Jones and Stefano Maffei for their help with preparing this revised documentation.
 
 ### Changed approach to documenting the specification
 We have re-introduced the IETF's [RFC2119](https://www.ietf.org/rfc/rfc2119.txt) language ("MUST", "SHOULD" etc.) in order to make the specification clearer. This has not necessarily made the specification stricter, but it has made it more precise.
