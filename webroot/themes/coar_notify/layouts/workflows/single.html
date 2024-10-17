@@ -7,6 +7,7 @@
 		<h2>Step {{ .File.ContentBaseName}}: {{ .Title }}</h2>
     {{ partial "rfc2119" . }}
 		<p>{{ .Description | markdownify }}</p>
+		<p>{{ .Content }}</p>
 		<div data-pagefind-ignore>
         {{ if eq .Params.scope "notify" }}
             {{ $mergedPayload := partial "payload/build_workflow_step_payload" . }}
