@@ -43,11 +43,11 @@ caches:
     maxAge: 5s
 params:
   siteHeaderMessage:
-    enable: false
+    enable: true
     text: |
       This is a development version of the COAR Notify documentation website.
       The content here is **subject to change without warning**.
-      The current, supported version is at [https://notify.coar-repositories.org](https://notify.coar-repositories.org).
+      The current, supported version is at [https://coar-notify.net](https://coar-notify.net).
   currentSpecificationVersion: "1.0.0"
   eventNotificationsPatternsBaseURL: "https://www.eventnotifications.net/"
   enableAnalytics: false  # this param may be overridden in production/development envs
