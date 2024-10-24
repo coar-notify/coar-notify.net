@@ -7,7 +7,7 @@ right_node: "Sciety"
 date: 2021-03-08
 type: workflows
 use-cases: [dissemination]
-status: draft
+status: published
 version: 1.0.0
 implementations:
   - pci

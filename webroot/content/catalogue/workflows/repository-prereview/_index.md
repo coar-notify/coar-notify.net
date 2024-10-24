@@ -7,7 +7,7 @@ right_node: "PreReview"
 date: 2024-06-20
 type: workflows
 use-cases: [peer-review]
-status: draft
+status: published
 version: 1.0.0
 implementations:
   - biorxiv
