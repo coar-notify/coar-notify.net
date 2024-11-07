@@ -56,9 +56,12 @@ params:
   gitHubRepoForSources: "https://github.com/coar-notify/coar-notify.net"
   feedbackFormURL: "https://github.com/coar-notify/coar-notify.net/issues/new?assignees=paulwalk&labels=feedback&template=feedback.md&title=PLACEHOLDER"
   mermaid:
-    left_node_colour: "#ddedea"
-    right_node_colour: "#daeaf6"
-    notify_node_colour: "#e8dff5"
+#    left_node_colour: "#ddedea"
+#    right_node_colour: "#daeaf6"
+#    notify_node_colour: "#e8dff5"
+    left_node_colour: "#f7d878"
+    right_node_colour: "#aec9d3"
+    notify_node_colour: "#e6c5d4"
 markup:
   defaultMarkdownHandler: goldmark
   goldmark:
