@@ -59,7 +59,7 @@ params:
 #    left_node_colour: "#ddedea"
 #    right_node_colour: "#daeaf6"
 #    notify_node_colour: "#e8dff5"
-    left_node_colour: "#f7d878"
+    left_node_colour: "#f7d878" #this colour palette from https://www.schemecolor.com/tender-touch.php
     right_node_colour: "#aec9d3"
     notify_node_colour: "#e6c5d4"
 markup:
