@@ -9,13 +9,20 @@ disablePathToLower: true
 services:
   rss:
     limit: 20
+mediaTypes:
+  application/ld+json:
+    suffixes:
+      - json
+outputFormats:
+  json:
+    mediaType: application/ld+json
 outputs:
   home:
     - html
     - json
+    - rss
   section:
     - html
-    - rss
   taxonomy:
     - html
   term:

@@ -25,6 +25,7 @@
 
 <title>{{ site.Title }}{{ if .Title }}: {{ .Title }}{{ end }}</title>
 
+
 {{ $variablesStyle := resources.Get "css/_variables.scss" | css.Sass | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $variablesStyle.Permalink }}">
 
@@ -85,13 +86,11 @@
 {{ $mainJS := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
 <script type="text/javascript" src="{{ $mainJS.Permalink }}"></script>
 
-{{/*<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">*/}}
-{{/*<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">*/}}
-{{/*<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">*/}}
-{{/*<link rel="manifest" href="/site.webmanifest">*/}}
-{{/*<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#787878">*/}}
-{{/*<meta name="msapplication-TileColor" content="#da532c">*/}}
-{{/*<meta name="theme-color" content="#ffffff">*/}}
+
+{{ $pageTile := .Title}}
+{{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink $pageTile | safeHTML }}
+{{ end }}
 
 
 
