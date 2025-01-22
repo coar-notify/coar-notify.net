@@ -1,0 +1,15 @@
+id:
+  value: "urn:uuid:4fb3af44-d4f8-4226-9475-2d09c2d8d9e0"
+type:
+  description: "The `type` of this activity MUST include the value *Accept*"
+  value: "Accept"
+origin:
+  lookup: "default"
+object:
+  lookup: "endorsement-offer"
+target:
+  lookup: "default"
+actor:
+  lookup: "default"
+inReplyTo:
+  lookup: "required-inReplyTo"

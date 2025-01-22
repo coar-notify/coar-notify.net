@@ -1,0 +1,65 @@
+default:
+  requirement: REQUIRED
+  description: |
+    It is the focus of the activity. Other `object` properties MAY appear in notifications, as sub-properties.
+    * MUST have an `id` which MUST be a URI identifying the `object`.
+  value:
+    id: "urn:uuid:82c9ac16-abc2-4cd2-9238-340f3c9f8a90"
+preprint:
+  value:
+    id: "https://research-organisation.org/repository/preprint/201203/421/"
+    type: ["Page", "sorg:AboutPage"]
+    "ietf:cite-as": "https://doi.org/10.5555/12345680"
+    "ietf:item":
+      id: "https://research-organisation.org/repository/preprint/201203/421/content.pdf"
+      type: [ "Article","sorg:ScholarlyArticle" ]
+      "mediaType": "application/pdf"
+  description: |
+    This `object` describes a preprint. It:
+    * MUST have an `id` which MUST be the HTTP URI of the "landing page" for the resource.
+    * MUST have a `type` describing the resource, which MUST include an [Activity Streams 2.0 object type](https://www.w3.org/ns/activitystreams#objects), and SHOULD include the value *sorg:AboutPage*.
+    * SHOULD have an `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the resource.
+    * MUST have an `ietf:item` containing the details of the actual content resource. The `ietf:item`:
+      * MUST have an `id` containing the HTTP URI of the content file for the resource.
+      * MUST have a `type` describing the resource, which MUST include an [Activity Streams 2.0 object type](https://www.w3.org/ns/activitystreams#objects), and SHOULD include a value from schema.org.
+      * MUST have a `mediaType` which contains the MIME Type of the content file.
+endorsement-offer:
+  description: >
+    It is the complete payload (without the `@context` property) of the *Offer* activity to which this pattern is a response.
+    In this case, the `object` contains an inner `object` which represents the resource which was being offered, rather than an activity.
+    Note that the value of the `inReplyTo` property MUST be the same as the value of the `id` property of the `object`, because both point to the original *Offer* activity.
+  value:
+    actor:
+      id: "https://orcid.org/0000-0002-1825-0097"
+      name: "Josiah Carberry"
+      type: "Person"
+    id: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
+    object:
+      id: "https://research-organisation.org/repository/preprint/201203/421/"
+      ietf:cite-as: "https://doi.org/10.5555/12345680"
+      ietf:item:
+        id: "https://research-organisation.org/repository/preprint/201203/421/content.pdf"
+        mediaType: "application/pdf"
+        type: ["Page", "sorg:AboutPage"]
+      type: "sorg:AboutPage"
+    origin:
+      id: "https://research-organisation.org/repository"
+      inbox: "https://research-organisation.org/inbox/"
+      type: "Service"
+    target:
+      id: "https://overlay-journal.com/system"
+      inbox: "https://overlay-journal.com/inbox/"
+      type: "Service"
+    type:
+      - "Offer"
+      - "coar-notify:EndorsementAction"
+pci-endorsement:
+  description: |
+    This is the "recommendation" published by PCI. It:
+    * MUST have an `id` which identifies the endorsement resource.
+    * MUST have a `type` describing the resource, which MUST include an [Activity Streams 2.0 object type](https://www.w3.org/ns/activitystreams#objects), and SHOULD include a value from schema.org.
+    * SHOULD have an `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the endorsement resource.
+  value:
+    id: "https://evolbiol.peercommunityin.org/articles/rec?articleId=794"
+    type: [ "Page","sorg:WebPage" ]
+    "ietf:cite-as": "https://doi.org/10.24072/pci.evolbiol.100794"

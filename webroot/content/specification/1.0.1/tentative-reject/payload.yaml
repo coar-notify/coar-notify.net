@@ -1,0 +1,20 @@
+id:
+  value: "urn:uuid:b6c7c187-4df2-45c6-8b03-b516b134224b"
+type:
+  value: "TentativeReject"
+  description: "The `type` of this activity MUST include the value *TentativeReject*"
+object:
+  lookup: "endorsement-offer"
+origin:
+  lookup: "generic-service"
+actor:
+  lookup: "default"
+target:
+  lookup: "generic-organisation"
+inReplyTo:
+  lookup: "required-inReplyTo"
+summary:
+  requirement: OPTIONAL
+  value: "The offer has been tentatively rejected, subject to further review."
+  description: |
+    When present, it SHOULD provide a brief, free-text summary of the reason for tentatively rejecting the previous *Offer*, and MAY provide an instruction on how to proceed further.

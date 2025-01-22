@@ -8,7 +8,7 @@ date: 2024-06-20
 type: workflows
 use-cases: [dissemination]
 status: published
-version: 1.0.0
+version: 1.0.1
 implementations:
   - dspace
   - dataverse

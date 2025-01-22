@@ -1,0 +1,28 @@
+id:
+  value: "urn:uuid:94ecae35-dcfd-4182-8550-22c7164fe23f"
+type:
+  value: ["Announce","coar-notify:EndorsementAction"]
+  description: |
+    The `type` of this activity MUST include the values:
+    - *Announce*
+    - *coar-notify:EndorsementAction*
+actor:
+  lookup: "overlay-journal"
+origin:
+  lookup: "overlay-journal"
+target:
+  lookup: "repository"
+object:
+  value:
+    id: "https://overlay-journal.com/articles/00001/"
+    type: [ "Page","sorg:WebPage" ]
+    "ietf:cite-as": "https://overlay-journal.com/articles/00001/"
+  description: |
+    This represents the endorsement. It:
+    * MUST have an `id` which identifies the endorsement resource.
+    * MUST have a `type` describing the resource, which MUST include an [Activity Streams 2.0 object type](https://www.w3.org/ns/activitystreams#objects), and SHOULD include a value from schema.org.
+    * SHOULD have an `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the endorsement resource.
+context:
+  lookup: "preprint"
+inReplyTo:
+  lookup: "optional-inReplyTo"
