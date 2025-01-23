@@ -1,0 +1,12 @@
+default:
+  requirement: REQUIRED
+  description: |
+    It takes an array of URIs which MUST include:
+    - *https://www.w3.org/ns/activitystreams*
+    
+    and MUST include ONE of the following:
+    - *https://coar-notify.net* ***(preferred)***
+    - *https://purl.org/coar/notify* instead ***(deprecated)***
+  value:
+    - "https://www.w3.org/ns/activitystreams"
+    - "https://coar-notify.net"

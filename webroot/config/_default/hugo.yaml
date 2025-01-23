@@ -9,13 +9,20 @@ disablePathToLower: true
 services:
   rss:
     limit: 20
+mediaTypes:
+  application/ld+json:
+    suffixes:
+      - json
+outputFormats:
+  json:
+    mediaType: application/ld+json
 outputs:
   home:
     - html
     - json
+    - rss
   section:
     - html
-    - rss
   taxonomy:
     - html
   term:
@@ -48,7 +55,7 @@ params:
       This is a development version of the COAR Notify documentation website.
       The content here is **subject to change without warning**.
       The current, supported version is at [https://notify.coar-repositories.org](https://notify.coar-repositories.org).
-  currentSpecificationVersion: "1.0.0"
+  currentSpecificationVersion: "1.0.1"
   eventNotificationsPatternsBaseURL: "https://www.eventnotifications.net/"
   enableAnalytics: false  # this param may be overridden in production/development envs
   googleSiteVerification:

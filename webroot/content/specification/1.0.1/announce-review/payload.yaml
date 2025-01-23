@@ -1,0 +1,28 @@
+id:
+  value: "urn:uuid:94ecae35-dcfd-4182-8550-22c7164fe23f"
+type:
+  value: ["Announce","coar-notify:ReviewAction"]
+  description: |
+    The `type` of this activity MUST include the values:
+    - *Announce*
+    - *coar-notify:ReviewAction*
+actor:
+  lookup: "review-service"
+origin:
+  lookup: "review-service"
+target:
+  lookup: "generic-service"
+object:
+  value:
+    id: "https://review-service.com/review/geo/202103/0021"
+    type: [ "Page","sorg:Review" ]
+    "ietf:cite-as": "https://doi.org/10.3214/987654"
+  description: |
+    This represents the review. It:
+    * MUST have an `id` which identifies the review resource.
+    * MUST have a `type` describing the resource, which MUST include an [Activity Streams 2.0 object type](https://www.w3.org/ns/activitystreams#objects), and SHOULD include a value from schema.org.
+    * SHOULD have an `ietf:cite-as` which contains the persistent HTTP URI (sometimes called the "PID") which is to be used to cite or link to the review resource.
+context:
+  lookup: "preprint"
+inReplyTo:
+  lookup: "optional-inReplyTo"

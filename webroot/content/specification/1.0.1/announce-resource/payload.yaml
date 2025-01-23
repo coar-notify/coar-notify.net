@@ -1,0 +1,23 @@
+id:
+  value: "urn:uuid:94ecae35-dcfd-4182-8550-22c7164fe23f"
+type:
+  value: ["Announce"]
+  description: "The `type` of this activity MUST include the value *Announce*"
+actor:
+  lookup: "overlay-journal"
+origin:
+  lookup: "overlay-journal"
+target:
+  lookup: "generic-service"
+object:
+  value:
+    id: "https://overlay-journal.com/information-page"
+    type: [ "Page","sorg:WebPage" ]
+  description: |
+    This describes a resource containing information about the results of some service. It:
+    * MUST have an `id` which identifies the resource representing the service result.
+    * MUST have a `type` describing the resource, which MUST include an [Activity Streams 2.0 object type](https://www.w3.org/ns/activitystreams#objects), and SHOULD include a value from schema.org.
+context:
+  lookup: "preprint"
+inReplyTo:
+  lookup: "optional-inReplyTo"

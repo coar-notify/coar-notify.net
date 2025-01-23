@@ -1,0 +1,20 @@
+id:
+  value: "urn:uuid:4fb3af44-d4f8-4226-9475-2d09c2d8d9e0"
+type:
+  value: "TentativeAccept"
+  description: "The `type` of this activity MUST include the value *TentativeAccept*"
+object:
+  lookup: "endorsement-offer"
+actor:
+  lookup: "default"
+origin:
+  lookup: "generic-service"
+target:
+  lookup: "generic-organisation"
+inReplyTo:
+  lookup: "required-inReplyTo"
+summary:
+  requirement: OPTIONAL
+  value: "The offer has been tentatively accepted, subject to further review."
+  description: |
+    When present, it SHOULD provide a brief, free-text summary of why the previous *Offer* has been only tentatively accepted.

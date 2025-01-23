@@ -8,7 +8,7 @@ date: 2021-03-08
 type: workflows
 use-cases: [dissemination]
 status: published
-version: 1.0.0
+version: 1.0.1
 implementations:
   - pci
   - sciety

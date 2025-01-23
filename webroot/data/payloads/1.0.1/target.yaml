@@ -1,0 +1,57 @@
+default:
+  requirement: REQUIRED
+  description: |
+    It describes the system which is intended to receive the notification. It:
+      - MUST have an `id` which MUST be an HTTP URI identifying the receiving system
+      - MUST have a `type` which SHOULD include the value *Service* from Activity Streams 2.0
+      - MUST have an `inbox` which MUST have the HTTP URI of the LDN inbox for the `target`.
+  value:
+    id: "https://generic-service-2.com/target-system"
+    type: "Service"
+    inbox: "https://generic-service-2.com/target-system/inbox/"
+pci:
+  value:
+    id: "https://evolbiol.peercommunityin.org/coar_notify/"
+    type: "Service"
+    inbox: "https://evolbiol.peercommunityin.org/coar_notify/inbox/"
+sciety:
+    value:
+      id: "https://sciety.org"
+      type: "Service"
+      inbox: "https://sciety.org/inbox/"
+# GENERIC SYSTEMS FOR PATTERNS
+review-service:
+  value:
+    id: "https://review-service.com/system"
+    type: "Service"
+    inbox: "https://review-service.com/inbox/"
+generic-service:
+  value:
+    id: "https://generic-service.com/system"
+    type: "Service"
+    inbox: "https://generic-service.com/system/inbox/"
+repository:
+  value:
+    id: "https://research-organisation.org/repository"
+    type: "Service"
+    inbox: "https://research-organisation.org/inbox/"
+repository_2:
+  value:
+    id: "https://another-research-organisation.org/repository"
+    type: "Service"
+    inbox: "https://another-research-organisation.org/inbox/"
+generic-organisation:
+  value:
+    id: "https://some-organisation.org"
+    inbox: "https://some-organisation.org/inbox/"
+    type: "Service"
+overlay-journal:
+  value:
+    id: "https://overlay-journal.com/system"
+    type: "Service"
+    inbox: "https://overlay-journal.com/inbox/"
+aggregation-service:
+  value:
+    id: "https://aggregator-service.org/system"
+    type: "Service"
+    inbox: "https://aggregator-service.org/requests/inbox/"

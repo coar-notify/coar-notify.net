@@ -1,0 +1,24 @@
+id:
+  value: "urn:uuid:49dae4d9-4a16-4dcf-8ae0-a0cef139254c"
+type:
+  value: ["Flag","coar-notify:UnprocessableNotification"]
+  description: |
+    The `type` of this activity MUST include the values:
+    - *Flag*
+    - *coar-notify:UnprocessableNotification*
+origin:
+  lookup: "generic-organisation"
+target:
+  lookup: "generic-service"
+actor:
+  lookup: "default"
+object:
+  description: >
+    The `object` refers to the previous activity that was not processable.
+    It MUST contain an `id`.
+  value:
+    id: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
+inReplyTo:
+  lookup: "required-inReplyTo"
+summary:
+  lookup: "unprocessable_url"
