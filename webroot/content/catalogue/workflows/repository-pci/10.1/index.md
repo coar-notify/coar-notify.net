@@ -7,6 +7,7 @@ type: workflows
 scope: notify
 sender: right_node
 pattern: announce-review
+ignore_pattern_payload: true
 flowchart:
   label: |
     Announce
