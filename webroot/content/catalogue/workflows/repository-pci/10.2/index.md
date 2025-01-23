@@ -1,7 +1,7 @@
 ---
 title: Announce Endorsement
 description: |
-  Having decided to endorse the preprint, PCI announces this
+  Having decided to endorse the preprint, PCI announces this.
 date: 2021-03-08
 type: workflows
 scope: notify

@@ -1,7 +1,7 @@
 ---
 title: Announce Endorsement
 description: |
-  PCI announces the existence of a published endorsement
+  PCI announces the existence of a published endorsement.
 date: 2021-03-08
 type: workflows
 scope: notify
