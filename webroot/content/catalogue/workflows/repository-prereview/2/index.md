@@ -1,7 +1,7 @@
 ---
 title: Request Review
 description: |
-  The repository requests a review from PREreview
+  The repository requests a review from PREreview.
 date: 2021-03-08
 type: workflows
 scope: notify
