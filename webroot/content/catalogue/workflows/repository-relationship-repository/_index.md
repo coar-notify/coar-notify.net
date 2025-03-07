@@ -17,4 +17,6 @@ implementations:
 
 This workflow was originally developed by Harvard University between its publications repository and its data repository, but it can be used by other repositories or systems.
 
+The DSpace community have documented their implementation of this workflow in *[Use Cases - Getting two DSpace application to communicate with each other](https://wiki.lyrasis.org/display/DSDOC8x/Use+Cases+-+Getting+two+DSpace+application+to+communicate+with+each+other)*.
+
 
