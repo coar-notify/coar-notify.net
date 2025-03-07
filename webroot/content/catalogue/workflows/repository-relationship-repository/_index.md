@@ -6,7 +6,7 @@ left_node: "a repository"
 right_node: "another repository"
 date: 2024-06-20
 type: workflows
-use-cases: [dissemination]
+use-cases: [dissemination,linking]
 status: published
 version: 1.0.1
 implementations:
