@@ -11,19 +11,19 @@ recommendations:
   recommendation_1: "COAR Notify workflows should use the [signposting.org](https://signposting.org) protocol to discover related resources."
 ---
 
-[FAIR Signposting](https://signposting.org/FAIR/) is the recommended mechanism for machines to discover metadata about the _object of an activity_ in the COAR Notify protocol. All the messages in the COAR Notify protocol are lean, focussing on  _referencing_ online resources rather than embedding (meta)data inline. This communication style, referred to as "Passing by Reference" in our [specification](/specification/), leverages of the distributed nature of repositories as the single source of truth, avoiding the need to transfer data into centralized silos. Signposting is a set of links that directs machines to auxiliary information about the object of an activity, such as metadata, license details, author information, and related resources.
+[FAIR Signposting](https://signposting.org/FAIR/) is the recommended mechanism to discover metadata about the _object of an activity_ in the COAR Notify protocol. All the messages in the COAR Notify protocol are lean, focussing on  _referencing_ online resources rather than embedding (meta)data inline. This communication style, referred to as "Passing by Reference" in the COAR Notify [specification](/specification/), leverages the distributed nature of repositories as the single source of truth, avoiding the need to transfer data into centralized silos. Signposting is a set of links that can be included on platforms to direct machines to information about the scholarly objects they host. This information includes pointers to landing pages, metadata, license details, author information, and related resources.
 
 ## Scholarly object
 
-Scholarly objects are typically published on the web as a set of web resources, including a _landing page_ (which usually serves as the detailed view of an object, providing metadata, links to full text, and related resources), one or more _content resources_ (such as a PDF article, dataset, or presentation), and one or more _metadata resources_ (structured metadata in formats such as OAI-DC, DataCite, RIOXX). The landing page has typically a persistent identifier such as a DOI or handle expressed as a HTTP URI. There can be more identifiers that pertain to the object such as author identifiers, licenses and type classifications.
+Scholarly objects are typically published on the web as a set of web resources, including a _landing page_ (which usually serves as the detailed view of an object, providing metadata, links to full text, and related resources), one or more _content resources_ (such as a PDF article, dataset, or presentation), and one or more _metadata resources_ (structured metadata in formats such as OAI-DC, DataCite, RIOXX). A landing page has typically a persistent identifier such as a DOI or handle expressed as a HTTP URI. Scholarly objects can also be associated with identifiers and resources, such as author identifiers, licenses, and type classifications.
 
-In the COAR Notify protocol, the main topic of the _object of an activity_ often points to the landing page of a scholarly object, with additional references to specific content resources associated with it. If a platform hosting scholarly outputs (e.g., data repositories, institutional repositories, publisher platforms) implements Signposting, machines can automatically discover the relationships between these objects, their metadata, and additional identifiers.
+In the COAR Notify protocol, the main topic of the Request/Offer and Announcement patterns (`object.id`) points to the landing page of a scholarly object, with optional additional references to specific content resources associated with it (`object.ietf:item`). If a platform hosting scholarly outputs (e.g., data repositories, institutional repositories, publisher platforms) implements Signposting, machines can automatically discover the relationships between these objects, their metadata, and additional identifiers.
 
 Signposts are HTTP `Link` headers or HTML `<link>` elements that points to resources and identifiers that constitute a scholarly object. Given the URL of a landing page, a Signpost can point to the associated content resources, metadata and identifiers. Given the URL of a content resource or a metadata resource, a Signpost can point to the landing page.
 
 <p>
 <img src="signposting.png"><br>
-<em>Diagram of a scholarly object with a landing page, content resource, metadata resource and two identifiers. Signposting interrelates the different parts of the object in a machine readable form</em>
+<em>Diagram of a scholarly object with a landing page, content resource, metadata resource and two identifiers. Signposting interrelates the different parts of the scholary object with typed links.</em>
 </p>
 
 ## Typed links
@@ -62,7 +62,7 @@ Link: <target-url>; rel="relation-text" ; type="link-relation-type" ; profile="p
 An example of such a HTTP Link header is:
 
 ```
-Link: <https://repo.org/metadata/123.mods> ; rel="describedby" ; type="application/xml" ; profile="http://www.loc.gov/mods/v3"
+Link: <https://repo.org/metadata/123.mods> ; rel="describedby" ; type="text/xml" ; profile="http://www.loc.gov/mods/v3"
 ```
 
 When multiple Signpost links are available, HTTP Link headers can be repeated:
@@ -93,7 +93,7 @@ HTML &lt;link&gt; elements are added to the header of HTML responses. They have 
 An example of such a HTTP Link header is:
 
 ```
-<link href="https://repo.org/metadata/123.mods" rel="describedby" type="application/profile="http://www.loc.gov/mods/v3"/>
+<link href="https://repo.org/metadata/123.mods" rel="describedby" type="text/xml" profile="http://www.loc.gov/mods/v3"/>
 ```
 
 When multiple Signpost links are available, HTTP Link headers can be repeated:
@@ -107,9 +107,17 @@ When multiple Signpost links are available, HTTP Link headers can be repeated:
 
 ### Serving very many Signposting typed links for one scholarly object
 
-When a platform requires serving a very large number of typed links,  the [FAIR Signposting](https://signposting.org/FAIR/) specification provides the _Link Set_ mechanism as a solution.
+When a platform requires serving a very large number of typed links,  the Signposting specification provides the [Link Set](org/FAIR/#linksetrec) mechanism as a solution.
 
-## Landing page 
+## Implementors guide
+
+The following section provides an overview of implementation guidelines for platforms hosting scholarly outputs and for web agents that need to retrieve metadata for scholarly objects that are the subject of COAR Notification messages.
+
+### Platforms
+
+The COAR Notify guidelines for Signposting differentiate between the landing page, content resources, and metadata resources of a scholarly object. Guidelines for each type of resource are provided in the subsections below.
+
+#### Landing page 
 
 COAR Notify recommends for each landing page of a scholarly object to provide Signposting typed links to content resources, metadata resources, persistent identifiers, author identifiers and resource type indicators.
 
@@ -124,7 +132,9 @@ A table with the recommended typed links follows below:
 | Resource type | `type` | 1 | The fixed URL value `https://schema.org/AboutPage`. | 
 | Resource type | `type` | 1 | The URL is a [Schema.org](https://schema.org/CreativeWork) CreativeWork that best described the type of scholarly object.|
 
-## Content resources
+<br>
+
+#### Content resources
 
 COAR Notify recommends for each content resource a Signposting typed link to the landing page of the scholarly object and optionally a resource type indicator.
 
@@ -135,7 +145,9 @@ A table with the recommended typed links follows below:
 | Landing page  | `collection`       | 1  | The URL is the landing page associated with the content resource. | 
 | Resource type | `type` | 0 or 1 | The URL is a [Schema.org](https://schema.org/CreativeWork) CreativeWork that best described the type of scholarly object.|
 
-## Metadata resources
+<br>
+
+#### Metadata resources
 
 COAR Notify recommends for each metadata resource a Signposting typed link to the landing page of the scholarly object.
 
@@ -145,7 +157,13 @@ A table with the recommended typed links follows below:
 |---------------|--------------------|-------------|--------|
 | Landing page  | `describes`       | 1  | The URL is the landing page associated with the content resource. | 
 
-## Metadata discovery strategy
+<br>
+
+#### Examples
+
+The Signposting website provides an overview of adopters, which can be used as reference and example: [https://signposting.org/adopters/](https://signposting.org/adopters/).
+
+### Web agents
 
 For web agents that need to discover the metadata of the object of an COAR Notify activity, the following algorithm can be used:
 
@@ -159,5 +177,10 @@ For web agents that need to discover the metadata of the object of an COAR Notif
 
 This algorithm can be hardened by verifying in step 2 and 6 that a ration type is available with the value `https://schema.org/AboutPage`.
 
+## General remarks
 
+- COAR Notify does not recommend a singular or minimal metadata format. However, many institutional repository platforms provide an [OAI-PMH](https://www.openarchives.org/pmh/) interface. As such, a Signposting `describedby` typed link to `verb=GetRecord` URL are feasible for such platforms. Such a typed link could at least provide OAI-DC with a type `text/xml` and profile `http://www.openarchives.org/OAI/2.0/oai_dc`.
+- COAR Notify recommends that platforms provide a range of metadata formats to enhance interoperability within the network.
+- Since Signposting requires machine interactions with scholarly platforms, COAR Notify discourages the use of content delivery network services, blocking robotic access, or requiring CAPTCHA tests to access the landing pages of scholarly objects. 
+ 
 {{< recommendation "recommendation_1" >}}
