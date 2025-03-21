@@ -175,7 +175,7 @@ For web agents that need to discover the metadata of the object of an COAR Notif
 6. If a HTML `<link>` element with a `rel` attribute with value `describedby` is available, then the URL reference is the link to the metadata resource. End.
 7. No information about metadata resources is available. End.
 
-This algorithm can be hardened by verifying in step 2 and 6 that a ration type is available with the value `https://schema.org/AboutPage`.
+This algorithm can be hardened by verifying in step 2 and 6 that a relation type is available with the value `https://schema.org/AboutPage`.
 
 ## General remarks
 
