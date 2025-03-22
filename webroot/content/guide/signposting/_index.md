@@ -28,7 +28,7 @@ Signposts are _typed links_ that point to resources and identifiers that constit
 
 ## Typed links
 
-Signposts are _typed links_ that are added to resources that constitute a scholarly object. Two methods are available to provide such typed links:
+Signposts are typed links that are added to resources that constitute a scholarly object. Two methods are available to provide such typed links:
 
 1. Provide typed links as HTTP `Link` headers in a HTTP response.
 2. Provide typed links as HTML `<link>` elements in a HTML response.
