@@ -15,11 +15,11 @@ recommendations:
 
 ## Scholarly object
 
-Scholarly objects are typically published on the web as a set of web resources, including a _landing page_ (which usually serves as the detailed view of an object, providing metadata, links to full text, and related resources), one or more _content resources_ (such as a PDF article, dataset, or presentation), and one or more _metadata resources_ (structured metadata in formats such as OAI-DC, DataCite, RIOXX). A landing page has typically a persistent identifier such as a DOI or handle expressed as a HTTP URI. Scholarly objects can also be associated with identifiers and resources, such as author identifiers, licenses, and type classifications.
+Scholarly objects are typically published on the web as a set of web resources, including a _landing page_ (which usually serves as the detailed view of an object, providing metadata, links to full text, and related resources), one or more _content resources_ (such as a PDF article, dataset, or presentation), and one or more _metadata resources_ (structured metadata in formats such as OAI-DC, DataCite, RIOXX). Scholarly objects can also be associated with identifiers and related resources, such as DOI, handle, author identifiers, licenses, and type classifications.
 
-In the COAR Notify protocol, the main topic of the Request/Offer and Announcement patterns (`object.id`) points to the landing page of a scholarly object, with optional additional references to specific content resources associated with it (`object.ietf:item`). If a platform hosting scholarly outputs (e.g., data repositories, institutional repositories, publisher platforms) implements Signposting, machines can automatically discover the relationships between these objects, their metadata, and additional identifiers.
+In the COAR Notify protocol, the main topic of the Request/Offer and Announcement patterns (`object.id`) points to the landing page of a scholarly object, with optional additional references to specific content resources associated with it (`object.ietf:item`). If a platform hosting scholarly outputs (e.g., data repositories, institutional repositories, publisher platforms) implements Signposting, machines can automatically discover the relationships between these objects, their metadata, and additional identifiers and resources.
 
-Signposts are HTTP `Link` headers or HTML `<link>` elements that points to resources and identifiers that constitute a scholarly object. Given the URL of a landing page, a Signpost can point to the associated content resources, metadata and identifiers. Given the URL of a content resource or a metadata resource, a Signpost can point to the landing page.
+Signposts are _typed links_ that point to resources and identifiers that constitute a scholarly object. Given the URL of a landing page, a Signpost can point to the associated content resources, metadata and identifiers. Given the URL of a content resource or a metadata resource, a Signpost can point to the landing page.
 
 <p>
 <img src="signposting.png"><br>
@@ -74,7 +74,7 @@ Link: <target-url-2>; rel="relation-text-2" ; type="link-relation-type-2" ; prof
 Link: <target-url-n>; rel="relation-text-n" ; type="link-relation-type-n" ; profile="profile-url-n"
 ```
 
-Repeated HTTP Link headers may also be grouped in one comma separated list:
+Repeated HTTP Link headers may also be grouped in a comma separated list:
 
 ```
 Link: <target-url-1>; rel="relation-text-1" ; type="link-relation-type-1" ; profile="profile-url-1",
@@ -130,7 +130,7 @@ A table with the recommended typed links follows below:
 | Persistent identifier | `cite-as` | 0 or 1 | The URL is the persistent identifier for the scholarly object, such as a DOI or a Handle. |
 | Author identifier(s) |  `author` | 0 or more | For each author of the scholarly object provide a persistent identifier expressed as an URI. | 
 | Resource type | `type` | 1 | The fixed URL value `https://schema.org/AboutPage`. | 
-| Resource type | `type` | 1 | The URL is a [Schema.org](https://schema.org/CreativeWork) CreativeWork that best described the type of scholarly object.|
+| Resource type | `type` | 1 | The URL is a [Schema.org](https://schema.org/CreativeWork#subtypes) CreativeWork that best describes the type of scholarly object.|
 
 <br>
 
@@ -143,7 +143,7 @@ A table with the recommended typed links follows below:
 | Target        | Link Relation Type | Cardinality | Comments | 
 |---------------|--------------------|-------------|--------|
 | Landing page  | `collection`       | 1  | The URL is the landing page associated with the content resource. | 
-| Resource type | `type` | 0 or 1 | The URL is a [Schema.org](https://schema.org/CreativeWork) CreativeWork that best described the type of scholarly object.|
+| Resource type | `type` | 0 or 1 | The URL is a [Schema.org](https://schema.org/CreativeWork#subtypes) CreativeWork that best describes the type of scholarly object.|
 
 <br>
 
@@ -180,7 +180,7 @@ This algorithm can be hardened by verifying in step 2 and 6 that a relation type
 ## General remarks
 
 - COAR Notify does not recommend a singular or minimal metadata format. However, many institutional repository platforms provide an [OAI-PMH](https://www.openarchives.org/pmh/) interface. As such, a Signposting `describedby` typed link to `verb=GetRecord` URL are feasible for such platforms. Such a typed link could at least provide OAI-DC with a type `text/xml` and profile `http://www.openarchives.org/OAI/2.0/oai_dc`.
-- COAR Notify recommends that platforms provide a range of metadata formats to enhance interoperability within the network.
+- COAR Notify discourages the use of Signpost links that are dynamically generated by JavaScript in the browser, such as those on client-side dynamic web pages.
 - Since Signposting requires machine interactions with scholarly platforms, COAR Notify discourages the use of content delivery network services, blocking robotic access, or requiring CAPTCHA tests to access the landing pages of scholarly objects. 
  
 {{< recommendation "recommendation_1" >}}
