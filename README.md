@@ -14,7 +14,7 @@ We try to serve all technical documentation for COAR Notify on the website at [h
   - Vocabulary
 - A catalogue of implementation systems & platforms
 - Documented workflows using COAR Notify patterns
-- Implementation Guide
+- Implementation Guide.
 
 ## About COAR Notify
 <img src="notify_logo.png" alt="COAR Notify logo" width="200"/>
