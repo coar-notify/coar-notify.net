@@ -8,7 +8,7 @@ menu:
         identifier: signposting
         weight: 36
 recommendations:
-  recommendation_1: "COAR Notify workflows should use the [signposting.org](https://signposting.org) protocol to discover related resources."
+  recommendation_1: "COAR Notify workflows should use the [FAIR Signposting](https://signposting.org) protocol to discover related resources and LDN Inboxes."
 ---
 
 [FAIR Signposting](https://signposting.org/FAIR/) is the recommended mechanism to discover metadata about the _object of an activity_ in the COAR Notify protocol. All the messages in the COAR Notify protocol are lean, focussing on  _referencing_ online resources rather than embedding (meta)data inline. This communication style, referred to as "Passing by Reference" in the COAR Notify [specification](/specification/), leverages the distributed nature of repositories as the single source of truth, avoiding the need to transfer data into centralized silos. Signposting is a set of typed links that can be included on platforms to direct machines to information about the scholarly objects they host. This information includes pointers to landing pages, metadata, license details, author information, and related resources.
