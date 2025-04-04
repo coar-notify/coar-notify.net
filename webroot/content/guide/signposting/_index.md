@@ -26,6 +26,12 @@ Signposts are _typed links_ that point to resources and identifiers that constit
 <em>Diagram of a scholarly object with a landing page, content resource, metadata resource and two identifiers. Signposting interrelates the different parts of the scholary object with typed links.</em>
 </p>
 
+## Discovery of LDN Inboxes
+
+A secondary role of Signposting and typed links in the COAR Notification protocol is to facilitate the discovery of LDN Inboxes. When presented with a landing page of a scholarly object or a content page, a sender of COAR Notify notifications must be able to determine the appropriate LDN Inbox URL to which the notifications should be sent.
+
+One common approach to address this is to maintain a list of well-known URL locations of the LDN Inboxes of repositories and service providers. An alternative approach is to use Signposting and typed links that guide machines to the preferred inbox associated with a scholarly object. For this latter approach, this guide will provide a recommendation using Signposting and typed links.
+
 ## Typed links
 
 Signposts are typed links that are added to resources that constitute a scholarly object. Two methods are available to provide such typed links:
@@ -105,6 +111,8 @@ When multiple Signpost links are available, HTTP Link headers can be repeated:
 <link href="target-url-n" rel="relation-text-n" type="link-relation-type-n" profile="profile-url-n"/>
 ```
 
+Remark: These HTML &lt;link&gt; elements also provide RDF clients with an RDF representation of typed links in the form of HTML+RDFa 1.1. This keeps our guide in line with the [LDN recommendation](https://www.w3.org/TR/ldn/#discovery) for the discovery of LDN Inboxes.
+
 ### Serving very many Signposting typed links for one scholarly object
 
 When a platform requires serving a very large number of typed links,  the Signposting specification provides the [Link Set](org/FAIR/#linksetrec) mechanism as a solution.
@@ -131,6 +139,7 @@ A table with the recommended typed links follows below:
 | Author identifier(s) |  `author` | 0 or more | For each author of the scholarly object provide a persistent identifier expressed as an URI. | 
 | Resource type | `type` | 1 | The fixed URL value `https://schema.org/AboutPage`. | 
 | Resource type | `type` | 0 or 1 | The URL is a [Schema.org](https://schema.org/CreativeWork#subtypes) CreativeWork that best describes the type of scholarly object.|
+| LDN Inbox | `http://www.w3.org/ns/ldp#inbox` | 1 | The URL is the location of the LDN Inbox of the COAR Notify protocol. | 
 
 <br>
 
@@ -144,6 +153,7 @@ A table with the recommended typed links follows below:
 |---------------|--------------------|-------------|--------|
 | Landing page  | `collection`       | 1  | The URL is the landing page associated with the content resource. | 
 | Resource type | `type` | 0 or 1 | The URL is a [Schema.org](https://schema.org/CreativeWork#subtypes) CreativeWork that best describes the type of scholarly object.|
+| LDN Inbox | `http://www.w3.org/ns/ldp#inbox` | 1 | The URL is the location of the LDN Inbox of the COAR Notify protocol. | 
 
 <br>
 
