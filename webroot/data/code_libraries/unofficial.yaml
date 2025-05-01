@@ -1,0 +1,19 @@
+---
+- title: "COAR Notify Validator (Typescript)"
+  description: |
+    A basic set of payload validation tools for the COAR Notify protocol.
+  programming_language: Typescript
+  sources: https://github.com/seanwiseman/coar-notify-validator-ts
+
+- title: "COAR Notify Inbox"
+  description: |
+    A basic implementation of an LDN inbox intended for COAR Notify developments purposes written in Python using FastAPI.
+  programming_language: Python
+  sources: https://github.com/seanwiseman/coar-notify-inbox
+
+- title: "Slack Relay"
+  description: |
+    A simple microservice to relay notifications from the COAR Notify Micro Inbox to a target Slack channel.
+  date: 2018-12-20
+  programming_language: Python
+  sources: https://github.com/seanwiseman/coar-notify-micro-inbox-slack-relay

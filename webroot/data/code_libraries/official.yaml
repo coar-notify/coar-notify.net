@@ -1,0 +1,16 @@
+---
+- title: "COAR Notify Python Bindings"
+  status: Supported
+  description: |
+    This library provides an officially supported Python implementation of the COAR Notify Protocol version 1.0.1
+  programming_language: Python
+  sources: https://github.com/coar-notify/coarnotifypy
+  documentation: https://coar-notify.github.io/coarnotifypy/build/html/index.html
+
+- title: "COAR Notify Review Offer Plugin"
+  status: Endorsed
+  description: |
+    This plugin enables the automatic & manual sending of preprint review offer notifications to target review services within the OPS environment.
+  programming_language: PHP
+  sources: https://github.com/seanwiseman/COARNotifyReviewOfferPlugin
+

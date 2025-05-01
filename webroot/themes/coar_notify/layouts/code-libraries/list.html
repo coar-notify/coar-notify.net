@@ -1,35 +1,79 @@
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-    <table class="table sortable-table table-sm table-striped">
-        <thead>
-        <tr class="column-header-row">
-            <th>Name</th>
-            <th>Language</th>
-            <th>Sources</th>
-            <th class="no-sort">Description</th>
-        </tr>
-        </thead>
-        <tbody>
-{{/*        {{ range .Data.Pages }}*/}}
-{{/*            <tr>*/}}
-{{/*                <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>*/}}
-{{/*                <td class="nowrap">{{ .Title }}</td>*/}}
-{{/*                <td>{{ .Params.programming_language }}</td>*/}}
-{{/*                <td class="nowrap"><a href="{{ .Params.sources }}" class="external-link">{{ .Params.sources }}</a></td>*/}}
-{{/*                <td>{{ .Description | markdownify }}</td>*/}}
-{{/*            </tr>*/}}
-{{/*        {{ end }}*/}}
-        {{ range site.Data.code_libraries }}
-            <tr>
-                <td class="nowrap">{{ .title }}</td>
-                <td>{{ .programming_language }}</td>
-                <td class="nowrap"><a href="{{ .sources }}" class="external-link">{{ .sources }}</a></td>
-                <td>{{ .description | markdownify }}</td>
-            </tr>
-        {{ end }}
-        </tbody>
-    </table>
+	<h1>{{ .Title }}</h1>
+  {{ .Content }}
+	<h2>Officially Supported/Endorsed by COAR Notify</h2>
+	These components are officially endorsed or supported by the COAR Notify Initiative project, where:
+	<ul>
+		<li><b>"endorsed"</b> means that the library is recommended for use in production systems</li>
+		<li><b>"supported"</b> means that the library is endorsed <b>and also</b> actively maintained by the COAR Notify Initiative.</li>
+	</ul>
 
 
+	<table class="table sortable-table table-sm table-striped">
+		<thead>
+		<tr class="column-header-row">
+			<th>Name</th>
+			<th>Status</th>
+			<th>Language</th>
+			<th class="no-sort">Description</th>
+		</tr>
+		</thead>
+		<tbody>
+    {{ range .Site.Data.code_libraries.official }}
+			<tr>
+				<td class="nowrap">{{ .title }}</td>
+				<td>{{ .status }}</td>
+				<td>{{ .programming_language }}</td>
+				<td>
+            {{ .description | markdownify }}
+            {{ with .sources }}
+							<br/>
+							<b>Sources:</b> <a href="{{ . }}" class="external-link">{{ . }}</a>
+            {{ end }}
+            {{ with .documentation }}
+							<br/>
+							<b>Documentation:</b> <a href="{{ . }}" class="external-link">{{ . }}</a>
+            {{ end }}
+				</td>
+			</tr>
+    {{ end }}
+		</tbody>
+	</table>
+
+	<br/>
+	<br/>
+	<h2>Other third-party implementations</h2>
+	This section provides a list of components that have been used to implement or support the COAR Notify protocol.
+	These are not endorsed or officially supported by COAR Notify.
+
+	<table class="table sortable-table table-sm table-striped">
+		<thead>
+		<tr class="column-header-row">
+			<th>Name</th>
+			<th>Status</th>
+			<th>Language</th>
+			<th class="no-sort">Description</th>
+		</tr>
+		</thead>
+		<tbody>
+    {{ range .Site.Data.code_libraries.unofficial }}
+			<tr>
+				<td class="nowrap">{{ .title }}</td>
+				<td>{{ .status }}</td>
+				<td>{{ .programming_language }}</td>
+				<td>
+            {{ .description | markdownify }}
+            {{ with .sources }}
+							<br/>
+							<b>Sources:</b> <a href="{{ . }}" class="external-link">{{ . }}</a>
+            {{ end }}
+            {{ with .documentation }}
+							<br/>
+							<b>Documentation:</b> <a href="{{ . }}" class="external-link">{{ . }}</a>
+            {{ end }}
+				</td>
+			</tr>
+    {{ end }}
+		</tbody>
+	</table>
 {{ end }}

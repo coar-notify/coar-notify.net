@@ -1,4 +1,6 @@
-{{ range . }}
+{{ $implementations := sort . "Title" "asc" }}
+
+{{ range $implementations }}
     {{ $systemPageLink := .Permalink}}
     {{ $systemPageTitle := .Title}}
 		<a href="{{ $systemPageLink }}" class="card-as-link">
