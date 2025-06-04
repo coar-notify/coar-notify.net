@@ -7,10 +7,13 @@
   sources: https://github.com/coar-notify/coarnotifypy
   documentation: https://coar-notify.github.io/coarnotifypy/build/html/index.html
 
-- title: "COAR Notify Review Offer Plugin"
-  status: Endorsed
+- title: "COAR Notify PHP Bindings"
+  status: Supported
   description: |
-    This plugin enables the automatic & manual sending of preprint review offer notifications to target review services within the OPS environment.
+    This library provides an officially supported PHP implementation of the COAR Notify Protocol version 1.0.1
   programming_language: PHP
-  sources: https://github.com/seanwiseman/COARNotifyReviewOfferPlugin
+  sources: https://github.com/coar-notify/coarnotifypy
+  documentation: https://coar-notify.github.io/coarnotifyphp/build/html/index.html
+
+
 
