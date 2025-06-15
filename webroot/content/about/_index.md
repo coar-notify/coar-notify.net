@@ -16,8 +16,8 @@ team:
     affiliation: Antleaf
     affiliation_link: https://www.antleaf.com
   - name: Martin Klein
-    affiliation: Los Alamos National Laboratory
-    affiliation_link: https://www.lanl.gov
+    affiliation: Pacific Northwest National Laboratory
+    affiliation_link: https://www.pnnl.gov/
   - name: Eloy Rodrigues
     affiliation: University of Minho
     affiliation_link: https://www.uminho.pt/EN
