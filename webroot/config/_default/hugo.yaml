@@ -32,7 +32,7 @@ outputs:
     - json
 permalinks:
   page:
-    posts: "/:year/:filename/"
+    posts: "/:year/:contentbasename/"
 taxonomies:
   tag: "tags"
   pattern-category: "pattern-categories"
