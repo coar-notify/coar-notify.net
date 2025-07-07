@@ -15,5 +15,10 @@
   sources: https://github.com/coar-notify/coarnotifypy
   documentation: https://coar-notify.github.io/coarnotifyphp/build/html/index.html
 
-
-
+- title: "COAR Notify Ruby Bindings"
+  status: Supported
+  description: |
+    This library provides an officially supported Ruby implementation of the COAR Notify Protocol version 1.0.1
+  programming_language: Ruby
+  sources: https://github.com/coar-notify/coarnotifyrb
+  documentation: https://github.com/coar-notify/coarnotifyrb
