@@ -13,6 +13,8 @@ implementations:
   - dspace
   - dataverse
   - dash
+  - hal
+  - nakala
 ---
 
 This workflow was originally developed by Harvard University between its publications repository and its data repository, but it can be used by other repositories or systems.
