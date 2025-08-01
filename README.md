@@ -74,4 +74,4 @@ The compiled website supports a Javascript search engine (using [pagefind](https
 ```bash
 pagefind --site <STATIC_WEBSITE_DESTINATION_FOLDER_PATH>
 ```
-This will add a folder: `<STATIC_WEBSITE_DESTINATION_FOLDER_PATH>/pagefind` which contains everything that the search function needs (Javascript, CSS, search index etc.)
+This will add a folder: `<STATIC_WEBSITE_DESTINATION_FOLDER_PATH>/pagefind` which contains everything that the search function needs (Javascript, CSS, search index etc.).
