@@ -12,6 +12,8 @@ version: 1.0.1
 implementations:
   - pci
   - sciety
+  - dspace
+  - eprints
 ---
 
 This workflow was originally developed between PCI and Sciety, but it can be used by other services (such as aggregators) wishing to interoperate with PCI.

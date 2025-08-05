@@ -11,6 +11,7 @@ status: published
 version: 1.0.1
 implementations:
   - dspace
+  - eprints
   - dataverse
   - dash
   - hal
