@@ -12,7 +12,7 @@
   description: |
     This library provides an officially supported PHP implementation of the COAR Notify Protocol version 1.0.1
   programming_language: PHP
-  sources: https://github.com/coar-notify/coarnotifypy
+  sources: https://github.com/coar-notify/coarnotifyphp
   documentation: https://coar-notify.github.io/coarnotifyphp/build/html/index.html
 
 - title: "COAR Notify Ruby Bindings"
