@@ -2,4 +2,4 @@ default:
   requirement: REQUIRED
   description: >
     It MUST include one of the [Activity Stream 2.0 Activity Types](https://www.w3.org/TR/activitystreams-vocabulary/#h-activity-types).
-    It MAY (depending on the activity) also include a type from the [Notify Activity Types](http://localhost:1313/specification/vocabulary/) vocabulary
+    It MAY (depending on the activity) also include a type from the [Notify Activity Types](https://coar-notify.net//specification/vocabulary/) vocabulary
