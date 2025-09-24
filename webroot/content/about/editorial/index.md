@@ -27,7 +27,7 @@ This Editorial Process Document outlines the process that is followed by the Edi
   </div>
 </div>
 
-The Editorial Board of the COAR Notify Protocol consists of at least three members who are appointed by COAR. The Board is responsible for managing the editorial process, including reviewing requests for additions or changes to the protocol, providing feedback, and making final decisions on changes. Specifically, the Board ensures that the Protocol:
+The Editorial Board of the COAR Notify Protocol consists of at least three members. The Board is responsible for managing the editorial process, including reviewing requests for additions or changes to the protocol, providing feedback, and making final decisions on changes. Specifically, the Board ensures that the Protocol:
 
 * conforms to the W3C Linked Data Notifications (LDN) specification
 * conforms to the Event Notifications in Value-Adding Networks specification
