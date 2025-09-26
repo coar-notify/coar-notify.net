@@ -15,6 +15,7 @@ implementations:
   - digital-csic
   - dspace
   - eprints
+  - apollo
 ---
 
 This workflow was originally developed between PCI and HAL, but it can be used by other repositories wishing to interoperate with PCI.
