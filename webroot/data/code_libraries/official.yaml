@@ -22,3 +22,11 @@
   programming_language: Ruby
   sources: https://github.com/coar-notify/coarnotifyrb
   documentation: https://github.com/coar-notify/coarnotifyrb
+
+- title: "COAR Notify Javascript Bindings"
+  status: Supported
+  description: |
+    This library provides an officially supported Javascript implementation of the COAR Notify Protocol version 1.0.1
+  programming_language: Javascript
+  sources: https://github.com/coar-notify/coarnotifyjs
+  documentation: https://github.com/coar-notify/coarnotifyjs
