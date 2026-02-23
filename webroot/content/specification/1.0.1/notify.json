@@ -9,6 +9,15 @@
     "IngestAction": "coar-notify:IngestAction",
     "RelationshipAction": "coar-notify:RelationshipAction",
     "UnprocessableNotification": "coar-notify:UnprocessableNotification",
+    "as:subject": {
+      "@type": "@id"
+    },
+    "as:object": {
+      "@type": "@id"
+    },
+    "as:relationship": {
+      "@type": "@id"
+    },
     "ietf:cite-as": {
         "@type" : "@id"
     }
