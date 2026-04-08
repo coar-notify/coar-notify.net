@@ -19,7 +19,7 @@
 		</tr>
 		</thead>
 		<tbody>
-    {{ range .Site.Data.code_libraries.official }}
+    {{ range hugo.Data.code_libraries.official }}
 			<tr>
 				<td class="nowrap">{{ .title }}</td>
 				<td>{{ .status }}</td>
@@ -56,7 +56,7 @@
 		</tr>
 		</thead>
 		<tbody>
-    {{ range .Site.Data.code_libraries.unofficial }}
+    {{ range hugo.Data.code_libraries.unofficial }}
 			<tr>
 				<td class="nowrap">{{ .title }}</td>
 				<td>{{ .status }}</td>

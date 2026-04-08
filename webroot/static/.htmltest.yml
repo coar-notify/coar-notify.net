@@ -1,4 +1,6 @@
 DirectoryPath: "."
+CheckExternal: false
+CheckInternal: true
 EnforceHTTPS: false
 IgnoreURLs:
   - "https://fonts.googleapis.com"

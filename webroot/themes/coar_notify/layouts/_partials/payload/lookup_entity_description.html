@@ -1,7 +1,7 @@
 {{ $lookupParameter := .lookupParameter}}
 {{ $version := .version }}
 
-{{ $payloadsVersion := index site.Data.payloads $version }}
+{{ $payloadsVersion := index hugo.Data.payloads $version }}
 {{ $lookupClassSource := index $payloadsVersion $lookupParameter.label }}
 {{ $lookupEntity := index $lookupClassSource $lookupParameter.key }}
 {{ $description := index $lookupEntity "description" }}

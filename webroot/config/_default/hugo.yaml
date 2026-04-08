@@ -1,6 +1,6 @@
 ---
 theme: "coar_notify"
-languageCode: "en-gb"
+locale: "en-gb"
 uglyURLs: false
 title: "COAR Notify"
 enableRobotsTXT: true
@@ -39,16 +39,30 @@ taxonomies:
   use-case: "use-cases"
   implementation-type: "implementation-types"
 caches:
-  getjson:
-    dir: :cacheDir/:project
-    maxAge: 5s
+  assets:
+    dir: :resourceDir/_gen
+    maxAge: -1
   getresource:
     dir: :cacheDir/:project
-    maxAge: 5s
-  getcsv:
+    maxAge: -1
+  images:
+    dir: :resourceDir/_gen
+    maxAge: -1
+  misc:
     dir: :cacheDir/:project
-    maxAge: 5s
+    maxAge: -1
+  modulegitinfo:
+    dir: :cacheDir/modules
+    maxAge: 24h
+  modulequeries:
+    dir: :cacheDir/modules
+    maxAge: 24h
+  modules:
+    dir: :cacheDir/modules
+    maxAge: -1
 params:
+  author:
+    email: paul@antleaf.com
   siteHeaderMessage:
     enable: false
     text: |
