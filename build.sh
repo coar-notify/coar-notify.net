@@ -3,6 +3,4 @@ hugo build \
 	--source ./webroot \
 	--destination $HUGO_BUILD_DESTINATION \
 	--cleanDestinationDir \
-	--logLevel info	 \
-  && pagefind \
-  	--site $HUGO_BUILD_DESTINATION
+	--logLevel info
