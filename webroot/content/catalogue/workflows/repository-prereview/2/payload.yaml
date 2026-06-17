@@ -1,15 +1,9 @@
 id:
   value: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
 origin:
-  value:
-    id: "https://www.biorxiv.org/"
-    inbox: "https://api.biorxiv.org/coar_inbox/"
-    type: "Service"
+  lookup: "repository"
 target:
-  value:
-    id: "https://www.prereview.org/"
-    inbox: "https://prereview-coar.fly.dev/inbox/"
-    type: "Service"
+  lookup: "prereview"
 object:
   lookup: "preprint"
 actor:
