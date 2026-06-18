@@ -16,7 +16,7 @@
 						Description
 					</div>
 					<div class="col">
-              {{ .Description }}
+              {{ .Description | markdownify}}
 					</div>
 				</div>
 				<div class="row">
@@ -24,7 +24,7 @@
 						Homepage
 					</div>
 					<div class="col">
-						<a href="{{ .Params.homepage }}">{{ .Params.homepage }}</a>
+						<a href="{{ .Params.homepage }}" class="external-link">{{ .Params.homepage }}</a>
 					</div>
 				</div>
 				<div class="row">

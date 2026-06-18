@@ -14,7 +14,7 @@ We try to serve all technical documentation for COAR Notify on the website at [h
   - Vocabulary
 - A catalogue of implementation systems & platforms
 - Documented workflows using COAR Notify patterns
-- Implementation Guide
+- Implementation Guide.
 
 ## About COAR Notify
 <img src="notify_logo.png" alt="COAR Notify logo" width="200"/>
@@ -74,4 +74,4 @@ The compiled website supports a Javascript search engine (using [pagefind](https
 ```bash
 pagefind --site <STATIC_WEBSITE_DESTINATION_FOLDER_PATH>
 ```
-This will add a folder: `<STATIC_WEBSITE_DESTINATION_FOLDER_PATH>/pagefind` which contains everything that the search function needs (Javascript, CSS, search index etc.)
+This will add a folder: `<STATIC_WEBSITE_DESTINATION_FOLDER_PATH>/pagefind` which contains everything that the search function needs (Javascript, CSS, search index etc.).

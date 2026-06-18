@@ -1,6 +1,6 @@
 /webroot/.hugo_build.lock
 /webroot/resources
 /webroot/public
-**/.DS_Store
+.DS_Store
 .idea
-.nova
+/.run/

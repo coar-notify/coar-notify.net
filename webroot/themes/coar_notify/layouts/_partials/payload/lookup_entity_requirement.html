@@ -1,0 +1,13 @@
+{{ $lookupParameter := .lookupParameter}}
+{{ $version := .version }}
+
+{{ $payloadsVersion := index hugo.Data.payloads $version }}
+{{ $lookupClassSource := index $payloadsVersion $lookupParameter.label }}
+{{ $lookupEntity := index $lookupClassSource $lookupParameter.key }}
+{{ $requirement := index $lookupEntity "requirement" }}
+{{ if eq $requirement nil }}
+    {{ $lookupEntity := index $lookupClassSource "default" }}
+    {{ $requirement = index $lookupEntity "requirement" }}
+{{ end}}
+
+{{ return $requirement }}

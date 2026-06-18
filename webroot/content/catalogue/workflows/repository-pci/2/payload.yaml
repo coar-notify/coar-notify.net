@@ -21,4 +21,4 @@ inReplyTo:
   requirement: OPTIONAL
   value: "urn:uuid:0370c0fb-bb78-4a9b-87f5-bed307a509dd"
   description: |
-    It MUST be specified if this is a response to a previous *TentativeReject* notification. If used, it MUST contain the URI which identifies the previous *TentativeReject* for which this is a response.
+    It MUST be specified if this is a response to a previous *TentativeReject* notification (indicating that this is a **re-submission**). If used, it MUST contain the URI which identifies the previous *TentativeReject* for which this is a response.

@@ -1,6 +1,6 @@
 ---
 theme: "coar_notify"
-languageCode: "en-gb"
+locale: "en-gb"
 uglyURLs: false
 title: "COAR Notify"
 enableRobotsTXT: true
@@ -9,13 +9,20 @@ disablePathToLower: true
 services:
   rss:
     limit: 20
+mediaTypes:
+  application/ld+json:
+    suffixes:
+      - json
+outputFormats:
+  json:
+    mediaType: application/ld+json
 outputs:
   home:
     - html
     - json
+    - rss
   section:
     - html
-    - rss
   taxonomy:
     - html
   term:
@@ -25,30 +32,44 @@ outputs:
     - json
 permalinks:
   page:
-    posts: "/:year/:filename/"
+    posts: "/:year/:contentbasename/"
 taxonomies:
   tag: "tags"
   pattern-category: "pattern-categories"
   use-case: "use-cases"
   implementation-type: "implementation-types"
 caches:
-  getjson:
-    dir: :cacheDir/:project
-    maxAge: 5s
+  assets:
+    dir: :resourceDir/_gen
+    maxAge: -1
   getresource:
     dir: :cacheDir/:project
-    maxAge: 5s
-  getcsv:
+    maxAge: -1
+  images:
+    dir: :resourceDir/_gen
+    maxAge: -1
+  misc:
     dir: :cacheDir/:project
-    maxAge: 5s
+    maxAge: -1
+  modulegitinfo:
+    dir: :cacheDir/modules
+    maxAge: 24h
+  modulequeries:
+    dir: :cacheDir/modules
+    maxAge: 24h
+  modules:
+    dir: :cacheDir/modules
+    maxAge: -1
 params:
+  author:
+    email: paul@antleaf.com
   siteHeaderMessage:
-    enable: true
+    enable: false
     text: |
       This is a development version of the COAR Notify documentation website.
       The content here is **subject to change without warning**.
-      The current, supported version is at [https://coar-notify.net](https://coar-notify.net).
-  currentSpecificationVersion: "1.0.0"
+      The current, supported version is at [https://notify.coar-repositories.org](https://notify.coar-repositories.org).
+  currentSpecificationVersion: "1.0.1"
   eventNotificationsPatternsBaseURL: "https://www.eventnotifications.net/"
   enableAnalytics: false  # this param may be overridden in production/development envs
   googleSiteVerification:
@@ -56,9 +77,12 @@ params:
   gitHubRepoForSources: "https://github.com/coar-notify/coar-notify.net"
   feedbackFormURL: "https://github.com/coar-notify/coar-notify.net/issues/new?assignees=paulwalk&labels=feedback&template=feedback.md&title=PLACEHOLDER"
   mermaid:
-    left_node_colour: "#ddedea"
-    right_node_colour: "#daeaf6"
-    notify_node_colour: "#e8dff5"
+#    left_node_colour: "#ddedea"
+#    right_node_colour: "#daeaf6"
+#    notify_node_colour: "#e8dff5"
+    left_node_colour: "#f7d878" #this colour palette from https://www.schemecolor.com/tender-touch.php
+    right_node_colour: "#aec9d3"
+    notify_node_colour: "#e6c5d4"
 markup:
   defaultMarkdownHandler: goldmark
   goldmark:
