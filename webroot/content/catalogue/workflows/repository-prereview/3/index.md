@@ -1,6 +1,6 @@
 ---
-title: PREReview processes the offer
-description: PREReview processes the offer to review the preprint.
+title: PREreview processes the offer
+description: PREreview advertises the request to their community.
 date: 2021-03-08
 type: workflows
 scope: right_node
