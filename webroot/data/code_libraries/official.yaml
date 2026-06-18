@@ -1,0 +1,32 @@
+---
+- title: "COAR Notify Python Bindings"
+  status: Supported
+  description: |
+    This library provides an officially supported Python implementation of the COAR Notify Protocol version 1.0.1
+  programming_language: Python
+  sources: https://github.com/coar-notify/coarnotifypy
+  documentation: https://coar-notify.github.io/coarnotifypy/build/html/index.html
+
+- title: "COAR Notify PHP Bindings"
+  status: Supported
+  description: |
+    This library provides an officially supported PHP implementation of the COAR Notify Protocol version 1.0.1
+  programming_language: PHP
+  sources: https://github.com/coar-notify/coarnotifyphp
+  documentation: https://coar-notify.github.io/coarnotifyphp/build/html/index.html
+
+- title: "COAR Notify Ruby Bindings"
+  status: Supported
+  description: |
+    This library provides an officially supported Ruby implementation of the COAR Notify Protocol version 1.0.1
+  programming_language: Ruby
+  sources: https://github.com/coar-notify/coarnotifyrb
+  documentation: https://github.com/coar-notify/coarnotifyrb
+
+- title: "COAR Notify Javascript Bindings"
+  status: Supported
+  description: |
+    This library provides an officially supported Javascript implementation of the COAR Notify Protocol version 1.0.1
+  programming_language: Javascript
+  sources: https://github.com/coar-notify/coarnotifyjs
+  documentation: https://github.com/coar-notify/coarnotifyjs

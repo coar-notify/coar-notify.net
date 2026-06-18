@@ -6,5 +6,8 @@ menus:
   main:
     weight: 75
     name: "News"
+outputs:
+  - HTML
+  - RSS
 ---
 

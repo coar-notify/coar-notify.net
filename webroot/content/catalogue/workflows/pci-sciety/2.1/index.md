@@ -1,7 +1,7 @@
 ---
 title: Announce Review(s)
 description: |
-  PCI announces the existence of a published review
+  PCI announces the existence of a published review.
 date: 2021-03-08
 type: workflows
 scope: notify

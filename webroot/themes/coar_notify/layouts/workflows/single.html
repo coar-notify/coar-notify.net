@@ -2,11 +2,12 @@
     {{ $workflowPage := .CurrentSection }}
     {{ partial "workflows/badges" . }}
 
-		<h1>{{ $workflowPage.Title}} workflow</h1>
+		<h1>{{ $workflowPage.Title}} workflow (step {{ .File.ContentBaseName}}: {{ .Title }})</h1>
     {{ partial "workflows/display_flowchart" (dict "workflowPage" $workflowPage "page" .)  }}
 		<h2>Step {{ .File.ContentBaseName}}: {{ .Title }}</h2>
     {{ partial "rfc2119" . }}
 		<p>{{ .Description | markdownify }}</p>
+		<p>{{ .Content }}</p>
 		<div data-pagefind-ignore>
         {{ if eq .Params.scope "notify" }}
             {{ $mergedPayload := partial "payload/build_workflow_step_payload" . }}

@@ -8,11 +8,14 @@ date: 2021-03-08
 type: workflows
 use-cases: [peer-review,endorsement]
 status: published
-version: 1.0.0
+version: 1.0.1
 implementations:
   - pci
   - hal
   - digital-csic
+  - dspace
+  - eprints
+  - apollo
 ---
 
 This workflow was originally developed between PCI and HAL, but it can be used by other repositories wishing to interoperate with PCI.
