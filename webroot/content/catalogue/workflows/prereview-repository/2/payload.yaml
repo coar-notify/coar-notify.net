@@ -1,0 +1,17 @@
+id:
+  value: "urn:uuid:e4ac5609-f2f7-4795-bff7-bd63df41ffe7"
+origin:
+  lookup: "prereview"
+target:
+  lookup: "repository"
+actor:
+  value: undefined
+inReplyTo:
+  value: undefined
+object:
+  value:
+    id: "https://prereview.org/reviews/20359959"
+    type:
+      - "Review"
+      - "sorg:Review"
+    "ietf:cite-as": "https://doi.org/10.5281/zenodo.20359959"
