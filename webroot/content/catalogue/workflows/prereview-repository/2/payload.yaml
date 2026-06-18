@@ -5,7 +5,7 @@ origin:
 target:
   lookup: "repository"
 actor:
-  value: undefined
+  lookup: "prereview"
 inReplyTo:
   value: undefined
 object:
