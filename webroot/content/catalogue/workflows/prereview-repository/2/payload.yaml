@@ -7,7 +7,7 @@ target:
 actor:
   lookup: "prereview"
 inReplyTo:
-  value: undefined
+  value: "omitted"
 object:
   value:
     id: "https://prereview.org/reviews/20359959"
