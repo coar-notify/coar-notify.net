@@ -14,6 +14,11 @@ pci:
     id: "https://evolbiol.peercommunityin.org/coar_notify/"
     type: "Service"
     inbox: "https://evolbiol.peercommunityin.org/coar_notify/inbox/"
+prereview:
+  value:
+    id: "https://prereview.org"
+    type: "Service"
+    inbox: "https://prereview.org/inbox"
 sciety:
   value:
     id: "https://sciety.org"
