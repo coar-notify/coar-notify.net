@@ -46,6 +46,11 @@ pci:
     id: "https://evolbiol.peercommunityin.org/coar_notify/"
     type: "Service"
     name: "Peer Community in Evolutionary Biology"
+prereview:
+  value:
+    id: "https://prereview.org"
+    type: "Service"
+    name: "PREreview"
 #reviewer:
 #  value:
 #    id: "https://isni.org/isni/0000000122832703"

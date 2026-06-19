@@ -16,6 +16,13 @@
     {{ $mergedPayload = merge $mergedPayload (partial "payload/process_property" (dict "version" $notify_version "label" $k "value" $v)) }}
 {{ end }}
 
-{{ partial "payload/validate_payload" (dict "payload" $mergedPayload "specificationVersion" $notify_version) }}
+{{ $finalPayload := dict }}
+{{ range $k, $v := $mergedPayload }}
+    {{ if ne (index $v "value") "omitted"}}
+        {{ $finalPayload = merge $finalPayload (dict $k $v) }}
+    {{ end }}
+{{ end }}
 
-{{ return $mergedPayload }}
+{{ partial "payload/validate_payload" (dict "payload" $finalPayload "specificationVersion" $notify_version) }}
+
+{{ return $finalPayload }}
